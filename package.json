@@ -1,0 +1,21 @@
+{
+  "name": "flonam",
+  "description": "Flonam corporate website (Hugo + Tailwind CSS v4)",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm:dev:css\" \"npm:dev:hugo\"",
+    "dev:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
+    "dev:hugo": "hugo server --buildDrafts --disableFastRender",
+    "build:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --minify",
+    "build": "npm run build:css && hugo --gc --minify",
+    "preview": "npm run build && hugo server -e production --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.19",
+    "concurrently": "^9.2.1",
+    "tailwindcss": "^4.1.17"
+  }
+}

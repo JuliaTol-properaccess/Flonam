@@ -1,0 +1,73 @@
+baseURL = "https://flonam.nl/"
+title = "Flonam"
+languageCode = "nl"
+defaultContentLanguage = "nl"
+defaultContentLanguageInSubdir = false
+timeZone = "Europe/Amsterdam"
+
+[languages]
+  [languages.nl]
+    languageName = "Nederlands"
+    weight = 1
+    contentDir = "content/nl"
+
+[pagination]
+  pagerSize = 12
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[params]
+  description = "Flonam — corporate website"
+  author = "Flonam"
+  logo = "/images/logo.svg"
+  logoText = "Flonam"
+
+  [params.contact]
+    email = "info@flonam.nl"
+
+[menus]
+  [[menus.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menus.main]]
+    name = "Over ons"
+    url = "/over/"
+    weight = 2
+  [[menus.main]]
+    name = "Diensten"
+    url = "/diensten/"
+    weight = 3
+  [[menus.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 4
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5

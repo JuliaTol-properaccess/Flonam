@@ -1,0 +1,16 @@
+<header class="border-b border-slate-200 bg-white/80 backdrop-blur sticky top-0 z-40">
+  <div class="container-wide flex items-center justify-between py-4">
+    <a href="{{ "/" | relLangURL }}" class="flex items-center gap-2 text-ink hover:text-ink">
+      <span class="font-display text-xl font-extrabold tracking-tight">{{ .Site.Params.logoText | default .Site.Title }}</span>
+    </a>
+    <nav aria-label="Hoofdmenu">
+      <ul class="flex items-center gap-6 text-sm font-medium">
+        {{ range .Site.Menus.main }}
+          <li>
+            <a href="{{ .URL | relLangURL }}" class="text-ink hover:text-brand">{{ .Name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

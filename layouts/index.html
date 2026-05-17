@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="bg-gradient-to-b from-surface to-white">
+  <div class="container-wide py-20 sm:py-28 text-center">
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+      {{ .Site.Title }}
+    </h1>
+    <p class="mt-6 max-w-2xl mx-auto text-lg text-muted">
+      {{ .Site.Params.description }}
+    </p>
+    <div class="mt-8 flex items-center justify-center gap-3">
+      <a href="/diensten/" class="btn-primary">Bekijk diensten</a>
+      <a href="/contact/" class="btn-secondary">Neem contact op</a>
+    </div>
+  </div>
+</section>
+
+<section class="container-wide py-16">
+  {{ .Content }}
+</section>
+{{ end }}
