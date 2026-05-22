@@ -1,29 +1,32 @@
-<footer class="border-t border-slate-200 bg-surface mt-16">
-  <div class="container-wide py-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+<footer class="border-t border-line bg-surface mt-20">
+  <div class="container-wide py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
     <div>
-      <div class="font-display text-lg font-extrabold text-ink">{{ .Site.Title }}</div>
-      <p class="mt-2 text-sm text-muted">{{ .Site.Params.description }}</p>
+      <div class="font-display text-xl font-bold text-ink">
+        Flonam<span class="text-purple-700">&nbsp;B.V.</span>
+      </div>
+      <p class="mt-3 text-sm text-muted leading-relaxed">{{ .Site.Params.description }}</p>
     </div>
     <div>
-      <h2 class="text-sm font-semibold text-ink">Navigatie</h2>
-      <ul class="mt-3 space-y-2 text-sm">
+      <h2 class="font-display text-sm font-bold text-ink uppercase tracking-wider">Navigatie</h2>
+      <ul class="mt-4 space-y-2 text-sm">
         {{ range .Site.Menus.main }}
-          <li><a href="{{ .URL | relLangURL }}" class="text-muted hover:text-brand">{{ .Name }}</a></li>
+          <li><a href="{{ .URL | relLangURL }}" class="text-muted hover:text-purple-700 transition-colors">{{ .Name }}</a></li>
         {{ end }}
       </ul>
     </div>
     <div>
-      <h2 class="text-sm font-semibold text-ink">Contact</h2>
-      <ul class="mt-3 space-y-2 text-sm text-muted">
+      <h2 class="font-display text-sm font-bold text-ink uppercase tracking-wider">Contact</h2>
+      <ul class="mt-4 space-y-2 text-sm text-muted">
         {{ with .Site.Params.contact.email }}
-          <li><a href="mailto:{{ . }}" class="hover:text-brand">{{ . }}</a></li>
+          <li><a href="mailto:{{ . }}" class="hover:text-purple-700 transition-colors">{{ . }}</a></li>
         {{ end }}
       </ul>
     </div>
   </div>
-  <div class="border-t border-slate-200">
-    <div class="container-wide py-4 text-xs text-muted">
-      &copy; {{ now.Year }} {{ .Site.Title }}. Alle rechten voorbehouden.
+  <div class="border-t border-line">
+    <div class="container-wide py-5 text-xs text-muted flex flex-wrap items-center justify-between gap-2">
+      <span>&copy; {{ now.Year }} Flonam B.V. Alle rechten voorbehouden.</span>
+      <span>Onderdeel van de Proper-familie. Zie ook <a href="https://properaccess.nl" class="text-purple-700 hover:underline" target="_blank" rel="noopener">Proper Access</a>.</span>
     </div>
   </div>
 </footer>

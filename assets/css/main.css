@@ -7,40 +7,80 @@
 @source "../../hugo_stats.json";
 
 @theme {
-  --color-brand: #2563eb;
-  --color-brand-dark: #1e40af;
-  --color-ink: #0f172a;
-  --color-muted: #64748b;
-  --color-surface: #f8fafc;
+  /* ---- Proper-family palette (ported from properinsight.nl) ---- */
+  --color-purple-900: #4C1D95;
+  --color-purple-700: #6B21A8;
+  --color-purple-600: #7C3AED;
+  --color-purple-500: #8B5CF6;
+  --color-purple-100: #EDE9FE;
+  --color-purple-50:  #F5F3FF;
 
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --color-petrol-700: #0F766E;
+  --color-petrol-600: #0D9488;
+  --color-petrol-100: #CCFBF1;
+
+  --color-gold-700: #B45309;
+  --color-gold-600: #D97706;
+  --color-gold-500: #F59E0B;
+  --color-gold-100: #FEF3C7;
+
+  --color-ink:        #1F2937;
+  --color-ink-600:    #374151;
+  --color-muted:      #6B7280;
+  --color-line:       #E5E7EB;
+  --color-surface:    #F9FAFB;
+
+  /* Semantic aliases */
+  --color-brand:      #6B21A8;
+  --color-brand-dark: #4C1D95;
+  --color-accent:     #D97706;
+  --color-accent-dark:#B45309;
+
+  /* Fonts */
+  --font-sans:    "Nunito", system-ui, -apple-system, sans-serif;
+  --font-display: "Nunito Sans", "Nunito", system-ui, sans-serif;
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
   body {
-    @apply bg-white text-ink font-sans antialiased;
+    @apply text-ink antialiased;
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    background: linear-gradient(135deg, #F9FAFB 0%, #F0EDFF 50%, #F9FAFB 100%);
+    background-attachment: fixed;
   }
   h1, h2, h3, h4 {
-    @apply font-display font-bold tracking-tight text-ink;
+    @apply text-ink font-bold tracking-tight;
+    font-family: var(--font-display);
+    line-height: 1.2;
   }
-  a {
-    @apply text-brand hover:text-brand-dark transition-colors;
+  a { color: inherit; text-decoration: none; }
+  :focus-visible {
+    outline: 3px solid var(--color-purple-500);
+    outline-offset: 2px;
   }
 }
 
 @utility container-narrow {
-  @apply mx-auto max-w-3xl px-4 sm:px-6;
+  @apply mx-auto max-w-3xl px-5 sm:px-6;
 }
 @utility container-wide {
-  @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  @apply mx-auto max-w-[1140px] px-5 sm:px-6 lg:px-8;
+}
+@utility section-label {
+  @apply inline-block text-xs font-bold uppercase tracking-[0.1em] text-purple-600 mb-3;
+  font-family: var(--font-display);
 }
 @utility btn-primary {
-  @apply inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold transition-colors bg-brand text-white hover:bg-brand-dark;
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-7 py-3.5 text-base font-bold transition-all bg-gold-600 text-white border-2 border-gold-600 hover:bg-gold-700 hover:border-gold-700 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(217,119,6,0.3)];
+  font-family: var(--font-display);
 }
 @utility btn-secondary {
-  @apply inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold transition-colors border border-slate-300 text-ink hover:bg-surface;
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-7 py-3.5 text-base font-bold transition-all bg-transparent text-gold-700 border-2 border-gold-600 hover:bg-gold-100 hover:-translate-y-0.5;
+  font-family: var(--font-display);
+}
+@utility card-hover {
+  @apply bg-white border-2 border-line rounded-2xl p-7 transition-all duration-300 hover:border-purple-600 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(107,33,168,0.1)];
 }

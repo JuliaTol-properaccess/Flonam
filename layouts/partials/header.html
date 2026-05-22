@@ -1,13 +1,18 @@
-<header class="border-b border-slate-200 bg-white/80 backdrop-blur sticky top-0 z-40">
-  <div class="container-wide flex items-center justify-between py-4">
-    <a href="{{ "/" | relLangURL }}" class="flex items-center gap-2 text-ink hover:text-ink">
-      <span class="font-display text-xl font-extrabold tracking-tight">{{ .Site.Params.logoText | default .Site.Title }}</span>
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-line">
+  <div class="container-wide flex items-center justify-between h-18">
+    <a href="{{ "/" | relLangURL }}" class="font-display text-[1.375rem] font-bold text-ink flex items-center gap-1 hover:text-ink">
+      Flonam<span class="text-purple-700">&nbsp;B.V.</span>
     </a>
-    <nav aria-label="Hoofdmenu">
-      <ul class="flex items-center gap-6 text-sm font-medium">
+    <nav aria-label="Hoofdmenu" class="hidden md:block">
+      <ul class="flex items-center gap-8">
         {{ range .Site.Menus.main }}
+          {{ $isCta := eq .Name "Contact" }}
           <li>
-            <a href="{{ .URL | relLangURL }}" class="text-ink hover:text-brand">{{ .Name }}</a>
+            {{ if $isCta }}
+              <a href="{{ .URL | relLangURL }}" class="font-display font-bold text-[1.0625rem] text-white bg-gold-600 hover:bg-gold-700 px-5 py-2.5 rounded-lg transition-colors">{{ .Name }}</a>
+            {{ else }}
+              <a href="{{ .URL | relLangURL }}" class="relative font-display font-semibold text-[0.9375rem] text-ink-600 hover:text-purple-700 transition-colors after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-purple-600 after:transition-[width] after:duration-200 hover:after:w-full">{{ .Name }}</a>
+            {{ end }}
           </li>
         {{ end }}
       </ul>

@@ -14,13 +14,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Nunito:wght@400;500;600;700&display=swap" />
 
   {{ with .OutputFormats.Get "RSS" }}
     <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ $.Site.Title }}" />
   {{ end }}
 </head>
 <body class="min-h-screen flex flex-col">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-4 focus:z-50 focus:bg-purple-700 focus:text-white focus:px-6 focus:py-3 focus:rounded-b-md focus:font-bold">Ga naar inhoud</a>
   {{ partial "header.html" . }}
   <main id="main" class="flex-1">
     {{ block "main" . }}{{ end }}

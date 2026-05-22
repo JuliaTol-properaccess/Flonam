@@ -1,5 +1,5 @@
 baseURL = "https://flonam.nl/"
-title = "Flonam"
+title = "Flonam B.V."
 languageCode = "nl"
 defaultContentLanguage = "nl"
 defaultContentLanguageInSubdir = false
@@ -41,10 +41,9 @@ timeZone = "Europe/Amsterdam"
   home = ["HTML", "RSS"]
 
 [params]
-  description = "Flonam — corporate website"
-  author = "Flonam"
-  logo = "/images/logo.svg"
-  logoText = "Flonam"
+  description = "SaaS-tools voor B2B-teams die efficiënter willen werken en processen willen versnellen. Gebouwd op ervaring in digitale toegankelijkheid."
+  author = "Flonam B.V."
+  logoText = "Flonam B.V."
 
   [params.contact]
     email = "info@flonam.nl"
