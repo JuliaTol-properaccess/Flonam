@@ -1,23 +1,23 @@
 {{ define "main" }}
-<section class="container-wide py-20 sm:py-24">
+<section class="container-wide py-20">
   <header class="mb-12 max-w-2xl">
     <p class="section-label">{{ .Section | default .Title | humanize }}</p>
-    <h1 class="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">{{ .Title }}</h1>
-    {{ with .Description }}<p class="mt-5 text-lg text-ink-600 leading-[1.8]">{{ . }}</p>{{ end }}
+    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] leading-[1.15]">{{ .Title }}</h1>
+    {{ with .Description }}<p class="mt-5 text-[1.0625rem] text-muted leading-[1.8]">{{ . }}</p>{{ end }}
   </header>
 
   {{ with .Content }}
-    <div class="prose prose-lg prose-slate max-w-none mb-12 prose-headings:font-display prose-a:text-purple-700 hover:prose-a:text-purple-900">{{ . }}</div>
+    <div class="prose prose-lg prose-slate max-w-none mb-12 prose-headings:tracking-[-0.02em] prose-a:text-green-700 hover:prose-a:text-green-900">{{ . }}</div>
   {{ end }}
 
   {{ if .Pages }}
     <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {{ range .Pages }}
-        <li class="card-hover">
-          <h2 class="font-display text-xl font-bold">
-            <a href="{{ .RelPermalink }}" class="text-ink hover:text-purple-700">{{ .Title }}</a>
+        <li class="card-base">
+          <h2 class="font-bold text-xl tracking-[-0.01em]">
+            <a href="{{ .RelPermalink }}" class="text-ink hover:text-green-700">{{ .Title }}</a>
           </h2>
-          {{ with .Description }}<p class="mt-2 text-sm text-muted leading-relaxed">{{ . }}</p>{{ end }}
+          {{ with .Description }}<p class="mt-2 text-[0.9375rem] text-muted leading-[1.65]">{{ . }}</p>{{ end }}
         </li>
       {{ end }}
     </ul>

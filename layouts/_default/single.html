@@ -1,11 +1,11 @@
 {{ define "main" }}
-<article class="container-narrow py-20 sm:py-24">
+<article class="container-narrow py-20">
   <header class="mb-12 text-center">
     <p class="section-label">{{ .Type | humanize }}</p>
-    <h1 class="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">{{ .Title }}</h1>
-    {{ with .Description }}<p class="mt-5 text-lg text-ink-600 leading-[1.8] max-w-2xl mx-auto">{{ . }}</p>{{ end }}
+    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] leading-[1.15]">{{ .Title }}</h1>
+    {{ with .Description }}<p class="mt-5 text-[1.0625rem] text-muted leading-[1.8] max-w-2xl mx-auto">{{ . }}</p>{{ end }}
   </header>
-  <div class="prose prose-lg prose-slate max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-purple-700 hover:prose-a:text-purple-900">
+  <div class="prose prose-lg prose-slate max-w-none prose-headings:tracking-[-0.02em] prose-a:text-green-700 hover:prose-a:text-green-900">
     {{ .Content }}
   </div>
 </article>
