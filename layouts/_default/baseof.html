@@ -23,7 +23,8 @@
   {{ end }}
 </head>
 <body class="min-h-screen flex flex-col">
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-4 focus:z-50 focus:bg-purple-700 focus:text-white focus:px-6 focus:py-3 focus:rounded-b-md focus:font-bold">Ga naar inhoud</a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-4 focus:z-50 focus:bg-green-700 focus:text-white focus:px-6 focus:py-3 focus:rounded-b-md focus:font-bold">Ga naar inhoud</a>
+  {{ partial "topbar.html" . }}
   {{ partial "header.html" . }}
   <main id="main" class="flex-1">
     {{ block "main" . }}{{ end }}

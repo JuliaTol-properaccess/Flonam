@@ -47,6 +47,9 @@ timeZone = "Europe/Amsterdam"
 
   [params.contact]
     email = "info@flonam.nl"
+    phone = "085 123 4567"
+    phone_link = "+31851234567"
+    address = "Voorbeeldstraat 1, 1234 AB Amsterdam"
 
 [menus]
   [[menus.main]]
