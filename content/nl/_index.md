@@ -35,18 +35,23 @@ waarom:
     - title: "Snelle inzet zonder lock-in"
       body: "Live in dagen, niet maanden. Werkt op je bestaande systemen. Stop wanneer je wilt — je data blijft van jou."
 
-features:
-  title: "Wat je krijgt"
-  body: "Vier concrete functies die je team direct tijd besparen."
+producten:
+  title: "Onze producten"
+  body: "Vier concrete tools die je team direct tijd besparen."
   items:
-    - title: "Slimme workflows"
-      body: "Automatiseer terugkerende taken."
-    - title: "Realtime dashboards"
-      body: "Volg prestaties direct."
-    - title: "AI-assistent"
-      body: "Betere voorstellen, minder fouten."
-    - title: "Open integraties"
-      body: "Werkt met je bestaande systemen."
+    - title: "MKB-offerte.nl"
+      icon: "file-text"
+      body: "Maak professionele offertes in minuten in plaats van uren. Voor MKB-ondernemers in Nederland."
+      url: "https://mkb-offerte.nl"
+    - title: "Kilometer-registratie app"
+      icon: "map"
+      body: "Houd zakelijke ritten automatisch bij vanaf je telefoon. Geen losse notitieboekjes meer."
+    - title: "AI-medewerker"
+      icon: "bot"
+      body: "Jouw eerste digitale collega. Beantwoordt mails, plant afspraken en houdt je administratie bij."
+    - title: "Dashboard voor je bedrijfsgegevens"
+      icon: "bar-chart"
+      body: "Eén scherm met al je cijfers — omzet, klanten, projecten, agenda. Stop met schakelen tussen tools."
 
 voor_wie:
   title: "Voor bedrijven die sneller willen groeien in minder tijd"
