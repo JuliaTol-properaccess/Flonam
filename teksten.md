@@ -2,8 +2,8 @@
 
 # Hero
 
-**Kop:** Werk sneller. Slimmer. Met AI als hefboom.  
-**Subtekst:** Flonam B.V. levert SaaS-tools voor B2B-teams die efficiënter willen werken en processen willen versnellen. Gebouwd op ervaring in digitale toegankelijkheid en bewezen tooling voor websites en apps.
+**Kop:** Bespaar jezelf 10 uur per week met slimme tools voor ondernemers
+**Subtekst:** Flonam B.V. levert SaaS-tools voor B2B-teams die efficiënter willen werken en processen willen versnellen. Gebouwd op 15 jaar ervaring in software ontwikeling en bewezen tooling voor websites en apps.
 
 **CTA:**
 
@@ -14,7 +14,7 @@
 
 ## Wat we doen
 
-**Kop:** Eén slimme SaaS-oplossing voor efficiënter B2B-werk  
+**Kop:** Slimme SaaS-oplossingen voor efficiënter B2B-werk  
 **Tekst:**  
 Flonam helpt bedrijven om repetitieve taken te automatiseren, data direct te benutten en sneller te reageren. Onze tools combineren zakelijke workflows met AI-ondersteuning, zodat je meer doet met minder.
 
@@ -29,9 +29,9 @@ Flonam helpt bedrijven om repetitieve taken te automatiseren, data direct te ben
 
 ## Waarom Flonam?
 
-**Kop:** Geen losse tools meer. Alleen resultaat.  
+**Kop:** Hoeveel kun je bereiken als je geen tijd meer verspilt aan repetetatieve taken?
 **Tekst:**  
-Flonam is geen experiment: we bouwen voort op bewezen expertise in digitale toegankelijkheid. Onze achtergrond in audits en toegankelijke tooling voor websites en apps zorgt dat we praktische, betrouwbare SaaS-oplossingen leveren.
+Flonam is geen experiment: we bouwen voort op bewezen expertise in software ontwikkeling. We bouwen praktische, betrouwbare SaaS-oplossingen.
 
 **Voordelen:**
 
@@ -44,9 +44,9 @@ Flonam is geen experiment: we bouwen voort op bewezen expertise in digitale toeg
 
 ## Voor wie is het
 
-**Kop:** Voor organisaties die sneller willen groeien met minder moeite  
+**Kop:** Voor bedrijven die sneller willen groeien in minder tijd  
 **Tekst:**  
-Flonam is ontworpen voor teams die processen willen stroomlijnen, klantvragen sneller willen beantwoorden en intern beter willen samenwerken.
+Flonam helpt teams die processen willen stroomlijnen, klantvragen sneller willen beantwoorden en intern beter willen samenwerken.
 
 **Ideale gebruikers:**
 

@@ -36,23 +36,23 @@
         {{ end }}
       </div>
 
-      {{/* Hero-visual: stats-card met 3 kerncijfers + glass panel */}}
-      <div class="bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-[20px] p-8">
-        <div class="text-[0.8125rem] font-semibold text-white/50 uppercase tracking-[0.08em] mb-6">Waarom Flonam in cijfers</div>
+      {{/* Hero-visual: stats-card met 3 kerncijfers — witte achtergrond */}}
+      <div class="bg-white border border-line rounded-[20px] p-8 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+        <div class="text-[0.8125rem] font-semibold text-green-600 uppercase tracking-[0.08em] mb-6">Waarom Flonam in cijfers</div>
         <div class="grid grid-cols-3 gap-4 mb-6">
           {{ range .stats }}
             <div class="text-center">
-              <div class="font-extrabold text-white text-[1.75rem] sm:text-[2rem] leading-none tracking-[-0.02em]">{{ .number }}{{ with .unit }}<span class="text-[1rem] font-semibold text-green-400 ml-0.5">{{ . }}</span>{{ end }}</div>
-              <div class="text-[0.75rem] text-white/60 mt-2 leading-tight">{{ .label }}</div>
+              <div class="font-extrabold text-ink text-[1.75rem] sm:text-[2rem] leading-none tracking-[-0.02em]">{{ .number }}{{ with .unit }}<span class="text-[1rem] font-semibold text-green-700 ml-0.5">{{ . }}</span>{{ end }}</div>
+              <div class="text-[0.75rem] text-muted mt-2 leading-tight">{{ .label }}</div>
             </div>
           {{ end }}
         </div>
-        <div class="pt-5 border-t border-white/10">
-          <div class="text-[0.75rem] font-semibold text-white/50 uppercase tracking-[0.08em] mb-3">Bewezen aanpak</div>
+        <div class="pt-5 border-t border-line">
+          <div class="text-[0.75rem] font-semibold text-green-600 uppercase tracking-[0.08em] mb-3">Bewezen aanpak</div>
           <ul class="space-y-2.5">
             {{ range first 3 $.Params.proof.bullets }}
-              <li class="flex items-start gap-2.5 text-[0.875rem] text-white/80">
-                <svg aria-hidden="true" class="size-4 text-green-400 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <li class="flex items-start gap-2.5 text-[0.875rem] text-ink">
+                <svg aria-hidden="true" class="size-4 text-green-700 mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 {{ . }}
               </li>
             {{ end }}

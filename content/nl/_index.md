@@ -5,7 +5,7 @@ description: "Bespaar 10 uur per week met slimme SaaS-tools voor B2B-teams. Gebo
 hero:
   badge: "≥10 uur tijdwinst per week"
   title: "Bespaar jezelf 10 uur per week met slimme tools voor ondernemers"
-  subtitle: "Flonam B.V. levert SaaS-tools voor B2B-teams die efficiënter willen werken en processen willen versnellen. Gebouwd op 15 jaar ervaring in software-ontwikkeling en bewezen tooling voor websites en apps."
+  subtitle: "Flonam levert SaaS-tools voor B2B-teams die efficiënter willen werken en processen willen versnellen. Gebouwd op 15 jaar ervaring in software-ontwikkeling en bewezen tooling voor websites en apps."
   primary_cta:
     label: "Start een gratis demo"
     url: "/contact/"
