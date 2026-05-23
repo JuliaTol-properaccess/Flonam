@@ -6,6 +6,8 @@
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
 
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
   {{ $css := resources.Get "css/style.css" }}
   {{ if $css }}
     {{ $css = $css | fingerprint }}

@@ -25,7 +25,7 @@ hero:
       label: "vendor-lock-in"
 
 waarom:
-  title: "Geen losse tools meer. Alleen resultaat."
+  title: "Tools die werk écht eenvoudiger maken"
   body: "Drie redenen waarom Flonam anders werkt dan een doorsnee SaaS-aanbieder."
   items:
     - title: "Minder handmatig werk"
