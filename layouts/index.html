@@ -146,67 +146,7 @@
 {{ end }}
 
 {{/* ─── PRODUCT SPOTLIGHTS — 4 alternating 2-col sections (image ↔ tekst) ─── */}}
-{{ with .Params.producten }}
-<section id="producten" class="pt-20 pb-8">
-  <div class="container-wide text-center max-w-2xl mx-auto">
-    <p class="section-label">Onze producten</p>
-    <h2 class="section-title">{{ .title }}</h2>
-    <p class="mt-3 text-[1.0625rem] text-muted">{{ .body }}</p>
-  </div>
-</section>
-
-{{ range $idx, $p := .items }}
-  {{ $isOdd := eq (mod $idx 2) 1 }}
-  {{ $bg := cond $isOdd "bg-cream" "bg-white" }}
-  {{ $external := hasPrefix $p.url "http" }}
-  <section class="{{ $bg }} py-16 sm:py-20">
-    <div class="container-wide">
-      <div class="grid gap-12 lg:gap-16 lg:grid-cols-2 lg:items-center">
-
-        {{/* Tekst-kolom */}}
-        <div class="{{ if $isOdd }}lg:order-2{{ end }}">
-          <p class="section-label">Product {{ add $idx 1 }} van 4</p>
-          <h3 class="text-3xl sm:text-[2rem] font-extrabold tracking-[-0.02em] leading-[1.2] text-ink">{{ $p.title }}</h3>
-          <p class="mt-4 text-[1.0625rem] text-muted leading-[1.7]">{{ $p.intro }}</p>
-
-          <ul class="mt-6 space-y-3">
-            {{ range $p.usps }}
-              <li class="flex items-start gap-3">
-                <span class="mt-1 inline-flex items-center justify-center size-6 rounded-full bg-green-100 text-green-700 shrink-0">
-                  <svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </span>
-                <span class="text-[0.9375rem] font-medium text-ink leading-snug">{{ . }}</span>
-              </li>
-            {{ end }}
-          </ul>
-
-          <div class="mt-8 flex flex-wrap items-baseline gap-2">
-            <span class="text-[0.8125rem] font-semibold text-muted uppercase tracking-[0.06em]">Prijs</span>
-            <span class="text-2xl font-extrabold text-green-700 tracking-[-0.02em]">{{ $p.price }}</span>
-          </div>
-
-          <div class="mt-6">
-            <a href="{{ $p.url }}"{{ if $external }} target="_blank" rel="noopener"{{ end }} class="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-all bg-green-700 text-white hover:bg-green-900 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(15,41,34,0.3)]">
-              {{ $p.cta_label }}
-              {{ if $external }}
-                <svg aria-hidden="true" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
-              {{ else }}
-                <svg aria-hidden="true" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-              {{ end }}
-            </a>
-          </div>
-        </div>
-
-        {{/* Illustratie-kolom */}}
-        <div class="{{ if $isOdd }}lg:order-1{{ end }}">
-          <img src="/images/illustrations/{{ $p.illustration }}.svg" alt="Illustratie: {{ $p.title }}" class="w-full h-auto max-w-[480px] mx-auto" width="480" height="420" loading="lazy" />
-        </div>
-
-      </div>
-    </div>
-  </section>
-{{ end }}
-{{ end }}
+{{ partial "producten.html" site.Data.producten }}
 
 {{/* ─── VOOR WIE — segmentatie ─── */}}
 {{ with .Params.voor_wie }}

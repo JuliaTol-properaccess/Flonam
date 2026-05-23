@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{ partial "producten.html" site.Data.producten }}
+
+{{ with .Content }}
+  <section class="container-narrow py-10">
+    <div class="prose prose-slate max-w-none">{{ . }}</div>
+  </section>
+{{ end }}
+{{ end }}
