@@ -1,0 +1,14 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flonam logomark — Notched Drop">
+  <title>Flonam — Notched Drop</title>
+  <!-- Organic drop with a precise geometric notch on the right -->
+  <path d="M 32 6
+           C 16 6 6 20 6 34
+           C 6 48 18 58 32 58
+           C 42 58 50 52 54 44
+           L 42 38
+           L 56 32
+           C 56 18 48 6 32 6 Z"
+        fill="#1B4332"/>
+  <!-- Inner accent: small directional dot inside the notch -->
+  <circle cx="48" cy="35" r="2.2" fill="#52B788"/>
+</svg>

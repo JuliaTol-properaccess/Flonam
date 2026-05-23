@@ -1,0 +1,22 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flonam logomark — Kurbits + Lotus">
+  <title>Flonam — Kurbits curl (Zweeds) + Lotus petal (Vietnamees)</title>
+
+  <!-- Kurbits curl: a 360° spiral on the left half, in stroke -->
+  <path d="M 28 30
+           C 28 36, 22 38, 16 36
+           C 8 34, 6 22, 14 16
+           C 22 10, 32 14, 30 24
+           C 29 28, 24 28, 22 25"
+        fill="none"
+        stroke="#1B4332"
+        stroke-width="3.5"
+        stroke-linecap="round"/>
+
+  <!-- Lotus petal: almond shape on the right half, pointing down-right -->
+  <path d="M 40 14
+           C 32 16, 30 28, 34 38
+           C 38 48, 46 54, 56 58
+           C 58 50, 58 36, 54 26
+           C 50 16, 46 12, 40 14 Z"
+        fill="#1B4332"/>
+</svg>

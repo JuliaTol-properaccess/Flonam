@@ -1,0 +1,12 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flonam logomark — Confluence">
+  <title>Flonam — Confluence</title>
+  <!-- Upper stream (lighter accent) -->
+  <path d="M 8 14 Q 22 14 30 24"
+        stroke="#52B788" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- Lower stream (lighter accent) -->
+  <path d="M 8 28 Q 22 28 30 26"
+        stroke="#52B788" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- Merged thick stream flowing south-east -->
+  <path d="M 26 22 Q 34 30 42 40 T 56 56"
+        stroke="#1B4332" stroke-width="9" fill="none" stroke-linecap="round"/>
+</svg>

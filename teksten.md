@@ -102,6 +102,6 @@ Begin vandaag met Flonam en ervaar hoe slim werk echt werkt. Vraag een demo aan 
 
 ## Footer
 
-**Kop:** Flonam B.V. maakt werk écht eenvoudiger  
+**Kop:** Flonam B.V. helpt je meer werk te verzetten in een kortere tijd 
 **Tekst:**  
 Nog geen klantcases? Wel bewezen ervaring in digitale toegankelijkheid. Neem contact op voor een vrijblijvende demo of een strategiegesprek.
