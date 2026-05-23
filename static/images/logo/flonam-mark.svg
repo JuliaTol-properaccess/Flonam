@@ -1,9 +1,11 @@
-<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flonam">
-  <title>Flonam</title>
-  <path d="M 8 14 C 22 12, 30 28, 38 36 S 54 54, 56 56"
-        fill="none"
-        stroke="#1B4332"
-        stroke-width="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Flonam">
+  <rect width="96" height="96" rx="18" fill="#1A1A1A"/>
+  <!-- F -->
+  <path d="M 14 16 L 52 16 L 52 26 L 26 26 L 26 44 L 46 44 L 46 53 L 26 53 L 26 80 L 14 80 Z" fill="#FFFFFF"/>
+  <!-- N — tweederde hoogte (42px), bottom-aligned op F's baseline (y=80) -->
+  <g fill="#E89940">
+    <rect x="56" y="38" width="9" height="42"/>
+    <rect x="75" y="38" width="9" height="42"/>
+    <polygon points="56,38 65,38 84,80 75,80"/>
+  </g>
 </svg>
