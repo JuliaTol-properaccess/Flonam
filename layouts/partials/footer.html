@@ -21,6 +21,18 @@
         {{ with .Site.Params.contact.email }}
           <li><a href="mailto:{{ . }}" class="hover:text-green-700 transition-colors">{{ . }}</a></li>
         {{ end }}
+        {{ with .Site.Params.contact.phone }}
+          <li><a href="tel:{{ $.Site.Params.contact.phone_link }}" class="hover:text-green-700 transition-colors">{{ . }}</a></li>
+        {{ end }}
+        {{ with .Site.Params.contact.address }}
+          <li>{{ . }}</li>
+        {{ end }}
+        {{ with .Site.Params.contact.kvk }}
+          <li><span class="text-ink/60">KVK</span> {{ . }}</li>
+        {{ end }}
+        {{ with .Site.Params.contact.btw }}
+          <li><span class="text-ink/60">BTW</span> {{ . }}</li>
+        {{ end }}
       </ul>
     </div>
   </div>

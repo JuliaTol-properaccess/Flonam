@@ -50,6 +50,8 @@ timeZone = "Europe/Amsterdam"
     phone = "085 123 4567"
     phone_link = "+31851234567"
     address = "Voorbeeldstraat 1, 1234 AB Amsterdam"
+    kvk = "12345678"
+    btw = "NL123456789B01"
 
 [menus]
   [[menus.main]]
