@@ -31,9 +31,9 @@ waarom:
     - title: "Minder handmatig werk"
       body: "Automatiseer terugkerende taken zodat je team zich kan richten op output, niet op data overtypen."
     - title: "AI waar het bewezen werkt"
-      body: "Geen AI om de AI. We zetten AI in waar het meetbaar slimmer en sneller werkt."
-    - title: "Snelle inzet zonder lock-in"
-      body: "Live in dagen, niet maanden. Werkt op je bestaande systemen. Stop wanneer je wilt — je data blijft van jou."
+      body: "Geen AI om de AI. We zetten het alleen in waar de uitkomsten meetbaar nauwkeurig zijn — en altijd controleerbaar door een mens."
+    - title: "Snelle inzet zonder verplichtingen"
+      body: "Geen lange contracten of opzegtermijnen. Snel instappen, gebruiken zolang het werkt, vertrekken wanneer je wilt — je data blijft altijd van jou."
 
 producten:
   title: "Onze producten"
