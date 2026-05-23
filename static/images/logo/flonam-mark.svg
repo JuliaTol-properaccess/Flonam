@@ -2,6 +2,10 @@
   <rect width="96" height="96" rx="18" fill="#1A1A1A"/>
   <!-- F -->
   <path d="M 18 16 L 56 16 L 56 26 L 30 26 L 30 44 L 50 44 L 50 53 L 30 53 L 30 80 L 18 80 Z" fill="#FFFFFF"/>
-  <!-- N — kleiner, lager, rechts naast de F -->
-  <path d="M 58 50 L 66 50 L 76 70 L 76 50 L 84 50 L 84 80 L 76 80 L 66 60 L 66 80 L 58 80 Z" fill="#E89940"/>
+  <!-- N — half-size, vertically centered on F's middle bar -->
+  <g transform="translate(58 41)" fill="#E89940">
+    <rect x="0" y="0" width="3" height="15"/>
+    <rect x="9" y="0" width="3" height="15"/>
+    <polygon points="3,0 6,0 12,15 9,15"/>
+  </g>
 </svg>
