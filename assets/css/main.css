@@ -7,33 +7,44 @@
 @source "../../hugo_stats.json";
 
 @theme {
-  /* ---- Proper Insight (live) palette ---- */
-  --color-green-900: #0F2922;
-  --color-green-800: #14352B;
-  --color-green-700: #1B4332;
-  --color-green-600: #2D6A4F;
-  --color-green-500: #40916C;
-  --color-green-400: #52B788;
-  --color-green-100: #D8F3DC;
-  --color-green-50:  #F0F7F2;
+  /* ---- Flonam merkidentiteit (Flonam_Merkidentiteit_dark_v2.pdf) ---- */
+  /* Inkt — primaire tekst, koppen, hoofdknoppen, zegel-achtergrond */
+  --color-ink:      #1F2A37;
+  --color-ink-900:  #18212C;
+  --color-ink-950:  #121922;
 
-  --color-cream:     #FAFAF5;
-  --color-cream-200: #F0EDE6;
+  /* Room — paginaondergrond, nooit zuiver wit */
+  --color-room:     #F6F4EF;
+  --color-room-200: #ECE9E0;
 
-  --color-ink:        #1A1A1A;
-  --color-ink-600:    #333333;
-  --color-muted:      #6B6B6B;
-  --color-line:       #E0E0E0;
-  --color-surface:    #F0F0F0;
+  /* Goud — accent: highlights, badges */
+  --color-gold:     #FDC500;
+  --color-gold-100: #FFF3C4;
+
+  /* Stroom-blauw — links, secundaire acties, informatieve status */
+  --color-blue:     #006AA7;
+  --color-blue-800: #00517F;
+  --color-blue-50:  #EAF2F7;
+
+  /* Signaalrood — foutmeldingen, destructieve acties */
+  --color-red:      #DA251D;
+
+  /* Taupe — secundaire tekst, labels, captions (warme ondertoon) */
+  --color-taupe:    #8A8478;
+  /* Donkerder taupe voor kleine tekst (WCAG-contrast op room/wit) */
+  --color-muted:    #67625A;
+
+  --color-line:     #E3DFD6;
+  --color-surface:  #F0EDE6;
 
   /* Semantic */
-  --color-brand:      #1B4332;
-  --color-brand-dark: #0F2922;
-  --color-accent:     #52B788;
+  --color-brand:      #1F2A37;
+  --color-brand-dark: #121922;
+  --color-accent:     #FDC500;
 
-  /* Single font family */
-  --font-sans:    "Montserrat", system-ui, -apple-system, sans-serif;
-  --font-display: "Montserrat", system-ui, -apple-system, sans-serif;
+  /* Typografie: Manrope voor koppen, Inter voor lopende tekst */
+  --font-sans:    "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Manrope", system-ui, -apple-system, sans-serif;
 }
 
 @layer base {
@@ -53,7 +64,7 @@
   h1 { letter-spacing: -0.03em; }
   a { color: inherit; text-decoration: none; }
   :focus-visible {
-    outline: 2px solid var(--color-green-500);
+    outline: 2px solid var(--color-blue);
     outline-offset: 2px;
   }
 }
@@ -65,22 +76,22 @@
   @apply mx-auto max-w-[1120px] px-6 sm:px-8;
 }
 @utility section-label {
-  @apply inline-block text-xs font-semibold uppercase tracking-[0.08em] text-green-600 mb-3;
+  @apply inline-block text-xs font-semibold uppercase tracking-[0.08em] text-blue mb-3;
 }
 @utility btn-pill-white {
-  @apply inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold transition-all bg-white text-green-900 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)];
+  @apply inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold transition-all bg-white text-ink hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)];
 }
 @utility btn-pill-ghost {
   @apply inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold transition-all text-white border-[1.5px] border-white/30 hover:border-white/60 hover:bg-white/5;
 }
-@utility btn-pill-green {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold transition-all bg-green-700 text-white hover:bg-green-900;
+@utility btn-pill-ink {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold transition-all bg-ink text-white hover:bg-ink-950;
 }
-@utility btn-pill-outline-green {
-  @apply inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold transition-all border-[1.5px] border-green-700 text-green-700 hover:bg-green-50;
+@utility btn-pill-outline-ink {
+  @apply inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold transition-all border-[1.5px] border-ink text-ink hover:bg-room;
 }
 @utility card-base {
-  @apply bg-white border border-line rounded-2xl p-8 transition-all duration-200 hover:border-green-500 hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)];
+  @apply bg-white border border-line rounded-2xl p-8 transition-all duration-200 hover:border-blue hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)];
 }
 @utility section-title {
   @apply text-3xl sm:text-[2.25rem] font-extrabold leading-[1.25] tracking-[-0.02em] text-ink;

@@ -1,8 +1,11 @@
 <header class="bg-white">
   <div class="container-wide flex items-center justify-between py-5">
-    <a href="{{ "/" | relLangURL }}" class="flex items-center gap-2.5 hover:text-ink">
-      <img src="/images/logo/flonam-mark.svg" alt="" class="size-9" width="36" height="36" />
-      <span class="font-extrabold text-[36px] text-ink tracking-[-0.03em] lowercase leading-none">flonam</span>
+    <a href="{{ "/" | relLangURL }}" class="flex items-center gap-3 hover:text-ink">
+      <img src="/images/logo/flonam-mark.svg" alt="" class="size-10" width="40" height="40" />
+      <span class="flex flex-col">
+        <span class="font-display font-extrabold text-[26px] text-ink tracking-[-0.02em] leading-none">Flonam</span>
+        <span class="mt-1 text-[0.5625rem] font-semibold uppercase tracking-[0.22em] text-muted leading-none">SaaS voor MKB</span>
+      </span>
     </a>
     <nav aria-label="Hoofdmenu" class="hidden md:block">
       <ul class="flex items-center gap-8">
@@ -10,9 +13,9 @@
           {{ $isCta := eq .Name "Contact" }}
           <li>
             {{ if $isCta }}
-              <a href="{{ .URL | relLangURL }}" class="btn-pill-green">{{ .Name }}</a>
+              <a href="{{ .URL | relLangURL }}" class="btn-pill-ink">{{ .Name }}</a>
             {{ else }}
-              <a href="{{ .URL | relLangURL }}" class="text-[0.9375rem] font-medium text-muted hover:text-green-700 transition-colors">{{ .Name }}</a>
+              <a href="{{ .URL | relLangURL }}" class="text-[0.9375rem] font-medium text-muted hover:text-blue transition-colors">{{ .Name }}</a>
             {{ end }}
           </li>
         {{ end }}

@@ -1,4 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Flonam">
-  <rect width="32" height="32" rx="6" fill="#1B4332"/>
-  <path d="M 7 7 L 25 7 L 25 11 L 11 11 L 11 14 L 20 14 L 20 18 L 11 18 L 11 25 L 7 25 Z" fill="#FFFFFF"/>
+  <!-- Eenkleurige versie: verplicht onder faviconmaat (16px) volgens merkgids -->
+  <rect width="32" height="32" rx="6" fill="#1F2A37"/>
+  <g transform="translate(9.08 6.67) scale(0.1867)" fill="#F6F4EF">
+    <rect x="10.8" y="0" width="17.5" height="100"/>
+    <rect x="0" y="0" width="10.8" height="10.8"/>
+    <rect x="4.1" y="17.5" width="6.7" height="6.7"/>
+    <path d="M 28.3 0 L 45.8 0 C 44.5 40 58.5 60 56.6 100 L 39.1 100 C 41 60 27 40 28.3 0 Z"/>
+    <rect x="56.6" y="0" width="17.5" height="100"/>
+  </g>
 </svg>

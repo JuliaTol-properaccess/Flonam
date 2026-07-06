@@ -1,11 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Flonam">
-  <rect width="96" height="96" rx="18" fill="#1A1A1A"/>
-  <!-- F -->
-  <path d="M 14 16 L 52 16 L 52 26 L 26 26 L 26 44 L 46 44 L 46 53 L 26 53 L 26 80 L 14 80 Z" fill="#FFFFFF"/>
-  <!-- N — tweederde hoogte (42px), bottom-aligned op F's baseline (y=80) -->
-  <g fill="#E89940">
-    <rect x="56" y="38" width="9" height="42"/>
-    <rect x="75" y="38" width="9" height="42"/>
-    <polygon points="56,38 65,38 84,80 75,80"/>
+  <!-- Zegel: inkt (#1F2A37), primair gebruik op donkere of gekleurde vlakken -->
+  <rect width="96" height="96" rx="18" fill="#1F2A37"/>
+  <!-- Constructie volgens merkgids: W=17.5, N-stelen 28.3 (W×φ), F-streepjes 10.8 (W÷φ) en 6.7 (W÷φ²) -->
+  <g transform="translate(27.25 20) scale(0.56)">
+    <!-- F: goud — streepjes wijzen naar links, steel = linkersteel van de N -->
+    <g fill="#FDC500">
+      <rect x="10.8" y="0" width="17.5" height="100"/>
+      <rect x="0" y="0" width="10.8" height="10.8"/>
+      <rect x="4.1" y="17.5" width="6.7" height="6.7"/>
+    </g>
+    <!-- Golvende verbinding: stroom-blauw, gedeelde hoekpunten met beide stelen -->
+    <path fill="#006AA7" d="M 28.3 0 L 45.8 0 C 44.5 40 58.5 60 56.6 100 L 39.1 100 C 41 60 27 40 28.3 0 Z"/>
+    <!-- Tweede steel: signaalrood -->
+    <rect x="56.6" y="0" width="17.5" height="100" fill="#DA251D"/>
   </g>
 </svg>

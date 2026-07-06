@@ -3,13 +3,13 @@
 {{/* ─── HERO — wit, belofte-H1, badge, CTA-ladder, productillustratie ─── */}}
 {{ with .Params.hero }}
 <section class="bg-white relative overflow-hidden">
-  <div aria-hidden="true" class="absolute -top-1/3 -right-[15%] size-[700px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(82,183,136,0.18) 0%, transparent 70%);"></div>
-  <div aria-hidden="true" class="absolute -bottom-1/4 -left-[10%] size-[500px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(232,153,64,0.10) 0%, transparent 70%);"></div>
+  <div aria-hidden="true" class="absolute -top-1/3 -right-[15%] size-[700px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(253,197,0,0.16) 0%, transparent 70%);"></div>
+  <div aria-hidden="true" class="absolute -bottom-1/4 -left-[10%] size-[500px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(0,106,167,0.08) 0%, transparent 70%);"></div>
   <div class="container-wide py-20 sm:py-24 relative">
     <div class="grid gap-16 lg:grid-cols-[1.05fr_1fr] lg:items-center">
       <div class="max-w-xl">
         {{ with .badge }}
-          <span class="inline-flex items-center gap-2 text-[0.8125rem] font-semibold text-green-700 bg-green-100 border border-green-200 rounded-full px-4 py-1.5 mb-6">
+          <span class="inline-flex items-center gap-2 text-[0.8125rem] font-semibold text-ink bg-gold-100 border border-gold/50 rounded-full px-4 py-1.5 mb-6">
             <svg aria-hidden="true" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 4 12 14.01 9 11.01"/></svg>
             {{ . }}
           </span>
@@ -22,18 +22,18 @@
         </p>
         <div class="mt-10 flex flex-wrap gap-4">
           {{ with .primary_cta }}
-            <a href="{{ .url }}" class="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 text-base font-semibold transition-all bg-green-700 text-white hover:bg-green-900 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(15,41,34,0.3)]">
+            <a href="{{ .url }}" class="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 text-base font-semibold transition-all bg-ink text-white hover:bg-ink-950 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(31,42,55,0.35)]">
               {{ .label }}
               <svg aria-hidden="true" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
           {{ end }}
           {{ with .secondary_cta }}
-            <a href="{{ .url }}" class="btn-pill-outline-green">{{ .label }}</a>
+            <a href="{{ .url }}" class="btn-pill-outline-ink">{{ .label }}</a>
           {{ end }}
         </div>
         {{ with .microcopy }}
           <p class="mt-5 text-[0.875rem] text-muted flex items-center gap-2">
-            <svg aria-hidden="true" class="size-4 text-green-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg aria-hidden="true" class="size-4 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             {{ . }}
           </p>
         {{ end }}
@@ -44,74 +44,74 @@
         <svg viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto" role="img" aria-label="Illustratie: MKB-offerte, mobiele app en dashboard">
 
           {{/* Schaduw onder de hoofdkaart */}}
-          <ellipse cx="240" cy="370" rx="200" ry="10" fill="#1A1A1A" opacity="0.08"/>
+          <ellipse cx="240" cy="370" rx="200" ry="10" fill="#1F2A37" opacity="0.08"/>
 
           {{/* Dashboard — hoofd-card, centraal */}}
           <g transform="translate(60 80)">
-            <rect width="360" height="240" rx="16" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1.5"/>
+            <rect width="360" height="240" rx="16" fill="#FFFFFF" stroke="#E3DFD6" stroke-width="1.5"/>
             {{/* Titel */}}
-            <rect x="20" y="20" width="140" height="10" rx="3" fill="#1A1A1A"/>
-            <rect x="20" y="34" width="80" height="6" rx="2" fill="#E0E0E0"/>
+            <rect x="20" y="20" width="140" height="10" rx="3" fill="#1F2A37"/>
+            <rect x="20" y="34" width="80" height="6" rx="2" fill="#E3DFD6"/>
             {{/* KPI tiles */}}
-            <rect x="20" y="56" width="100" height="58" rx="8" fill="#F0F7F2"/>
-            <text x="32" y="84" font-family="Montserrat, sans-serif" font-size="20" font-weight="800" fill="#1B4332">€42k</text>
-            <text x="32" y="102" font-family="Montserrat, sans-serif" font-size="9" fill="#6B6B6B">Omzet</text>
-            <rect x="130" y="56" width="100" height="58" rx="8" fill="#F0F7F2"/>
-            <text x="142" y="84" font-family="Montserrat, sans-serif" font-size="20" font-weight="800" fill="#1B4332">128</text>
-            <text x="142" y="102" font-family="Montserrat, sans-serif" font-size="9" fill="#6B6B6B">Klanten</text>
-            <rect x="240" y="56" width="100" height="58" rx="8" fill="#FEF3C7"/>
-            <text x="252" y="84" font-family="Montserrat, sans-serif" font-size="20" font-weight="800" fill="#E89940">+18%</text>
-            <text x="252" y="102" font-family="Montserrat, sans-serif" font-size="9" fill="#6B6B6B">Groei</text>
+            <rect x="20" y="56" width="100" height="58" rx="8" fill="#EAF2F7"/>
+            <text x="32" y="84" font-family="Manrope, sans-serif" font-size="20" font-weight="800" fill="#1F2A37">€42k</text>
+            <text x="32" y="102" font-family="Manrope, sans-serif" font-size="9" fill="#67625A">Omzet</text>
+            <rect x="130" y="56" width="100" height="58" rx="8" fill="#EAF2F7"/>
+            <text x="142" y="84" font-family="Manrope, sans-serif" font-size="20" font-weight="800" fill="#1F2A37">128</text>
+            <text x="142" y="102" font-family="Manrope, sans-serif" font-size="9" fill="#67625A">Klanten</text>
+            <rect x="240" y="56" width="100" height="58" rx="8" fill="#FFF3C4"/>
+            <text x="252" y="84" font-family="Manrope, sans-serif" font-size="20" font-weight="800" fill="#FDC500">+18%</text>
+            <text x="252" y="102" font-family="Manrope, sans-serif" font-size="9" fill="#67625A">Groei</text>
             {{/* Chart-frame */}}
-            <rect x="20" y="128" width="320" height="92" rx="8" fill="#FAFAF5"/>
+            <rect x="20" y="128" width="320" height="92" rx="8" fill="#F6F4EF"/>
             {{/* Bars */}}
-            <rect x="40" y="180" width="20" height="30" rx="2" fill="#52B788"/>
-            <rect x="68" y="165" width="20" height="45" rx="2" fill="#52B788"/>
-            <rect x="96" y="172" width="20" height="38" rx="2" fill="#52B788"/>
-            <rect x="124" y="150" width="20" height="60" rx="2" fill="#1B4332"/>
-            <rect x="152" y="158" width="20" height="52" rx="2" fill="#52B788"/>
-            <rect x="180" y="145" width="20" height="65" rx="2" fill="#1B4332"/>
-            <rect x="208" y="152" width="20" height="58" rx="2" fill="#52B788"/>
-            <rect x="236" y="140" width="20" height="70" rx="2" fill="#1B4332"/>
-            <rect x="264" y="130" width="20" height="80" rx="2" fill="#E89940"/>
-            <rect x="292" y="142" width="20" height="68" rx="2" fill="#E89940"/>
+            <rect x="40" y="180" width="20" height="30" rx="2" fill="#006AA7"/>
+            <rect x="68" y="165" width="20" height="45" rx="2" fill="#006AA7"/>
+            <rect x="96" y="172" width="20" height="38" rx="2" fill="#006AA7"/>
+            <rect x="124" y="150" width="20" height="60" rx="2" fill="#1F2A37"/>
+            <rect x="152" y="158" width="20" height="52" rx="2" fill="#006AA7"/>
+            <rect x="180" y="145" width="20" height="65" rx="2" fill="#1F2A37"/>
+            <rect x="208" y="152" width="20" height="58" rx="2" fill="#006AA7"/>
+            <rect x="236" y="140" width="20" height="70" rx="2" fill="#1F2A37"/>
+            <rect x="264" y="130" width="20" height="80" rx="2" fill="#FDC500"/>
+            <rect x="292" y="142" width="20" height="68" rx="2" fill="#FDC500"/>
           </g>
 
           {{/* MKB-offerte document — links, geroteerd */}}
           <g transform="translate(0 30) rotate(-7 70 100)">
-            <rect x="0" y="0" width="140" height="180" rx="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1.5"/>
-            <text x="14" y="26" font-family="Montserrat, sans-serif" font-size="10" font-weight="800" fill="#1B4332">OFFERTE</text>
-            <text x="14" y="40" font-family="Montserrat, sans-serif" font-size="7" fill="#6B6B6B">MKB-offerte.nl</text>
-            <line x1="14" y1="52" x2="126" y2="52" stroke="#E0E0E0" stroke-width="1"/>
-            <rect x="14" y="64" width="76" height="4" rx="2" fill="#E0E0E0"/>
-            <rect x="100" y="64" width="26" height="4" rx="2" fill="#1A1A1A"/>
-            <rect x="14" y="76" width="62" height="4" rx="2" fill="#E0E0E0"/>
-            <rect x="100" y="76" width="26" height="4" rx="2" fill="#1A1A1A"/>
-            <rect x="14" y="88" width="70" height="4" rx="2" fill="#E0E0E0"/>
-            <rect x="100" y="88" width="26" height="4" rx="2" fill="#1A1A1A"/>
-            <rect x="14" y="100" width="58" height="4" rx="2" fill="#E0E0E0"/>
-            <rect x="100" y="100" width="26" height="4" rx="2" fill="#1A1A1A"/>
-            <line x1="14" y1="116" x2="126" y2="116" stroke="#E0E0E0" stroke-width="1"/>
-            <text x="14" y="134" font-family="Montserrat, sans-serif" font-size="8" font-weight="700" fill="#6B6B6B">TOTAAL</text>
-            <text x="126" y="134" text-anchor="end" font-family="Montserrat, sans-serif" font-size="14" font-weight="800" fill="#E89940">€ 2.450</text>
-            <rect x="14" y="148" width="112" height="22" rx="11" fill="#1B4332"/>
-            <text x="70" y="163" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">Akkoord</text>
+            <rect x="0" y="0" width="140" height="180" rx="10" fill="#FFFFFF" stroke="#E3DFD6" stroke-width="1.5"/>
+            <text x="14" y="26" font-family="Manrope, sans-serif" font-size="10" font-weight="800" fill="#1F2A37">OFFERTE</text>
+            <text x="14" y="40" font-family="Manrope, sans-serif" font-size="7" fill="#67625A">MKB-offerte.nl</text>
+            <line x1="14" y1="52" x2="126" y2="52" stroke="#E3DFD6" stroke-width="1"/>
+            <rect x="14" y="64" width="76" height="4" rx="2" fill="#E3DFD6"/>
+            <rect x="100" y="64" width="26" height="4" rx="2" fill="#1F2A37"/>
+            <rect x="14" y="76" width="62" height="4" rx="2" fill="#E3DFD6"/>
+            <rect x="100" y="76" width="26" height="4" rx="2" fill="#1F2A37"/>
+            <rect x="14" y="88" width="70" height="4" rx="2" fill="#E3DFD6"/>
+            <rect x="100" y="88" width="26" height="4" rx="2" fill="#1F2A37"/>
+            <rect x="14" y="100" width="58" height="4" rx="2" fill="#E3DFD6"/>
+            <rect x="100" y="100" width="26" height="4" rx="2" fill="#1F2A37"/>
+            <line x1="14" y1="116" x2="126" y2="116" stroke="#E3DFD6" stroke-width="1"/>
+            <text x="14" y="134" font-family="Manrope, sans-serif" font-size="8" font-weight="700" fill="#67625A">TOTAAL</text>
+            <text x="126" y="134" text-anchor="end" font-family="Manrope, sans-serif" font-size="14" font-weight="800" fill="#FDC500">€ 2.450</text>
+            <rect x="14" y="148" width="112" height="22" rx="11" fill="#1F2A37"/>
+            <text x="70" y="163" text-anchor="middle" font-family="Manrope, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF">Akkoord</text>
           </g>
 
           {{/* Phone met km-registratie — rechtsonder, geroteerd */}}
           <g transform="translate(360 210) rotate(8 50 90)">
-            <rect x="0" y="0" width="100" height="180" rx="18" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1.5"/>
-            <rect x="6" y="6" width="88" height="168" rx="14" fill="#0F2922"/>
-            <text x="14" y="26" font-family="Montserrat, sans-serif" font-size="8" font-weight="700" fill="#52B788">KILOMETERS</text>
-            <text x="14" y="56" font-family="Montserrat, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF">142,8</text>
-            <text x="14" y="68" font-family="Montserrat, sans-serif" font-size="7" fill="#52B788">km deze week</text>
-            <path d="M 14 90 Q 30 105 50 96 T 86 116" stroke="#52B788" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <circle cx="14" cy="90" r="3" fill="#E89940"/>
-            <circle cx="86" cy="116" r="3" fill="#E89940"/>
+            <rect x="0" y="0" width="100" height="180" rx="18" fill="#FFFFFF" stroke="#E3DFD6" stroke-width="1.5"/>
+            <rect x="6" y="6" width="88" height="168" rx="14" fill="#18212C"/>
+            <text x="14" y="26" font-family="Manrope, sans-serif" font-size="8" font-weight="700" fill="#006AA7">KILOMETERS</text>
+            <text x="14" y="56" font-family="Manrope, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF">142,8</text>
+            <text x="14" y="68" font-family="Manrope, sans-serif" font-size="7" fill="#006AA7">km deze week</text>
+            <path d="M 14 90 Q 30 105 50 96 T 86 116" stroke="#006AA7" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="14" cy="90" r="3" fill="#FDC500"/>
+            <circle cx="86" cy="116" r="3" fill="#FDC500"/>
             <rect x="14" y="130" width="72" height="3" rx="1" fill="#FFFFFF" opacity="0.4"/>
             <rect x="14" y="139" width="50" height="3" rx="1" fill="#FFFFFF" opacity="0.3"/>
             <rect x="14" y="148" width="60" height="3" rx="1" fill="#FFFFFF" opacity="0.4"/>
-            <circle cx="50" cy="162" r="7" fill="#E89940"/>
+            <circle cx="50" cy="162" r="7" fill="#FDC500"/>
           </g>
 
         </svg>
@@ -123,7 +123,7 @@
 
 {{/* ─── WAAROM — 3 differentiators (CRO: max 3) ─── */}}
 {{ with .Params.waarom }}
-<section id="waarom" class="bg-cream py-20">
+<section id="waarom" class="bg-room py-20">
   <div class="container-wide">
     <div class="text-center max-w-2xl mx-auto mb-12">
       <p class="section-label">Waarom Flonam</p>
@@ -133,8 +133,8 @@
     <div class="grid gap-6 sm:grid-cols-3">
       {{ range .items }}
         <div class="bg-white border border-line rounded-2xl p-8">
-          <div class="inline-flex items-center justify-center size-12 bg-green-100 rounded-xl mb-5">
-            <svg class="size-6 text-green-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div class="inline-flex items-center justify-center size-12 bg-gold-100 rounded-xl mb-5">
+            <svg class="size-6 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <h3 class="font-bold text-lg text-ink tracking-[-0.01em] mb-2">{{ .title }}</h3>
           <p class="text-[0.9375rem] text-muted leading-[1.65]">{{ .body }}</p>
@@ -159,9 +159,9 @@
     </div>
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {{ range .bullets }}
-        <div class="bg-white border border-line rounded-2xl p-6 text-center hover:border-green-500 hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all">
-          <div class="inline-flex items-center justify-center size-12 bg-green-100 rounded-xl mb-4">
-            <svg class="size-6 text-green-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="17" cy="7" r="3"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+        <div class="bg-white border border-line rounded-2xl p-6 text-center hover:border-blue hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all">
+          <div class="inline-flex items-center justify-center size-12 bg-gold-100 rounded-xl mb-4">
+            <svg class="size-6 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="17" cy="7" r="3"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
           </div>
           <p class="font-semibold text-ink text-[0.9375rem] tracking-[-0.01em]">{{ . }}</p>
         </div>
@@ -174,15 +174,15 @@
 {{/* ─── INLINE CTA — mid-page conversie ─── */}}
 {{ with .Params.inline_cta }}
 <section class="px-6 sm:px-8 py-12">
-  <div class="max-w-[1120px] mx-auto bg-green-900 rounded-[20px] p-10 sm:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-10">
-    <div aria-hidden="true" class="absolute -top-1/2 -right-[10%] size-[400px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(45,106,79,0.3) 0%, transparent 70%);"></div>
+  <div class="max-w-[1120px] mx-auto bg-ink rounded-[20px] p-10 sm:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-10">
+    <div aria-hidden="true" class="absolute -top-1/2 -right-[10%] size-[400px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(0,106,167,0.25) 0%, transparent 70%);"></div>
     <div class="flex-1 relative text-center md:text-left">
       <h3 class="text-xl sm:text-2xl font-bold text-white tracking-[-0.01em]">{{ .title }}</h3>
       <p class="mt-2 text-[0.9375rem] text-white/70 leading-relaxed">{{ .body }}</p>
     </div>
     <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0 relative w-full md:w-auto">
       {{ with .primary }}
-        <a href="{{ .url }}" class="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[0.9375rem] font-semibold bg-white text-green-900 hover:-translate-y-px hover:shadow-[0_4px_16px_rgba(0,0,0,0.2)] transition-all">
+        <a href="{{ .url }}" class="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[0.9375rem] font-semibold bg-white text-ink hover:-translate-y-px hover:shadow-[0_4px_16px_rgba(0,0,0,0.2)] transition-all">
           {{ .label }}
           <svg aria-hidden="true" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
@@ -207,9 +207,9 @@
       </div>
       <ul class="space-y-3">
         {{ range .bullets }}
-          <li class="flex items-start gap-4 bg-cream border border-line rounded-2xl p-5">
-            <div class="size-10 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-              <svg class="size-5 text-green-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <li class="flex items-start gap-4 bg-room border border-line rounded-2xl p-5">
+            <div class="size-10 bg-gold-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="size-5 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <p class="font-medium text-ink leading-snug self-center">{{ . }}</p>
           </li>
@@ -222,8 +222,8 @@
 
 {{/* ─── FINAL CTA — concrete actie + herhaal belofte + microcopy ─── */}}
 {{ with .Params.cta }}
-<section class="bg-green-900 py-20 relative overflow-hidden">
-  <div aria-hidden="true" class="absolute -top-1/2 left-1/2 -translate-x-1/2 size-[700px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(45,106,79,0.35) 0%, transparent 70%);"></div>
+<section class="bg-ink py-20 relative overflow-hidden">
+  <div aria-hidden="true" class="absolute -top-1/2 left-1/2 -translate-x-1/2 size-[700px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(0,106,167,0.28) 0%, transparent 70%);"></div>
   <div class="container-wide relative text-center">
     <h2 class="text-3xl sm:text-[2.5rem] font-extrabold text-white tracking-[-0.02em] leading-tight max-w-3xl mx-auto">{{ .title }}</h2>
     <p class="mt-5 text-[1.0625rem] text-white/70 leading-[1.8] max-w-2xl mx-auto">{{ .body }}</p>
@@ -238,7 +238,7 @@
     </div>
     {{ with .microcopy }}
       <p class="mt-5 text-[0.875rem] text-white/55 flex items-center justify-center gap-2">
-        <svg aria-hidden="true" class="size-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <svg aria-hidden="true" class="size-4 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         {{ . }}
       </p>
     {{ end }}

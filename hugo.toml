@@ -47,11 +47,8 @@ timeZone = "Europe/Amsterdam"
 
   [params.contact]
     email = "info@flonam.nl"
-    phone = "085 123 4567"
-    phone_link = "+31851234567"
-    address = "Voorbeeldstraat 1, 1234 AB Amsterdam"
-    kvk = "12345678"
-    btw = "NL123456789B01"
+    address = "Duiveland 26, 8302 PK Emmeloord"
+    kvk = "42103028"
 
 [menus]
   [[menus.main]]
