@@ -47,7 +47,7 @@ timeZone = "Europe/Amsterdam"
 
   [params.contact]
     email = "info@flonam.nl"
-    address = "Duiveland 26, 8302 PK Emmeloord"
+    address = "Randweg 25, 8304 AS Emmeloord"
     kvk = "42103028"
 
 [menus]
