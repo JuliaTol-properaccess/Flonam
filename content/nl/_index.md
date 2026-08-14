@@ -1,65 +1,20 @@
 ---
 title: "Flonam"
-description: "Bespaar 10 uur per week met slimme SaaS-tools voor B2B-teams. Gebouwd op 15 jaar software-ervaring."
+description: "Wij bouwen SaaS-oplossingen voor bedrijven en organisaties."
 
 hero:
-  badge: "≥10 uur tijdwinst per week"
-  title: "Bespaar jezelf 10 uur per week met slimme tools voor ondernemers"
-  subtitle: "Flonam levert SaaS-tools voor B2B-teams die efficiënter willen werken en processen willen versnellen. Gebouwd op 15 jaar ervaring in software-ontwikkeling en bewezen tooling voor websites en apps."
-  primary_cta:
-    label: "Start een gratis demo"
-    url: "/contact/"
-  secondary_cta:
-    label: "Ontdek hoe het werkt"
-    url: "#producten"
-  microcopy: "Gratis · Vrijblijvend · Geen creditcard nodig"
-  stats:
-    - number: "15"
-      unit: "jaar"
-      label: "software-ervaring"
-    - number: "~10u"
-      unit: "/week"
-      label: "tijdwinst per team"
-    - number: "0"
-      unit: ""
-      label: "vendor-lock-in"
+  title: "Te weinig tijd, te weinig mensen. Toch alles op orde."
+  body: "Flonam bouwt SaaS-oplossingen voor bedrijven en organisaties. Elk product staat op zichzelf, met een eigen naam en een eigen site. Hieronder zie je wat er nu al draait."
 
-voor_wie:
-  title: "Voor bedrijven die sneller willen groeien in minder tijd"
-  body: "Flonam helpt teams die processen willen stroomlijnen, klantvragen sneller willen beantwoorden en intern beter willen samenwerken."
-  bullets:
-    - "Sales en accountmanagement"
-    - "Operations en projectteams"
-    - "Finance en administratie"
-    - "IT-gedreven organisaties"
-
-inline_cta:
-  title: "Klaar om 10 uur per week terug te verdienen?"
-  body: "Een gratis demo van 20 minuten. Je ziet direct waar Flonam in jouw werk past."
-  primary:
-    label: "Vraag een demo aan"
-    url: "/contact/"
-  secondary:
-    label: "Plan een gesprek"
-    url: "/contact/"
+tijd:
+  label: "Waar die tijd in gaat zitten"
+  alineas:
+    - "Offertes maken en opvolgen kost tijd zodra het handmatig gaat: prijzen herberekenen, documenten opmaken, nabellen of een klant al getekend heeft. Een vast proces met sjablonen en automatische opvolging scheelt die herhaling."
+    - "Sinds juni 2025 moeten veel digitale diensten aan toegankelijkheidseisen voldoen. Of die verplichting geldt en wat er dan nog moet gebeuren, is niet voor elke organisatie meteen duidelijk — dat uitzoeken en bijhouden kost zonder overzicht onnodig veel tijd."
 
 proof:
-  title: "Gebouwd door makers met 15 jaar software-ervaring"
-  body: "Flonam is geen pivot van een marketingbureau. Het team heeft 15 jaar achter de rug met het bouwen van betrouwbare software voor websites en apps. Die ervaring zit in elk onderdeel — van data-modellen tot interfacekeuzes."
-  bullets:
-    - "15 jaar bouwen aan productie-software"
-    - "Beheerst de hele stack — van database tot interface"
-    - "Audits en tooling voor websites en apps op de teller"
-    - "Bouwt voor de lange termijn, geen wegwerp-features"
-
-cta:
-  title: "Begin vandaag — verdien deze week 10 uur terug"
-  body: "Een gratis demo van 20 minuten. Geen creditcard, geen verplichtingen — je ziet zelf of het werkt voor jouw team."
-  primary:
-    label: "Vraag een demo aan"
-    url: "/contact/"
-  secondary:
-    label: "Plan een kennismaking"
-    url: "/contact/"
-  microcopy: "Vrijblijvend · Geen creditcard · 20 min"
+  title: "Nog geen klantcases. Wel bewezen ervaring."
+  body: "Vijftien jaar bouwen aan software voor kleine organisaties — van data-modellen tot interfacekeuzes. Flonam is de volgende stap: dezelfde ervaring, nu in losse tools die je direct kunt gebruiken."
+  cta_label: "Meer over Flonam"
+  cta_url: "/over/"
 ---

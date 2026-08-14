@@ -1,37 +1,39 @@
 ---
 title: "Over Flonam"
-description: "Wie we zijn en waar we voor staan."
+description: "Losse tools die één probleem oplossen en verder je dag niet opeisen."
 url: "/over/"
 ---
 
-## Onze missie
+Wij bouwen software voor bedrijven en organisaties die het werk rond moeten
+krijgen met te weinig tijd en te weinig mensen. Geen platform waar alles in
+zit, maar losse tools die één probleem oplossen en verder je dag niet
+opeisen.
 
-Bij Flonam bouwen we slimme tools die MKB-ondernemers tijd teruggeven. Geen opgeblazen enterprise-software, geen vendor lock-in — wel doordachte software die elke werkweek minimaal 10 uur scheelt, zodat je je tijd weer kwijt kan aan ondernemen zelf.
+## Waarom losse producten
 
-<section class="not-prose mt-16">
-  <div class="grid gap-8 sm:gap-10 sm:grid-cols-2 sm:items-center">
-    <div>
-      <img src="/images/team/julia.jpg" alt="Foto van Julia Tol" class="w-full h-auto rounded-2xl aspect-4/5 object-cover bg-cream" width="400" height="500" />
-    </div>
-    <div>
-      <p class="section-label">Team</p>
-      <h2 class="text-3xl font-extrabold tracking-[-0.02em] leading-[1.2] text-ink">Julia Tol</h2>
-      <p class="mt-1 text-[0.9375rem] font-semibold text-green-700">Co-founder &mdash; alles rondom techniek</p>
-      <p class="mt-4 text-[1.0625rem] text-muted leading-[1.7]">BS in Computer Science, met 15 jaar ervaring in softwareontwikkeling en 7 jaar in WCAG-auditing. Expert in digitale toegankelijkheid.</p>
-    </div>
-  </div>
-</section>
+Elk Flonam-product staat op zichzelf. Je hoeft geen pakket af te nemen om
+één ding te regelen, en je zit nergens aan vast: je gegevens zijn van jou
+en je kunt ze meenemen wanneer je wilt. Dat is bewust zo gebouwd — we hebben
+genoeg organisaties gezien die vastzaten aan software die ze niet meer
+wilden.
 
-<section class="not-prose mt-16">
-  <div class="grid gap-8 sm:gap-10 sm:grid-cols-2 sm:items-center">
-    <div class="sm:order-2">
-      <img src="/images/team/phi.jpg" alt="Foto van Phi Pham" class="w-full h-auto rounded-2xl aspect-4/5 object-cover bg-cream" width="400" height="500" />
+## Nog geen klantcases. Wel bewezen ervaring.
+
+Flonam is een nieuw bedrijf. Het team erachter niet.
+
+<section class="not-prose mt-8">
+  <div class="grid gap-6 sm:grid-cols-2">
+    <div class="border border-line rounded-2xl p-6">
+      <img src="/images/team/julia.webp" alt="Foto van Julia Tol" class="size-20 rounded-full object-cover bg-room" width="80" height="80" />
+      <h3 class="mt-4 text-xl font-extrabold tracking-[-0.02em] text-ink">Julia Tol</h3>
+      <p class="mt-1 text-[0.9375rem] font-semibold text-blue">Co-founder &amp; Technisch directeur</p>
+      <p class="mt-3 text-[0.9375rem] text-muted leading-[1.7]">BS in Computer Science, met 15 jaar ervaring in softwareontwikkeling en 7 jaar in WCAG-auditing. Expert in digitale toegankelijkheid.</p>
     </div>
-    <div class="sm:order-1">
-      <p class="section-label">Team</p>
-      <h2 class="text-3xl font-extrabold tracking-[-0.02em] leading-[1.2] text-ink">Phi Pham</h2>
-      <p class="mt-1 text-[0.9375rem] font-semibold text-green-700">Co-founder &mdash; alles rondom PR, marketing en sales</p>
-      <p class="mt-4 text-[1.0625rem] text-muted leading-[1.7]">Tekst volgt.</p>
+    <div class="border border-line rounded-2xl p-6">
+      <img src="/images/team/phi.jpeg" alt="Foto van Phi Pham" class="size-20 rounded-full object-cover bg-room" width="80" height="80" />
+      <h3 class="mt-4 text-xl font-extrabold tracking-[-0.02em] text-ink">Phi Pham</h3>
+      <p class="mt-1 text-[0.9375rem] font-semibold text-blue">Co-founder &amp; Operationeel directeur</p>
+      <p class="mt-3 text-[0.9375rem] text-muted leading-[1.7]">BBA in Entrepreneurship, gericht op startups, sales en marketing. Vijftien jaar saleservaring, waarvan ruim zes jaar in B2B-sales.</p>
     </div>
   </div>
 </section>

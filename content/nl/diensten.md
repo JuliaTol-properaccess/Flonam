@@ -1,6 +1,6 @@
 ---
 title: "Diensten"
-description: "Vier concrete tools die je team direct tijd besparen."
+description: "Twee producten live, meer op komst."
 url: "/diensten/"
 layout: "diensten"
 ---

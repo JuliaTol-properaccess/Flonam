@@ -41,7 +41,7 @@ timeZone = "Europe/Amsterdam"
   home = ["HTML", "RSS"]
 
 [params]
-  description = "SaaS-tools voor B2B-teams die efficiënter willen werken en processen willen versnellen. Gebouwd op ervaring in digitale toegankelijkheid."
+  description = "Wij bouwen SaaS-oplossingen voor bedrijven en organisaties."
   author = "Flonam"
   logoText = "Flonam"
 
