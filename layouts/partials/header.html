@@ -35,55 +35,82 @@
 
       {{/* Mobiel menu-knop */}}
       <button type="button" id="menu-toggle" class="md:hidden inline-flex items-center justify-center size-10 rounded-full text-ink hover:bg-room transition-colors shrink-0" aria-expanded="false" aria-controls="mobile-menu" aria-label="{{ if eq site.Language.Lang "en" }}Open menu{{ else }}Menu openen{{ end }}">
-        <svg id="menu-icon-open" aria-hidden="true" class="size-6 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        <svg id="menu-icon-close" aria-hidden="true" class="size-6 hidden -rotate-90 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        <svg id="menu-icon-open" aria-hidden="true" class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg id="menu-icon-close" aria-hidden="true" class="size-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
   </div>
-
-  {{/* Mobiel menu-paneel — grid-rows-animatie voor een soepele open/dicht-beweging */}}
-  <div id="mobile-menu-wrapper" class="md:hidden grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-300 ease-in-out">
-    <nav id="mobile-menu" aria-label="{{ if eq site.Language.Lang "en" }}Mobile menu{{ else }}Mobiel menu{{ end }}" class="overflow-hidden border-t border-line bg-white">
-      <ul class="container-wide py-4 flex flex-col gap-1">
-        {{ range .Site.Menus.main }}
-          {{ $isCta := eq .Name "Contact" }}
-          <li>
-            {{ if $isCta }}
-              <a href="{{ .URL | relLangURL }}" class="btn-pill-ink mt-2 inline-flex">{{ .Name }}</a>
-            {{ else }}
-              <a href="{{ .URL | relLangURL }}" class="block py-2.5 text-base font-medium text-muted hover:text-blue transition-colors">{{ .Name }}</a>
-            {{ end }}
-          </li>
-        {{ end }}
-      </ul>
-      {{ with .AllTranslations }}
-        <div class="container-wide pb-4 flex items-center gap-2 border-t border-line pt-3">
-          <span class="text-[0.8125rem] text-muted">{{ if eq site.Language.Lang "en" }}Language:{{ else }}Taal:{{ end }}</span>
-          {{ range sort . "Language.LanguageName" }}
-            <a href="{{ .Permalink }}" hreflang="{{ .Language.Lang }}" class="inline-flex items-center justify-center px-3 py-1 rounded-full text-[0.75rem] font-bold uppercase tracking-wide transition-colors {{ if eq .Language.Lang $.Language.Lang }}bg-blue text-white{{ else }}bg-room text-muted{{ end }}">{{ .Language.Lang }}</a>
-          {{ end }}
-        </div>
-      {{ end }}
-    </nav>
-  </div>
 </header>
+
+{{/* Mobiel menu — backdrop + drawer die van rechts naar links inschuift (transform, GPU-versneld = soepel) */}}
+<div id="mobile-menu-backdrop" class="md:hidden fixed inset-0 bg-ink/50 opacity-0 pointer-events-none transition-opacity duration-300 ease-out z-40" aria-hidden="true"></div>
+
+<div id="mobile-menu-wrapper" class="md:hidden fixed inset-y-0 right-0 z-50 w-[85vw] max-w-[320px] translate-x-full transition-transform duration-300 ease-out bg-white shadow-[-12px_0_32px_rgba(31,42,55,0.18)] flex flex-col">
+  <div class="shrink-0 flex items-center justify-between px-5 py-5 border-b border-line">
+    <span class="font-display font-extrabold text-lg text-ink tracking-[-0.02em]">Menu</span>
+    <button type="button" id="menu-close" class="inline-flex items-center justify-center size-10 rounded-full text-ink hover:bg-room transition-colors" aria-label="{{ if eq site.Language.Lang "en" }}Close menu{{ else }}Menu sluiten{{ end }}">
+      <svg aria-hidden="true" class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="{{ if eq site.Language.Lang "en" }}Mobile menu{{ else }}Mobiel menu{{ end }}" class="flex-1 min-h-0 overflow-y-auto">
+    <ul class="p-5 flex flex-col gap-1">
+      {{ range .Site.Menus.main }}
+        {{ $isCta := eq .Name "Contact" }}
+        <li>
+          {{ if $isCta }}
+            <a href="{{ .URL | relLangURL }}" class="btn-pill-ink mt-2 inline-flex">{{ .Name }}</a>
+          {{ else }}
+            <a href="{{ .URL | relLangURL }}" class="block py-2.5 text-base font-medium text-muted hover:text-blue transition-colors">{{ .Name }}</a>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+    {{ with .AllTranslations }}
+      <div class="px-5 pb-5 flex items-center gap-2 border-t border-line pt-4">
+        <span class="text-[0.8125rem] text-muted">{{ if eq site.Language.Lang "en" }}Language:{{ else }}Taal:{{ end }}</span>
+        {{ range sort . "Language.LanguageName" }}
+          <a href="{{ .Permalink }}" hreflang="{{ .Language.Lang }}" class="inline-flex items-center justify-center px-3 py-1 rounded-full text-[0.75rem] font-bold uppercase tracking-wide transition-colors {{ if eq .Language.Lang $.Language.Lang }}bg-blue text-white{{ else }}bg-room text-muted{{ end }}">{{ .Language.Lang }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </nav>
+</div>
 
 <script>
   (function () {
     var toggle = document.getElementById('menu-toggle');
-    var wrapper = document.getElementById('mobile-menu-wrapper');
+    var closeBtn = document.getElementById('menu-close');
+    var backdrop = document.getElementById('mobile-menu-backdrop');
+    var panel = document.getElementById('mobile-menu-wrapper');
     var iconOpen = document.getElementById('menu-icon-open');
     var iconClose = document.getElementById('menu-icon-close');
-    if (!toggle || !wrapper) return;
+    if (!toggle || !panel || !backdrop) return;
+
+    function openMenu() {
+      toggle.setAttribute('aria-expanded', 'true');
+      panel.classList.remove('translate-x-full');
+      backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+      document.documentElement.classList.add('overflow-hidden');
+    }
+    function closeMenu() {
+      toggle.setAttribute('aria-expanded', 'false');
+      panel.classList.add('translate-x-full');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      document.documentElement.classList.remove('overflow-hidden');
+    }
+
     toggle.addEventListener('click', function () {
       var isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isOpen));
-      wrapper.classList.toggle('grid-rows-[0fr]');
-      wrapper.classList.toggle('grid-rows-[1fr]');
-      wrapper.classList.toggle('opacity-0');
-      wrapper.classList.toggle('opacity-100');
-      iconOpen.classList.toggle('hidden');
-      iconClose.classList.toggle('hidden');
+      if (isOpen) { closeMenu(); } else { openMenu(); }
+    });
+    closeBtn.addEventListener('click', closeMenu);
+    backdrop.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
     });
   })();
 </script>
