@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Flonam">
   <!-- Eenkleurige versie: verplicht onder faviconmaat (16px) volgens merkgids -->
   <rect width="32" height="32" rx="6" fill="#1F2A37"/>
-  <g transform="translate(9.08 6.67) scale(0.1867)" fill="#F6F4EF">
+  <g transform="translate(7.23 4.17) scale(0.2367)" fill="#F6F4EF">
     <rect x="10.8" y="0" width="17.5" height="100"/>
     <rect x="0" y="0" width="10.8" height="10.8"/>
     <rect x="4.1" y="17.5" width="6.7" height="6.7"/>

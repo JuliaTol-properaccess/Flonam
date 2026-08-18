@@ -2,7 +2,8 @@
   <!-- Zegel: inkt (#1F2A37), primair gebruik op donkere of gekleurde vlakken -->
   <rect width="96" height="96" rx="18" fill="#1F2A37"/>
   <!-- Constructie volgens merkgids: W=17.5, N-stelen 28.3 (W×φ), F-streepjes 10.8 (W÷φ) en 6.7 (W÷φ²) -->
-  <g transform="translate(27.25 20) scale(0.56)">
+  <!-- Schaal 0.71 = vult zegel met exact 1× steelbreedte vrije ruimte (merkgids-minimum) -->
+  <g transform="translate(21.7 12.5) scale(0.71)">
     <!-- F: goud — streepjes wijzen naar links, steel = linkersteel van de N -->
     <g fill="#FDC500">
       <rect x="10.8" y="0" width="17.5" height="100"/>
