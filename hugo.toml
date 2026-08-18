@@ -7,7 +7,7 @@ timeZone = "Europe/Amsterdam"
 
 [languages]
   [languages.nl]
-    label = "Nederlands"
+    languageName = "Nederlands"
     weight = 1
     contentDir = "content/nl"
     [languages.nl.params]
@@ -29,7 +29,7 @@ timeZone = "Europe/Amsterdam"
       url = "/contact/"
       weight = 4
   [languages.en]
-    label = "English"
+    languageName = "English"
     weight = 2
     contentDir = "content/en"
     [languages.en.params]

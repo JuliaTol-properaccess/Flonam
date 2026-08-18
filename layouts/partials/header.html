@@ -27,7 +27,7 @@
       {{/* Taalwisselaar — desktop */}}
       {{ with .AllTranslations }}
         <div class="hidden md:flex items-center gap-1 border border-line rounded-full p-0.5" role="group" aria-label="{{ if eq site.Language.Lang "en" }}Switch language{{ else }}Wissel taal{{ end }}">
-          {{ range sort . "Language.Label" }}
+          {{ range sort . "Language.LanguageName" }}
             <a href="{{ .Permalink }}" hreflang="{{ .Language.Lang }}" class="inline-flex items-center justify-center px-2.5 py-1 rounded-full text-[0.75rem] font-bold uppercase tracking-wide transition-colors {{ if eq .Language.Lang $.Language.Lang }}bg-blue text-white{{ else }}text-muted hover:text-ink{{ end }}">{{ .Language.Lang }}</a>
           {{ end }}
         </div>
@@ -59,7 +59,7 @@
       {{ with .AllTranslations }}
         <div class="container-wide pb-4 flex items-center gap-2 border-t border-line pt-3">
           <span class="text-[0.8125rem] text-muted">{{ if eq site.Language.Lang "en" }}Language:{{ else }}Taal:{{ end }}</span>
-          {{ range sort . "Language.Label" }}
+          {{ range sort . "Language.LanguageName" }}
             <a href="{{ .Permalink }}" hreflang="{{ .Language.Lang }}" class="inline-flex items-center justify-center px-3 py-1 rounded-full text-[0.75rem] font-bold uppercase tracking-wide transition-colors {{ if eq .Language.Lang $.Language.Lang }}bg-blue text-white{{ else }}bg-room text-muted{{ end }}">{{ .Language.Lang }}</a>
           {{ end }}
         </div>
