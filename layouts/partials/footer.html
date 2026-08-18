@@ -1,5 +1,5 @@
 <footer class="bg-room border-t border-line mt-20">
-  <div class="container-wide py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+  <div class="container-wide py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
     <div>
       <div class="flex items-center gap-3">
         <img src="/images/logo/flonam-mark.svg" alt="" class="size-9" width="36" height="36" />
@@ -15,6 +15,14 @@
       <ul class="mt-4 space-y-2 text-[0.9375rem]">
         {{ range .Site.Menus.main }}
           <li><a href="{{ .URL | relLangURL }}" class="text-muted hover:text-blue transition-colors">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    <div>
+      <h2 class="text-xs font-semibold text-ink uppercase tracking-[0.08em]">Producten</h2>
+      <ul class="mt-4 space-y-2 text-[0.9375rem]">
+        {{ range site.Data.producten.items }}
+          <li><a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }} class="text-muted hover:text-blue transition-colors">{{ .title }}</a></li>
         {{ end }}
       </ul>
     </div>

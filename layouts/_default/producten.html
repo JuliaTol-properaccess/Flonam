@@ -1,0 +1,15 @@
+{{ define "main" }}
+<header class="container-narrow pt-20 pb-4 text-center">
+  <p class="section-label">{{ .Type | humanize }}</p>
+  <h1 class="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] leading-[1.15]">{{ .Title }}</h1>
+  {{ with .Description }}<p class="mt-5 text-[1.0625rem] text-muted leading-[1.8] max-w-2xl mx-auto">{{ . }}</p>{{ end }}
+</header>
+
+{{ with .Content }}
+  <section class="container-narrow py-10">
+    <div class="prose prose-slate max-w-none">{{ . }}</div>
+  </section>
+{{ end }}
+
+{{ partial "producten.html" site.Data.producten }}
+{{ end }}

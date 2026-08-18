@@ -32,7 +32,7 @@ Flonam is een nieuw bedrijf. Het team erachter niet.
     <div class="border border-line rounded-2xl p-6">
       <img src="/images/team/phi.jpeg" alt="Foto van Phi Pham" class="size-20 rounded-full object-cover bg-room" width="80" height="80" />
       <h3 class="mt-4 text-xl font-extrabold tracking-[-0.02em] text-ink">Phi Pham</h3>
-      <p class="mt-1 text-[0.9375rem] font-semibold text-blue">Co-founder &amp; Operationeel directeur</p>
+      <p class="mt-1 text-[0.9375rem] font-semibold text-blue">Co-founder &amp; Commercieel directeur</p>
       <p class="mt-3 text-[0.9375rem] text-muted leading-[1.7]">BBA in Entrepreneurship, gericht op startups, sales en marketing. Vijftien jaar saleservaring, waarvan ruim zes jaar in B2B-sales.</p>
     </div>
   </div>
