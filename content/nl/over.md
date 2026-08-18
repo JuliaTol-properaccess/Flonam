@@ -32,7 +32,7 @@ commerciële bedrijfsvoering.
       <img src="/images/team/phi.jpeg" alt="Foto van Phi Pham" class="size-20 rounded-full object-cover bg-room" width="80" height="80" />
       <h3 class="mt-4 text-xl font-extrabold tracking-[-0.02em] text-ink">Phi Pham</h3>
       <p class="mt-1 text-[0.9375rem] font-semibold text-blue">Co-founder &amp; Commercieel directeur</p>
-      <p class="mt-3 text-[0.9375rem] text-muted leading-[1.7]">BBA in Entrepreneurship en Retail Management, met negen jaar ervaring in B2C-sales, twee jaar als recruitment consultant bij Visiar Healthcare en zes jaar B2B-sales bij een AI-chatbot-startup, ZorgDomein en IZZ.</p>
+      <p class="mt-3 text-[0.9375rem] text-muted leading-[1.7]">BBA in Entrepreneurship en Retail Management, met negen jaar ervaring in B2C-sales, anderhalf jaar als recruitment consultant bij Visiar Healthcare en zes jaar B2B-sales bij een AI-chatbot-startup, ZorgDomein en IZZ.</p>
     </div>
   </div>
 </section>

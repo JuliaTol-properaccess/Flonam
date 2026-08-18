@@ -32,7 +32,7 @@ operations.
       <img src="/images/team/phi.jpeg" alt="Photo of Phi Pham" class="size-20 rounded-full object-cover bg-room" width="80" height="80" />
       <h3 class="mt-4 text-xl font-extrabold tracking-[-0.02em] text-ink">Phi Pham</h3>
       <p class="mt-1 text-[0.9375rem] font-semibold text-blue">Co-founder &amp; Commercial Director</p>
-      <p class="mt-3 text-[0.9375rem] text-muted leading-[1.7]">BBA in Entrepreneurship and Retail Management, with nine years of B2C sales experience, two years as a recruitment consultant at Visiar Healthcare, and six years of B2B sales at an AI chatbot startup, ZorgDomein and IZZ.</p>
+      <p class="mt-3 text-[0.9375rem] text-muted leading-[1.7]">BBA in Entrepreneurship and Retail Management, with nine years of B2C sales experience, one and a half years as a recruitment consultant at Visiar Healthcare, and six years of B2B sales at an AI chatbot startup, ZorgDomein and IZZ.</p>
     </div>
   </div>
 </section>
