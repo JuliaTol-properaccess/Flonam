@@ -23,9 +23,19 @@
 
         {{/* Tekst-kolom */}}
         <div class="{{ if $isOdd }}lg:order-2{{ end }}">
-          <p class="section-label">Propositie {{ add $idx 1 }} van {{ len $.items }}</p>
+          <p class="section-label">Product {{ add $idx 1 }} van {{ len $.items }}</p>
           <h3 class="text-2xl sm:text-3xl font-extrabold tracking-[-0.02em] leading-[1.2] text-ink">{{ $p.title }}</h3>
           <p class="mt-4 text-[1.0625rem] text-muted leading-[1.7]">{{ $p.intro }}</p>
+          {{ with $p.features }}
+            <ul class="mt-5 space-y-2.5">
+              {{ range . }}
+                <li class="flex items-start gap-2.5">
+                  <svg aria-hidden="true" class="size-4 text-blue mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span class="text-[0.9375rem] text-ink leading-snug">{{ . }}</span>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
           <a href="{{ $p.url }}"{{ if $external }} target="_blank" rel="noopener"{{ end }} class="mt-6 inline-flex items-center gap-1.5 text-[0.9375rem] font-semibold text-blue hover:text-blue-800 transition-colors">
             {{ $p.title }}
             {{ if $external }}
@@ -36,10 +46,17 @@
           </a>
         </div>
 
-        {{/* Illustratie-kolom */}}
-        {{ with $p.illustration }}
+        {{/* Screenshot-kolom — echte productsite, zodat elke propositie z'n eigen huisstijl toont */}}
+        {{ with $p.screenshot }}
           <div class="{{ if $isOdd }}lg:order-1{{ end }}">
-            <img src="/images/illustrations/{{ . }}.svg" alt="Illustratie: {{ $p.title }}" class="w-full h-auto max-w-[440px] mx-auto" width="480" height="420" loading="lazy" />
+            <div class="rounded-xl border border-line bg-white shadow-[0_12px_32px_rgba(31,42,55,0.12)] overflow-hidden max-w-[480px] mx-auto">
+              <div class="flex items-center gap-1.5 px-3 py-2.5 bg-room border-b border-line">
+                <span class="size-2.5 rounded-full bg-line"></span>
+                <span class="size-2.5 rounded-full bg-line"></span>
+                <span class="size-2.5 rounded-full bg-line"></span>
+              </div>
+              <img src="/images/screenshots/{{ . }}.png" alt="Screenshot van {{ $p.title }}" class="w-full h-auto block" loading="lazy" />
+            </div>
           </div>
         {{ end }}
 

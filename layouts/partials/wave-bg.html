@@ -1,0 +1,27 @@
+{{/* Vloeiende merkstroom-achtergrond — verwijst naar "Flo" (Zweeds voor stroom) en de golvende
+     F→N-verbinding in het logo. Plaatsen in een sectie met class "relative overflow-hidden".
+     Geef een variant mee: {{ partial "wave-bg.html" (dict "variant" "2") }} — zo oogt niet elke
+     pagina identiek. Zonder variant-argument (of via "." vanuit een page-context) valt terug op "1". */}}
+{{ $variant := "1" }}
+{{ if reflect.IsMap . }}{{ with .variant }}{{ $variant = . }}{{ end }}{{ end }}
+
+<svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  {{ if eq $variant "2" }}
+    <path d="M -100 210 C 300 120, 550 330, 850 190 S 1350 60, 1700 170" fill="none" stroke="#006AA7" stroke-width="130" stroke-linecap="round" opacity="0.10"/>
+    <path d="M -100 410 C 340 480, 600 260, 950 420 S 1450 300, 1700 390" fill="none" stroke="#FDC500" stroke-width="90" stroke-linecap="round" opacity="0.08"/>
+    <path d="M -100 300 C 380 220, 700 390, 1050 260 S 1500 140, 1700 220" fill="none" stroke="#DA251D" stroke-width="45" stroke-linecap="round" opacity="0.06"/>
+  {{ else if eq $variant "3" }}
+    <path d="M -100 300 C 250 460, 500 180, 800 340 S 1300 140, 1700 300" fill="none" stroke="#FDC500" stroke-width="130" stroke-linecap="round" opacity="0.11"/>
+    <path d="M -100 480 C 300 340, 600 540, 950 380 S 1400 220, 1700 340" fill="none" stroke="#006AA7" stroke-width="90" stroke-linecap="round" opacity="0.07"/>
+    <path d="M -100 150 C 320 260, 620 60, 980 200 S 1480 340, 1700 200" fill="none" stroke="#DA251D" stroke-width="45" stroke-linecap="round" opacity="0.05"/>
+  {{ else if eq $variant "4" }}
+    <path d="M -100 250 C 280 160, 520 420, 820 260 S 1320 420, 1700 280" fill="none" stroke="#DA251D" stroke-width="60" stroke-linecap="round" opacity="0.06"/>
+    <path d="M -100 420 C 260 500, 540 300, 860 450 S 1360 280, 1700 400" fill="none" stroke="#FDC500" stroke-width="120" stroke-linecap="round" opacity="0.10"/>
+    <path d="M -100 100 C 300 200, 580 20, 920 150 S 1440 280, 1700 140" fill="none" stroke="#006AA7" stroke-width="90" stroke-linecap="round" opacity="0.07"/>
+  {{ else }}
+    <path d="M -100 470 C 260 380, 480 560, 760 430 S 1260 270, 1700 350" fill="none" stroke="#FDC500" stroke-width="130" stroke-linecap="round" opacity="0.10"/>
+    <path d="M -100 190 C 320 290, 560 60, 900 210 S 1420 390, 1700 270" fill="none" stroke="#006AA7" stroke-width="95" stroke-linecap="round" opacity="0.08"/>
+    <path d="M -100 330 C 360 250, 650 420, 1000 300 S 1520 180, 1700 260" fill="none" stroke="#DA251D" stroke-width="45" stroke-linecap="round" opacity="0.06"/>
+  {{ end }}
+</svg>
+<div aria-hidden="true" class="absolute inset-0 bg-gradient-to-b from-white/55 via-white/15 to-transparent pointer-events-none"></div>

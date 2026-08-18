@@ -1,10 +1,14 @@
 {{ define "main" }}
-<article class="container-narrow py-20">
-  <header class="mb-12 text-center">
-    <p class="section-label">{{ .Type | humanize }}</p>
+{{ $waveVariant := "2" }}
+{{ if eq .Title "Contact" }}{{ $waveVariant = "4" }}{{ end }}
+<section class="bg-room relative overflow-hidden">
+  {{ partial "wave-bg.html" (dict "variant" $waveVariant) }}
+  <header class="container-narrow py-20 relative text-center">
     <h1 class="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] leading-[1.15]">{{ .Title }}</h1>
     {{ with .Description }}<p class="mt-5 text-[1.0625rem] text-muted leading-[1.8] max-w-2xl mx-auto">{{ . }}</p>{{ end }}
   </header>
+</section>
+<article class="container-narrow py-16">
   <div class="prose prose-lg prose-slate max-w-none prose-headings:tracking-[-0.02em] prose-a:text-blue hover:prose-a:text-blue-800">
     {{ .Content }}
   </div>

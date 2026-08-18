@@ -1,10 +1,10 @@
-<header class="bg-white">
+<header class="bg-white relative">
   <div class="container-wide flex items-center justify-between py-5">
-    <a href="{{ "/" | relLangURL }}" class="flex items-center gap-3 hover:text-ink">
-      <img src="/images/logo/flonam-mark.svg" alt="" class="size-10" width="40" height="40" />
-      <span class="flex flex-col">
+    <a href="{{ "/" | relLangURL }}" class="flex items-center gap-3 hover:text-ink min-w-0 shrink">
+      <img src="/images/logo/flonam-mark.svg" alt="" class="size-10 shrink-0" width="40" height="40" />
+      <span class="flex flex-col min-w-0">
         <span class="font-display font-extrabold text-[26px] text-ink tracking-[-0.02em] leading-none">Flonam</span>
-        <span class="mt-1 text-[0.5625rem] font-semibold uppercase tracking-[0.22em] text-muted leading-none">SaaS-oplossingen voor bedrijven en organisaties</span>
+        <span class="hidden sm:block mt-1 text-[0.5625rem] font-semibold uppercase tracking-[0.22em] text-muted leading-none truncate">SaaS-oplossingen voor bedrijven en organisaties</span>
       </span>
     </a>
     <nav aria-label="Hoofdmenu" class="hidden md:block">
@@ -21,5 +21,44 @@
         {{ end }}
       </ul>
     </nav>
+
+    {{/* Mobiel menu-knop */}}
+    <button type="button" id="menu-toggle" class="md:hidden inline-flex items-center justify-center size-10 rounded-full text-ink hover:bg-room transition-colors shrink-0" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu openen">
+      <svg id="menu-icon-open" aria-hidden="true" class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg id="menu-icon-close" aria-hidden="true" class="size-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
   </div>
+
+  {{/* Mobiel menu-paneel */}}
+  <nav id="mobile-menu" aria-label="Mobiel menu" class="hidden md:hidden border-t border-line bg-white">
+    <ul class="container-wide py-4 flex flex-col gap-1">
+      {{ range .Site.Menus.main }}
+        {{ $isCta := eq .Name "Contact" }}
+        <li>
+          {{ if $isCta }}
+            <a href="{{ .URL | relLangURL }}" class="btn-pill-ink mt-2 inline-flex">{{ .Name }}</a>
+          {{ else }}
+            <a href="{{ .URL | relLangURL }}" class="block py-2.5 text-base font-medium text-muted hover:text-blue transition-colors">{{ .Name }}</a>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
 </header>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('menu-toggle');
+    var menu = document.getElementById('mobile-menu');
+    var iconOpen = document.getElementById('menu-icon-open');
+    var iconClose = document.getElementById('menu-icon-close');
+    if (!toggle || !menu) return;
+    toggle.addEventListener('click', function () {
+      var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  })();
+</script>
