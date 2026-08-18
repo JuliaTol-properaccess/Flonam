@@ -15,9 +15,24 @@ tijd:
     - title: "Toegankelijkheidseisen"
       body: "Sinds juni 2025 moeten veel digitale diensten aan toegankelijkheidseisen voldoen. Of die verplichting geldt en wat er dan nog moet gebeuren, is niet voor elke organisatie meteen duidelijk — dat uitzoeken en bijhouden kost zonder overzicht onnodig veel tijd."
 
-proof:
-  title: "Nog geen klantcases. Wel bewezen ervaring."
-  body: "Vijftien jaar bouwen aan software voor organisaties — van data-modellen tot interfacekeuzes. Flonam is de volgende stap: dezelfde ervaring, nu in losse tools die je direct kunt gebruiken."
-  cta_label: "Meer over Flonam"
-  cta_url: "/over/"
+faq:
+  label: "Veelgestelde vragen"
+  title: "Wat je wil weten"
+  items:
+    - q: "Waarom losse producten en geen platform?"
+      a: "Elk Flonam-product staat op zichzelf. Je hoeft geen pakket af te nemen om één ding te regelen, en je zit nergens aan vast."
+    - q: "Wat gebeurt er met mijn data als ik stop?"
+      a: "Je gegevens blijven van jou. Je kunt ze op elk moment meenemen."
+    - q: "Hoe snel kan ik starten?"
+      a: "Je bent binnen een dag aan de slag, zonder implementatietraject."
+    - q: "Hebben jullie al klanten?"
+      a: "Nog geen klantcases, wel bewezen ervaring. Flonam is een jong bedrijf — het team erachter niet."
+      link_label: "Meer over het team"
+      link_url: "/over/"
+
+cta:
+  title: "Nog vragen?"
+  body: "Stuur een mail en we denken met je mee."
+  label: "Neem contact op"
+  url: "/contact/"
 ---
