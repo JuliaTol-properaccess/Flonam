@@ -58,7 +58,7 @@
 {{ end }}
 
 {{/* ─── PRODUCT SPOTLIGHTS — waar we nu aan bouwen ─── */}}
-{{ partial "producten.html" site.Data.producten }}
+{{ partial "producten.html" (index site.Data.producten site.Language.Lang) }}
 
 {{/* ─── FAQ — beantwoordt vragen i.p.v. Over Ons te herhalen ─── */}}
 {{ with .Params.faq }}

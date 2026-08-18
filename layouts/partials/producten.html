@@ -23,7 +23,7 @@
 
         {{/* Tekst-kolom */}}
         <div class="{{ if $isOdd }}lg:order-2{{ end }}">
-          <p class="section-label">Product {{ add $idx 1 }} van {{ len $.items }}</p>
+          <p class="section-label">{{ if eq site.Language.Lang "en" }}Product {{ add $idx 1 }} of {{ len $.items }}{{ else }}Product {{ add $idx 1 }} van {{ len $.items }}{{ end }}</p>
           <h3 class="text-2xl sm:text-3xl font-extrabold tracking-[-0.02em] leading-[1.2] text-ink">{{ $p.title }}</h3>
           <p class="mt-4 text-[1.0625rem] text-muted leading-[1.7]">{{ $p.intro }}</p>
           {{ with $p.features }}
@@ -55,7 +55,7 @@
                 <span class="size-2.5 rounded-full bg-line"></span>
                 <span class="size-2.5 rounded-full bg-line"></span>
               </div>
-              <img src="/images/screenshots/{{ . }}.png" alt="Screenshot van {{ $p.title }}" class="w-full h-auto block" loading="lazy" />
+              <img src="/images/screenshots/{{ . }}.png" alt="{{ if eq site.Language.Lang "en" }}Screenshot of {{ else }}Screenshot van {{ end }}{{ $p.title }}" class="w-full h-auto block" loading="lazy" />
             </div>
           </div>
         {{ end }}

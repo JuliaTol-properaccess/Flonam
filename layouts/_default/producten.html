@@ -13,5 +13,5 @@
   </section>
 {{ end }}
 
-{{ partial "producten.html" site.Data.producten }}
+{{ partial "producten.html" (index site.Data.producten site.Language.Lang) }}
 {{ end }}

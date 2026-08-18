@@ -1,0 +1,19 @@
+title: "What we're building right now"
+body: "Two products live, more on the way. Each with its own site."
+items:
+  - title: "EAA-monitor.nl"
+    screenshot: "eaa-monitor"
+    intro: "Since June 2025, many digital services are required to be accessible. EAA-monitor.nl tracks, sector by sector, where the Netherlands stands, and explains in plain language who the law applies to, what regulators check, and what you can do yourself."
+    features:
+      - "Weekly, independent measurement per sector"
+      - "Explained in plain language, no legal jargon"
+      - "Free to use, no sales pitch"
+    url: "https://eaa-monitor.nl"
+  - title: "MKB-offerte.nl"
+    screenshot: "mkb-offerte"
+    intro: "Create and follow up on quotes without it turning into an evening chore. Paste in your client's request, and within ten minutes you have a quote your client can sign online right away."
+    features:
+      - "Quote ready in 10 minutes, even from your phone"
+      - "Client signs directly in the browser"
+      - "WCAG 2.2 AA-proof — also accessible for users with a disability"
+    url: "https://mkb-offerte.nl"
