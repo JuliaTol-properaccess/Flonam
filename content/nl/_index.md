@@ -10,13 +10,6 @@ hero:
   cta_primary: "Bekijk wat er draait"
   terminal_summary: "2 live · 0 implementatietrajecten · 0 pakketten"
 
-stats:
-  - value: "~10"
-    label: "mensen in het team"
-  - value: "AA"
-    label: "WCAG 2.2 in elk product"
-  - value: "NL"
-    label: "Nederlands bedrijf, Nederlandse klanten"
 
 faq:
   label: "Veelgestelde vragen"

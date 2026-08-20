@@ -57,19 +57,6 @@
 </section>
 {{ end }}
 
-{{/* ─── STATS — harde cijfers, geen bijvoeglijke naamwoorden ─── */}}
-{{ with .Params.stats }}
-<section class="bg-ink-900 border-t border-white/8">
-  <div class="container-wide py-9 grid gap-7 grid-cols-1 sm:grid-cols-3">
-    {{ range . }}
-      <div>
-        <span class="block font-display text-[2.125rem] font-extrabold tracking-[-0.02em] text-white leading-none">{{ .value }}</span>
-        <span class="block mt-1.5 text-[0.9375rem] text-white/58 leading-snug">{{ .label }}</span>
-      </div>
-    {{ end }}
-  </div>
-</section>
-{{ end }}
 
 {{/* ─── PRODUCT SPOTLIGHTS — waar we nu aan bouwen (dashboards-framing) ─── */}}
 {{ partial "producten.html" (index site.Data.producten site.Language.Lang) }}

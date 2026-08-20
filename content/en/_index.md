@@ -11,14 +11,6 @@ hero:
   cta_primary: "See what's live"
   terminal_summary: "2 live · 0 implementation projects · 0 bundles"
 
-stats:
-  - value: "~10"
-    label: "people on the team"
-  - value: "AA"
-    label: "WCAG 2.2 in every product"
-  - value: "NL"
-    label: "Dutch company, Dutch customers"
-
 faq:
   label: "Frequently asked questions"
   title: "What you want to know."
