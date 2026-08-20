@@ -11,14 +11,12 @@ hero:
   terminal_summary: "2 live · 0 implementatietrajecten · 0 pakketten"
 
 stats:
-  - value: "2"
-    label: "producten live"
   - value: "~10"
     label: "mensen in het team"
   - value: "AA"
     label: "WCAG 2.2 in elk product"
-  - value: "0"
-    label: "implementatietrajecten"
+  - value: "Emmeloord"
+    label: "waar we zitten"
 
 faq:
   label: "Veelgestelde vragen"

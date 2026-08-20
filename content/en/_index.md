@@ -12,14 +12,12 @@ hero:
   terminal_summary: "2 live · 0 implementation projects · 0 bundles"
 
 stats:
-  - value: "2"
-    label: "products live"
   - value: "~10"
     label: "people on the team"
   - value: "AA"
     label: "WCAG 2.2 in every product"
-  - value: "0"
-    label: "implementation projects"
+  - value: "Emmeloord"
+    label: "where we're based"
 
 faq:
   label: "Frequently asked questions"
