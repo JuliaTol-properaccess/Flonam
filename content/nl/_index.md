@@ -8,7 +8,6 @@ hero:
   titleAccent: "grondig gebouwd."
   body: "Flonam bouwt SaaS voor bedrijven en organisaties, ongeacht sector of omvang. Elk product staat op zichzelf: eigen naam, eigen site, geen pakket eromheen."
   cta_primary: "Bekijk wat er draait"
-  cta_secondary: "Stuur een mail"
   terminal_summary: "2 live · 0 implementatietrajecten · 0 pakketten"
 
 stats:
@@ -38,5 +37,5 @@ faq:
 
 cta:
   title: "Vragen? Stuur gerust een mail."
-  body: "We denken graag met je mee en reageren gemiddeld binnen twee werkdagen."
+  body: "We denken graag mee en reageren gemiddeld binnen twee werkdagen."
 ---

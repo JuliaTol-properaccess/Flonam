@@ -9,7 +9,6 @@ hero:
   titleAccent: "properly built."
   body: "Flonam builds SaaS for businesses and organisations, regardless of sector or size. Each product stands on its own: its own name, its own site, no bundle around it."
   cta_primary: "See what's live"
-  cta_secondary: "Send an email"
   terminal_summary: "2 live · 0 implementation projects · 0 bundles"
 
 stats:
@@ -39,5 +38,5 @@ faq:
 
 cta:
   title: "Questions? Feel free to email."
-  body: "We're happy to think it through with you, and typically reply within two business days."
+  body: "We're happy to think along, and typically reply within two business days."
 ---
