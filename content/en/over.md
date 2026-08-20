@@ -32,7 +32,8 @@ screen reader simply isn't finished.
 
 ## The team
 
-Behind Flonam is a team of around ten people: developers and WCAG
-auditors, led by founders Julia and Phi. That size keeps us agile,
-not a heavy organisation, while giving us enough knowledge and
-capacity in-house to pick up projects quickly and thoroughly.
+Behind Flonam is a team of around ten people: from development and
+WCAG audits to sales and marketing, led by founders Julia and Phi.
+That size keeps us agile, not a heavy organisation, while giving us
+enough knowledge and capacity in-house to pick up projects quickly
+and thoroughly.

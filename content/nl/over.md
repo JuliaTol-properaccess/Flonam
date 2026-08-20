@@ -32,7 +32,8 @@ niet kunt gebruiken simpelweg niet af is.
 
 ## Het team
 
-Achter Flonam staat een team van zo'n tien mensen: ontwikkelaars en
-WCAG-auditors, onder leiding van oprichters Julia en Phi. Die omvang
-houdt ons wendbaar, geen logge organisatie, en geeft ons genoeg kennis
-en capaciteit in huis om projecten snel en grondig op te pakken.
+Achter Flonam staat een team van zo'n tien mensen: van ontwikkeling en
+WCAG-audits tot sales en marketing, onder leiding van oprichters Julia
+en Phi. Die omvang houdt ons wendbaar, geen logge organisatie, en geeft
+ons genoeg kennis en capaciteit in huis om projecten snel en grondig
+op te pakken.
