@@ -13,7 +13,7 @@ hero:
 
 stats:
   - value: "2"
-    label: "products live, more on the way"
+    label: "products live"
   - value: "~10"
     label: "people on the team"
   - value: "AA"

@@ -12,7 +12,7 @@ hero:
 
 stats:
   - value: "2"
-    label: "producten live, meer op komst"
+    label: "producten live"
   - value: "~10"
     label: "mensen in het team"
   - value: "AA"
