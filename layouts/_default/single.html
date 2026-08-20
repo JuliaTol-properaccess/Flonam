@@ -19,25 +19,25 @@
         </div>
       {{ end }}
 
-      <div class="grid gap-11 lg:grid-cols-2 items-center">
+      <div class="grid gap-11 lg:grid-cols-[1fr_15rem] items-start">
         <div class="prose prose-lg prose-slate max-w-none prose-headings:tracking-[-0.02em] prose-a:text-blue hover:prose-a:text-blue-800">
           {{ .Content }}
         </div>
-        <div class="grid grid-cols-2 gap-3.5">
-          <figure>
-            <div class="aspect-[3/4] overflow-hidden border border-line">
+        <div class="flex lg:flex-col gap-4">
+          <figure class="flex-1 lg:flex-none">
+            <div class="aspect-square overflow-hidden shadow-[0_10px_30px_rgba(14,20,28,0.1)]">
               <img src="/images/team/julia.webp" alt="Julia Tol" class="w-full h-full object-cover" />
             </div>
-            <figcaption class="mt-2.5 text-[0.8125rem] leading-snug">
+            <figcaption class="mt-2 text-[0.75rem] leading-snug">
               <span class="block font-bold text-ink-900">Julia Tol</span>
               <span class="block text-muted">Co-founder &amp; CTO</span>
             </figcaption>
           </figure>
-          <figure class="mt-7">
-            <div class="aspect-[3/4] overflow-hidden border border-line">
+          <figure class="flex-1 lg:flex-none">
+            <div class="aspect-square overflow-hidden shadow-[0_10px_30px_rgba(14,20,28,0.1)]">
               <img src="/images/team/phi.jpeg" alt="Phi Pham" class="w-full h-full object-cover" />
             </div>
-            <figcaption class="mt-2.5 text-[0.8125rem] leading-snug">
+            <figcaption class="mt-2 text-[0.75rem] leading-snug">
               <span class="block font-bold text-ink-900">Phi Pham</span>
               <span class="block text-muted">{{ if eq site.Language.Lang "en" }}Co-founder &amp; Commercial Director{{ else }}Co-founder &amp; Commercieel directeur{{ end }}</span>
             </figcaption>
@@ -102,7 +102,7 @@
               <textarea id="cf-message" rows="4" required placeholder="{{ if eq site.Language.Lang "en" }}For example: every quote costs me an evening.{{ else }}Bijvoorbeeld: elke offerte kost me een avond.{{ end }}" class="text-[0.96875rem] px-4 py-3 border border-[#6B7280] resize-y"></textarea>
             </label>
             <button type="submit" class="btn-primary justify-center">{{ if eq site.Language.Lang "en" }}Send{{ else }}Verstuur{{ end }}</button>
-            <p class="text-[0.84375rem] text-muted leading-[1.5]">{{ if eq site.Language.Lang "en" }}This opens your email app with everything filled in — nothing is sent from here directly. Prefer to mail straight away?{{ else }}Dit opent je mailprogramma met alles al ingevuld — er wordt hiervandaan niets automatisch verstuurd. Liever meteen mailen?{{ end }} <a href="mailto:{{ .Site.Params.contact.email }}" class="font-semibold text-blue hover:text-blue-800">{{ .Site.Params.contact.email }}</a>.</p>
+            <p class="text-[0.84375rem] text-muted leading-[1.5]">{{ if eq site.Language.Lang "en" }}This opens your email app with everything filled in, nothing is sent from here directly. Prefer to mail straight away?{{ else }}Dit opent je mailprogramma met alles al ingevuld, er wordt hiervandaan niets automatisch verstuurd. Liever meteen mailen?{{ end }} <a href="mailto:{{ .Site.Params.contact.email }}" class="font-semibold text-blue hover:text-blue-800">{{ .Site.Params.contact.email }}</a>.</p>
           </form>
         </div>
       </div>
@@ -117,8 +117,8 @@
         var name = document.getElementById('cf-name').value;
         var email = document.getElementById('cf-email').value;
         var message = document.getElementById('cf-message').value;
-        var subject = encodeURIComponent('Contact via flonam.nl — ' + name);
-        var body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+        var subject = encodeURIComponent('Contact via flonam.nl: ' + name);
+        var body = encodeURIComponent(message + '\n\n' + name + ' (' + email + ')');
         window.location.href = 'mailto:{{ .Site.Params.contact.email }}?subject=' + subject + '&body=' + body;
       });
     })();

@@ -7,7 +7,7 @@ hero:
   badge: "LIVE · 2 PRODUCTS"
   title: "Too little time, too few people."
   titleAccent: "Yet everything under control."
-  body: "Flonam builds SaaS for businesses and organisations — regardless of sector or size. Each product stands on its own: its own name, its own site, no bundle around it."
+  body: "Flonam builds SaaS for businesses and organisations, regardless of sector or size. Each product stands on its own: its own name, its own site, no bundle around it."
   cta_primary: "See what's live"
   cta_secondary: "Send an email"
   terminal_summary: "2 live · 0 implementation projects · 0 bundles"
@@ -33,7 +33,7 @@ faq:
     - q: "How quickly can I get started?"
       a: "You're up and running within a day. No implementation project, no onboarding project."
     - q: "Do you have any customers yet?"
-      a: "No customer cases yet, but proven experience. Flonam is a young company — the team behind it isn't."
+      a: "No customer cases yet, but proven experience. Flonam is a young company, the team behind it isn't."
       link_label: "More about us"
       link_url: "/en/about/"
 

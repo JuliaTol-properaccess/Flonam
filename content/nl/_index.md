@@ -6,7 +6,7 @@ hero:
   badge: "LIVE · 2 PRODUCTEN"
   title: "Te weinig tijd, te weinig mensen."
   titleAccent: "Toch alles op orde."
-  body: "Flonam bouwt SaaS voor bedrijven en organisaties — ongeacht sector of omvang. Elk product staat op zichzelf: eigen naam, eigen site, geen pakket eromheen."
+  body: "Flonam bouwt SaaS voor bedrijven en organisaties, ongeacht sector of omvang. Elk product staat op zichzelf: eigen naam, eigen site, geen pakket eromheen."
   cta_primary: "Bekijk wat er draait"
   cta_secondary: "Stuur een mail"
   terminal_summary: "2 live · 0 implementatietrajecten · 0 pakketten"
@@ -32,7 +32,7 @@ faq:
     - q: "Hoe snel kan ik starten?"
       a: "Je bent binnen een dag aan de slag. Geen implementatietraject, geen onboarding-project."
     - q: "Hebben jullie al klanten?"
-      a: "Nog geen klantcases, wel bewezen ervaring. Flonam is een jong bedrijf — het team erachter niet."
+      a: "Nog geen klantcases, wel bewezen ervaring. Flonam is een jong bedrijf, het team erachter niet."
       link_label: "Meer over ons"
       link_url: "/over/"
 

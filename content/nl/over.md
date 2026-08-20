@@ -1,7 +1,7 @@
 ---
 title: "Over Flonam"
 headline: "Kleine club, miljoenen regels code."
-description: "Flonam is een jong bedrijf, gebouwd door mensen die dit werk al jaren doen. We maken software die één klus echt afmaakt: geen platform waar je in moet stappen, geen implementatietraject — een product dat werkt op de dag dat je het aanzet."
+description: "Flonam is een jong bedrijf, gebouwd door mensen die dit werk al jaren doen. We maken software die één klus echt afmaakt: geen platform waar je in moet stappen, geen implementatietraject, maar een product dat werkt op de dag dat je het aanzet."
 url: "/over/"
 
 principles:
@@ -29,3 +29,10 @@ die het gebruiken.
 Toegankelijkheid zit er vanaf de eerste regel code in. Niet omdat het
 moet, maar omdat een product dat je met een toetsenbord of schermlezer
 niet kunt gebruiken simpelweg niet af is.
+
+## Het team
+
+Achter Flonam staat een team van zo'n tien mensen: ontwikkelaars en
+WCAG-auditors, onder leiding van oprichters Julia en Phi. Die omvang
+houdt ons wendbaar, geen logge organisatie, en geeft ons genoeg kennis
+en capaciteit in huis om projecten snel en grondig op te pakken.

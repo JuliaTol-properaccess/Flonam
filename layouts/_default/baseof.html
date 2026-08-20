@@ -14,9 +14,7 @@
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
   {{ end }}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Nunito:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="/fonts/fonts.css" />
 
   {{ with .OutputFormats.Get "RSS" }}
     <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ $.Site.Title }}" />

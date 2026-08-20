@@ -46,8 +46,8 @@
   </div>
   <div class="border-t border-white/10">
     <div class="container-wide py-5 text-[0.8125rem] text-white/40 flex flex-wrap items-center justify-between gap-2">
-      <span>&copy; {{ now.Year }} Flonam. {{ if eq site.Language.Lang "en" }}All rights reserved.{{ else }}Alle rechten voorbehouden.{{ end }}</span>
-      <span class="font-mono text-[0.75rem] text-white/30">{{ if eq site.Language.Lang "en" }}built in Emmeloord{{ else }}gebouwd in Emmeloord{{ end }}</span>
+      <span>&copy; {{ now.Year }} Flonam B.V. {{ if eq site.Language.Lang "en" }}All rights reserved.{{ else }}Alle rechten voorbehouden.{{ end }}</span>
+      <a href="{{ if eq site.Language.Lang "en" }}/en/privacy/{{ else }}/privacy/{{ end }}" class="hover:text-gold transition-colors">{{ if eq site.Language.Lang "en" }}Privacy policy{{ else }}Privacyverklaring{{ end }}</a>
     </div>
   </div>
 </footer>

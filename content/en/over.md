@@ -1,7 +1,7 @@
 ---
 title: "About Flonam"
 headline: "Small team, millions of lines of code."
-description: "Flonam is a young company, built by people who've done this work for years. We make software that actually finishes one job: no platform to step into, no implementation project — a product that works the day you turn it on."
+description: "Flonam is a young company, built by people who've done this work for years. We make software that actually finishes one job: no platform to step into, no implementation project, just a product that works the day you turn it on."
 url: "/en/about/"
 
 principles:
@@ -29,3 +29,10 @@ people who use it.
 Accessibility is in from the first line of code. Not because it's
 required, but because a product you can't use with a keyboard or a
 screen reader simply isn't finished.
+
+## The team
+
+Behind Flonam is a team of around ten people: developers and WCAG
+auditors, led by founders Julia and Phi. That size keeps us agile,
+not a heavy organisation, while giving us enough knowledge and
+capacity in-house to pick up projects quickly and thoroughly.
