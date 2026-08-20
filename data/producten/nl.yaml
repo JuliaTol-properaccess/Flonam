@@ -3,7 +3,7 @@ title: "Twee producten live. Meer op komst."
 body: "Flonam bouwt interactieve dashboards die bedrijven en organisaties inzicht geven in hun operationele processen. EAA-monitor.nl is daar een voorbeeld van. Elk product staat op zichzelf, met een eigen site, eigen prijs en eigen tempo."
 items:
   - title: "EAA-monitor.nl"
-    tag: "DASHBOARD · GRATIS"
+    tag: "DASHBOARD · LIVE"
     color: "#0A8FD8"
     kind: "dashboard"
     statusLine: "wekelijkse meting per sector"
@@ -11,7 +11,7 @@ items:
     features:
       - "Wekelijkse, onafhankelijke meting per sector"
       - "Uitleg in gewone taal, geen juridisch jargon"
-      - "Gratis te raadplegen, zonder verkooppraatje"
+      - "Onafhankelijke meting, zonder verkooppraatje"
     sectors:
       - name: "Rijksoverheid"
         pct: 78
