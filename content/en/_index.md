@@ -16,8 +16,8 @@ stats:
     label: "people on the team"
   - value: "AA"
     label: "WCAG 2.2 in every product"
-  - value: "Emmeloord"
-    label: "where we're based"
+  - value: "NL"
+    label: "Dutch company, Dutch customers"
 
 faq:
   label: "Frequently asked questions"

@@ -15,8 +15,8 @@ stats:
     label: "mensen in het team"
   - value: "AA"
     label: "WCAG 2.2 in elk product"
-  - value: "Emmeloord"
-    label: "waar we zitten"
+  - value: "NL"
+    label: "Nederlands bedrijf, Nederlandse klanten"
 
 faq:
   label: "Veelgestelde vragen"
