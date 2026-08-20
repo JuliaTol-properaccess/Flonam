@@ -13,10 +13,10 @@ hero:
 stats:
   - value: "2"
     label: "producten live, meer op komst"
-  - value: "10 min"
-    label: "van aanvraag naar verstuurde offerte"
-  - value: "1 dag"
-    label: "tot je aan de slag bent"
+  - value: "~10"
+    label: "mensen in het team"
+  - value: "AA"
+    label: "WCAG 2.2 in elk product"
   - value: "0"
     label: "implementatietrajecten"
 

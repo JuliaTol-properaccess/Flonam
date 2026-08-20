@@ -14,10 +14,10 @@ hero:
 stats:
   - value: "2"
     label: "products live, more on the way"
-  - value: "10 min"
-    label: "from request to sent quote"
-  - value: "1 day"
-    label: "until you're up and running"
+  - value: "~10"
+    label: "people on the team"
+  - value: "AA"
+    label: "WCAG 2.2 in every product"
   - value: "0"
     label: "implementation projects"
 
