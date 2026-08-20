@@ -1,7 +1,7 @@
 ---
 title: "About Flonam"
-headline: "Small team, millions of lines of code."
-description: "Flonam is a young company, built by people who've done this work for years. We make software that actually finishes one job: no platform to step into, no implementation project, just a product that works the day you turn it on."
+headline: "One focus, millions of lines of code."
+description: "Flonam is a young company, but the people behind it have done this work for years. We build software that fully takes one job off your hands: no platform to step into, no implementation project, just a product that works the day you turn it on."
 url: "/en/about/"
 
 principles:

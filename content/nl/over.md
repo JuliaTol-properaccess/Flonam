@@ -1,7 +1,7 @@
 ---
 title: "Over Flonam"
-headline: "Kleine club, miljoenen regels code."
-description: "Flonam is een jong bedrijf, gebouwd door mensen die dit werk al jaren doen. We maken software die één klus echt afmaakt: geen platform waar je in moet stappen, geen implementatietraject, maar een product dat werkt op de dag dat je het aanzet."
+headline: "Eén focus, miljoenen regels code."
+description: "Flonam is een jong bedrijf, maar de mensen erachter doen dit werk al jaren. We bouwen software die één klus volledig van je overneemt: geen platform waar je in moet stappen, geen implementatietraject, gewoon een product dat werkt op de dag dat je het aanzet."
 url: "/over/"
 
 principles:
