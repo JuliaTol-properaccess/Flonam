@@ -130,9 +130,27 @@
       <h2 class="text-[2rem] sm:text-[2.5rem] font-extrabold tracking-[-0.03em] text-white mb-3">{{ .title }}</h2>
       <p class="text-[1.125rem] text-white/66 max-w-[32rem]">{{ .body }}</p>
     </div>
-    <a href="mailto:{{ $email }}" class="btn-gold">{{ $email }}</a>
+    <div class="flex flex-col items-start gap-2.5">
+      <a href="mailto:{{ $email }}" class="btn-gold">{{ $email }}</a>
+      <button type="button" data-copy-email="{{ $email }}" class="text-[0.8125rem] font-semibold text-white/45 hover:text-white/75 transition-colors">
+        {{ if eq site.Language.Lang "en" }}Or copy the address{{ else }}Of kopieer het adres{{ end }}
+      </button>
+    </div>
   </div>
 </section>
+<script>
+  (function () {
+    var btn = document.querySelector('[data-copy-email]');
+    if (!btn || !navigator.clipboard) return;
+    var original = btn.textContent;
+    btn.addEventListener('click', function () {
+      navigator.clipboard.writeText(btn.getAttribute('data-copy-email')).then(function () {
+        btn.textContent = '{{ if eq site.Language.Lang "en" }}Copied{{ else }}Gekopieerd{{ end }}';
+        setTimeout(function () { btn.textContent = original; }, 2000);
+      });
+    });
+  })();
+</script>
 {{ end }}
 
 {{ with .Content }}

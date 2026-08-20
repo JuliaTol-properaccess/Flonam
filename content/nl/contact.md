@@ -1,6 +1,6 @@
 ---
 title: "Contact"
 headline: "Stuur een mail en we denken met je mee."
-description: "Vertel kort welke klus tijd kost. Je krijgt antwoord van iemand die het product zelf bouwt."
+description: "Vertel kort waar je tegenaan loopt. Julia of Phi leest het zelf en denkt met je mee."
 url: "/contact/"
 ---

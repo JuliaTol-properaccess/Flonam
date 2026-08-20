@@ -4,8 +4,8 @@ description: "Wij bouwen SaaS-oplossingen voor bedrijven en organisaties."
 
 hero:
   badge: "LIVE · 2 PRODUCTEN"
-  title: "Te weinig tijd, te weinig mensen."
-  titleAccent: "Toch alles op orde."
+  title: "Eén klus tegelijk,"
+  titleAccent: "grondig gebouwd."
   body: "Flonam bouwt SaaS voor bedrijven en organisaties, ongeacht sector of omvang. Elk product staat op zichzelf: eigen naam, eigen site, geen pakket eromheen."
   cta_primary: "Bekijk wat er draait"
   cta_secondary: "Stuur een mail"
@@ -29,14 +29,14 @@ faq:
       a: "Elk Flonam-product staat op zichzelf. Je hoeft geen pakket af te nemen om één ding te regelen, en je zit nergens aan vast."
     - q: "Wat gebeurt er met mijn data als ik stop?"
       a: "Je gegevens blijven van jou. Je kunt ze op elk moment meenemen, in een formaat dat je elders kunt gebruiken."
-    - q: "Hoe snel kan ik starten?"
-      a: "Je bent binnen een dag aan de slag. Geen implementatietraject, geen onboarding-project."
+    - q: "Is er een implementatietraject nodig?"
+      a: "Nee. Onze producten werken zodra je ze aanzet, zonder onboarding-project of consultants."
     - q: "Hebben jullie al klanten?"
       a: "Nog geen klantcases, wel bewezen ervaring. Flonam is een jong bedrijf, het team erachter niet."
       link_label: "Meer over ons"
       link_url: "/over/"
 
 cta:
-  title: "Nog vragen? Stuur een mail."
-  body: "Je krijgt antwoord van iemand die het product zelf bouwt. Geen ticketsysteem, geen accountmanager."
+  title: "Vragen? Stuur gerust een mail."
+  body: "We denken graag met je mee. Julia of Phi antwoordt zelf, meestal dezelfde dag."
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Products"
 headline: "Standalone products. Each with its own site."
-description: "You don't need to buy a bundle to solve one problem. Take what you need, stop whenever you want."
+description: "Each product stands on its own, with its own site and its own pace. No bundle around it."
 url: "/en/products/"
 layout: "producten"
 ---
