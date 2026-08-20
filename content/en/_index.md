@@ -39,5 +39,5 @@ faq:
 
 cta:
   title: "Questions? Feel free to email."
-  body: "We're happy to think it through with you. Julia or Phi replies personally, usually the same day."
+  body: "We're happy to think it through with you, and typically reply within two business days."
 ---

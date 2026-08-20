@@ -38,5 +38,5 @@ faq:
 
 cta:
   title: "Vragen? Stuur gerust een mail."
-  body: "We denken graag met je mee. Julia of Phi antwoordt zelf, meestal dezelfde dag."
+  body: "We denken graag met je mee en reageren gemiddeld binnen twee werkdagen."
 ---
