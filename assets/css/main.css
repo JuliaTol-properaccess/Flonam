@@ -7,56 +7,60 @@
 @source "../../hugo_stats.json";
 
 @theme {
-  /* ---- Flonam merkidentiteit (Flonam_Merkidentiteit_dark_v2.pdf) ---- */
-  /* Inkt — primaire tekst, koppen, hoofdknoppen, zegel-achtergrond */
-  --color-ink:      #1F2A37;
-  --color-ink-900:  #18212C;
-  --color-ink-950:  #121922;
+  /* ---- Flonam merkidentiteit v3 (redesign 2026-08) ---- */
+  /* Inkt — donkere vlakken, headers, footer, primaire knoppen */
+  --color-ink:      #0E141C;
+  --color-ink-800:  #141C26;
+  --color-ink-900:  #1F2A37;
 
-  /* Room — paginaondergrond, nooit zuiver wit */
-  --color-room:     #F6F4EF;
-  --color-room-200: #ECE9E0;
+  /* Room — lichte paginaondergrond */
+  --color-room:     #F6F7F9;
+  --color-room-200: #EDEFF2;
 
-  /* Goud — accent: highlights, badges */
-  --color-gold:     #FDC500;
-  --color-gold-100: #FFF3C4;
+  /* Goud — accent: highlights, live-indicator, badges */
+  --color-gold:     #FEC502;
+  --color-gold-100: #FEF6DE;
 
-  /* Stroom-blauw — links, secundaire acties, informatieve status */
-  --color-blue:     #006AA7;
-  --color-blue-800: #00517F;
-  --color-blue-50:  #EAF2F7;
+  /* Stroom-blauw — links, primaire acties, informatieve status */
+  --color-blue:     #0A8FD8;
+  --color-blue-800: #0B7CB9;
+  --color-blue-50:  #E9F5FC;
 
   /* Signaalrood — foutmeldingen, destructieve acties */
-  --color-red:      #DA251D;
+  --color-red:      #DB251C;
 
-  /* Taupe — secundaire tekst, labels, captions (warme ondertoon) */
-  --color-taupe:    #8A8478;
-  /* Donkerder taupe voor kleine tekst (WCAG-contrast op room/wit) */
-  --color-muted:    #67625A;
+  /* Succes-groen — live-status, positieve indicatoren */
+  --color-green:    #22C55E;
 
-  --color-line:     #E3DFD6;
-  --color-surface:  #F0EDE6;
+  /* Taupe — kleine labels/tags (bv. "PRODUCT 01") */
+  --color-taupe:    #67625A;
+  /* Donkerder grijs voor lopende secundaire tekst */
+  --color-muted:    #4B5563;
+
+  --color-line:     #E7E9ED;
+  --color-surface:  #F6F7F9;
 
   /* Semantic */
-  --color-brand:      #1F2A37;
-  --color-brand-dark: #121922;
-  --color-accent:     #FDC500;
+  --color-brand:      #0E141C;
+  --color-brand-dark: #0E141C;
+  --color-accent:     #FEC502;
 
-  /* Typografie: Manrope voor koppen, Inter voor lopende tekst */
-  --font-sans:    "Inter", system-ui, -apple-system, sans-serif;
-  --font-display: "Manrope", system-ui, -apple-system, sans-serif;
+  /* Typografie: Plus Jakarta Sans voor koppen, Nunito voor lopende tekst, JetBrains Mono voor code/status-accenten */
+  --font-sans:    "Nunito", system-ui, -apple-system, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
 }
 
 @layer base {
   html { scroll-behavior: smooth; }
   body {
-    @apply text-ink antialiased bg-white;
+    @apply text-ink-900 antialiased bg-white;
     font-family: var(--font-sans);
     font-size: 1.0625rem;
     line-height: 1.7;
   }
   h1, h2, h3, h4 {
-    @apply text-ink font-bold;
+    @apply text-ink-900 font-bold;
     font-family: var(--font-display);
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -64,9 +68,10 @@
   h1 { letter-spacing: -0.03em; }
   a { color: inherit; text-decoration: none; }
   :focus-visible {
-    outline: 2px solid var(--color-blue);
+    outline: 3px solid var(--color-gold);
     outline-offset: 2px;
   }
+  ::selection { background: var(--color-gold); color: var(--color-ink); }
 }
 
 @utility container-narrow {
@@ -76,23 +81,29 @@
   @apply mx-auto max-w-[1120px] px-6 sm:px-8;
 }
 @utility section-label {
-  @apply inline-block text-xs font-semibold uppercase tracking-[0.08em] text-blue mb-3;
-}
-@utility btn-pill-white {
-  @apply inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold transition-all bg-white text-ink hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)];
-}
-@utility btn-pill-ghost {
-  @apply inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold transition-all text-white border-[1.5px] border-white/30 hover:border-white/60 hover:bg-white/5;
-}
-@utility btn-pill-ink {
-  @apply inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold transition-all bg-ink text-white hover:bg-ink-950;
-}
-@utility btn-pill-outline-ink {
-  @apply inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold transition-all border-[1.5px] border-ink text-ink hover:bg-room;
-}
-@utility card-base {
-  @apply bg-white border border-line rounded-2xl p-8 transition-all duration-200 hover:border-blue hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)];
+  @apply inline-block text-xs font-bold uppercase tracking-[0.14em] text-blue mb-3;
 }
 @utility section-title {
-  @apply text-3xl sm:text-[2.25rem] font-extrabold leading-[1.25] tracking-[-0.02em] text-ink;
+  @apply text-3xl sm:text-[2.25rem] font-extrabold leading-[1.15] tracking-[-0.03em] text-ink-900;
+}
+
+/* Knoppen — scherpe hoeken, geen pills */
+@utility btn-primary {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-bold transition-all bg-blue text-white shadow-[0_10px_26px_rgba(10,143,216,0.3)] hover:bg-blue-800;
+}
+@utility btn-dark {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-bold transition-all bg-ink-900 text-white hover:bg-ink;
+}
+@utility btn-gold {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-extrabold transition-all bg-gold text-ink shadow-[0_10px_26px_rgba(254,197,2,0.25)] hover:bg-[#e5b202];
+}
+@utility btn-outline-white {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-bold transition-all bg-white/5 text-white border border-white/25 hover:bg-white/10;
+}
+@utility btn-ghost-dark {
+  @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-bold transition-all text-white/75 hover:bg-white/10 hover:text-white;
+}
+
+@utility card-base {
+  @apply bg-white border border-line p-8 transition-all duration-200 hover:border-blue;
 }

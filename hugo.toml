@@ -11,7 +11,7 @@ timeZone = "Europe/Amsterdam"
     weight = 1
     contentDir = "content/nl"
     [languages.nl.params]
-      description = "Wij bouwen SaaS-oplossingen voor bedrijven en organisaties."
+      description = "Wij bouwen datagedreven SaaS-oplossingen voor bedrijven en organisaties."
     [[languages.nl.menus.main]]
       name = "Home"
       url = "/"
@@ -33,7 +33,7 @@ timeZone = "Europe/Amsterdam"
     weight = 2
     contentDir = "content/en"
     [languages.en.params]
-      description = "We build SaaS solutions for businesses and organisations."
+      description = "We build data-driven SaaS solutions for businesses and organisations."
     [[languages.en.menus.main]]
       name = "Home"
       url = "/en/"

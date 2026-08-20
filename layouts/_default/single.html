@@ -1,28 +1,138 @@
 {{ define "main" }}
-{{ $isAbout := eq .File.ContentBaseName "over" }}
-{{ if $isAbout }}
-  <section class="relative overflow-hidden bg-ink min-h-[440px] flex flex-col justify-end">
-    <img src="/images/team/julia-phi-samen.jpg" alt="Julia Tol en Phi Pham, oprichters van Flonam" class="absolute inset-0 w-full h-full object-cover object-[center_20%]" />
-    <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-b from-ink/10 via-ink/20 to-ink"></div>
-    <header class="container-narrow pb-10 pt-24 relative text-center">
-      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] leading-[1.15] text-white">{{ .Title }}</h1>
-      {{ with .Description }}<p class="mt-5 text-[1.0625rem] text-white/80 leading-[1.8] max-w-2xl mx-auto">{{ . }}</p>{{ end }}
-    </header>
+{{ $base := .File.ContentBaseName }}
+
+{{ partial "page-hero.html" (dict "eyebrow" .Title "title" (.Params.headline | default .Title) "body" .Description) }}
+
+{{ if eq $base "over" }}
+
+  <section class="bg-white">
+    <div class="container-wide py-20">
+      {{ with .Params.principles }}
+        <div class="grid gap-5 grid-cols-2 lg:grid-cols-4 mb-16">
+          {{ range . }}
+            <div class="border border-line p-6">
+              <span class="font-mono text-[0.75rem] font-semibold text-blue">{{ .no }}</span>
+              <h3 class="text-[1.1875rem] font-extrabold tracking-[-0.01em] mt-3 mb-2.5">{{ .title }}</h3>
+              <p class="text-[0.9375rem] leading-[1.6] text-muted">{{ .body }}</p>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      <div class="grid gap-11 lg:grid-cols-2 items-center">
+        <div class="prose prose-lg prose-slate max-w-none prose-headings:tracking-[-0.02em] prose-a:text-blue hover:prose-a:text-blue-800">
+          {{ .Content }}
+        </div>
+        <div class="grid grid-cols-2 gap-3.5">
+          <figure>
+            <div class="aspect-[3/4] overflow-hidden border border-line">
+              <img src="/images/team/julia.webp" alt="Julia Tol" class="w-full h-full object-cover" />
+            </div>
+            <figcaption class="mt-2.5 text-[0.8125rem] leading-snug">
+              <span class="block font-bold text-ink-900">Julia Tol</span>
+              <span class="block text-muted">Co-founder &amp; CTO</span>
+            </figcaption>
+          </figure>
+          <figure class="mt-7">
+            <div class="aspect-[3/4] overflow-hidden border border-line">
+              <img src="/images/team/phi.jpeg" alt="Phi Pham" class="w-full h-full object-cover" />
+            </div>
+            <figcaption class="mt-2.5 text-[0.8125rem] leading-snug">
+              <span class="block font-bold text-ink-900">Phi Pham</span>
+              <span class="block text-muted">{{ if eq site.Language.Lang "en" }}Co-founder &amp; Commercial Director{{ else }}Co-founder &amp; Commercieel directeur{{ end }}</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <section class="bg-ink-900">
+    <div class="container-wide py-11 grid gap-7 grid-cols-1 sm:grid-cols-3">
+      {{ with .Site.Params.contact }}
+        <div>
+          <span class="font-display block text-[1.625rem] font-extrabold text-white tracking-[-0.02em]">Emmeloord</span>
+          <span class="text-[0.875rem] text-white/55">{{ .address }}</span>
+        </div>
+        <div>
+          <span class="font-display block text-[1.625rem] font-extrabold text-white tracking-[-0.02em]">KVK {{ .kvk }}</span>
+          <span class="text-[0.875rem] text-white/55">{{ if eq site.Language.Lang "en" }}Registered in the Netherlands{{ else }}Ingeschreven in Nederland{{ end }}</span>
+        </div>
+        <div>
+          <span class="font-display block text-[1.625rem] font-extrabold text-white tracking-[-0.02em]">{{ .email }}</span>
+          <span class="text-[0.875rem] text-white/55">{{ if eq site.Language.Lang "en" }}Straight to the people who build it{{ else }}Direct bij de bouwers{{ end }}</span>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+{{ else if eq $base "contact" }}
+
+  {{/* De hero hierboven dekt links de intro al; hier alleen het formulier + contactgegevens naast elkaar op een donkere sectie, zoals in het ontwerp. We hertekenen daarom de hero niet, maar voegen de kaart eronder toe. */}}
+  <section class="relative overflow-hidden bg-ink -mt-1">
+    <div class="container-wide pb-20 sm:pb-24 relative">
+      <div class="grid gap-12 lg:grid-cols-2 items-start">
+        <div class="flex flex-col gap-4">
+          {{ with .Site.Params.contact }}
+            <div class="flex gap-4 items-start pb-4 border-b border-white/10">
+              <span class="font-mono text-[0.6875rem] font-semibold text-gold pt-1 min-w-16">MAIL</span>
+              <span class="text-[1.03125rem] text-white leading-[1.5]">{{ .email }}</span>
+            </div>
+            <div class="flex gap-4 items-start pb-4 border-b border-white/10">
+              <span class="font-mono text-[0.6875rem] font-semibold text-gold pt-1 min-w-16">{{ if eq site.Language.Lang "en" }}ADDRESS{{ else }}ADRES{{ end }}</span>
+              <span class="text-[1.03125rem] text-white leading-[1.5]">{{ .address }}</span>
+            </div>
+            <div class="flex gap-4 items-start pb-4 border-b border-white/10">
+              <span class="font-mono text-[0.6875rem] font-semibold text-gold pt-1 min-w-16">KVK</span>
+              <span class="text-[1.03125rem] text-white leading-[1.5]">{{ .kvk }}</span>
+            </div>
+          {{ end }}
+        </div>
+
+        <div class="bg-white p-8 sm:p-9 shadow-[0_30px_70px_rgba(0,0,0,0.4)]">
+          <h2 class="text-[1.5rem] font-extrabold tracking-[-0.02em] mb-6">{{ if eq site.Language.Lang "en" }}How can we help?{{ else }}Waar kunnen we mee helpen?{{ end }}</h2>
+          <form id="contact-form" class="flex flex-col gap-4">
+            <label class="flex flex-col gap-1.5 text-[0.875rem] font-bold">{{ if eq site.Language.Lang "en" }}Name{{ else }}Naam{{ end }}
+              <input type="text" id="cf-name" required placeholder="{{ if eq site.Language.Lang "en" }}Your name{{ else }}Je naam{{ end }}" class="text-[0.96875rem] px-4 py-3 border border-[#6B7280]" />
+            </label>
+            <label class="flex flex-col gap-1.5 text-[0.875rem] font-bold">{{ if eq site.Language.Lang "en" }}Email{{ else }}E-mail{{ end }}
+              <input type="email" id="cf-email" required placeholder="jij@bedrijf.nl" class="text-[0.96875rem] px-4 py-3 border border-[#6B7280]" />
+            </label>
+            <label class="flex flex-col gap-1.5 text-[0.875rem] font-bold">{{ if eq site.Language.Lang "en" }}What's on your mind?{{ else }}Waar loop je tegenaan?{{ end }}
+              <textarea id="cf-message" rows="4" required placeholder="{{ if eq site.Language.Lang "en" }}For example: every quote costs me an evening.{{ else }}Bijvoorbeeld: elke offerte kost me een avond.{{ end }}" class="text-[0.96875rem] px-4 py-3 border border-[#6B7280] resize-y"></textarea>
+            </label>
+            <button type="submit" class="btn-primary justify-center">{{ if eq site.Language.Lang "en" }}Send{{ else }}Verstuur{{ end }}</button>
+            <p class="text-[0.84375rem] text-muted leading-[1.5]">{{ if eq site.Language.Lang "en" }}This opens your email app with everything filled in — nothing is sent from here directly. Prefer to mail straight away?{{ else }}Dit opent je mailprogramma met alles al ingevuld — er wordt hiervandaan niets automatisch verstuurd. Liever meteen mailen?{{ end }} <a href="mailto:{{ .Site.Params.contact.email }}" class="font-semibold text-blue hover:text-blue-800">{{ .Site.Params.contact.email }}</a>.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = document.getElementById('cf-name').value;
+        var email = document.getElementById('cf-email').value;
+        var message = document.getElementById('cf-message').value;
+        var subject = encodeURIComponent('Contact via flonam.nl — ' + name);
+        var body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+        window.location.href = 'mailto:{{ .Site.Params.contact.email }}?subject=' + subject + '&body=' + body;
+      });
+    })();
+  </script>
+
 {{ else }}
-  {{ $waveVariant := "2" }}
-  {{ if eq .Title "Contact" }}{{ $waveVariant = "4" }}{{ end }}
-  <section class="bg-room relative overflow-hidden">
-    {{ partial "wave-bg.html" (dict "variant" $waveVariant) }}
-    <header class="container-narrow py-20 relative text-center">
-      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] leading-[1.15]">{{ .Title }}</h1>
-      {{ with .Description }}<p class="mt-5 text-[1.0625rem] text-muted leading-[1.8] max-w-2xl mx-auto">{{ . }}</p>{{ end }}
-    </header>
-  </section>
+
+  {{ with .Content }}
+    <article class="container-narrow py-16">
+      <div class="prose prose-lg prose-slate max-w-none prose-headings:tracking-[-0.02em] prose-a:text-blue hover:prose-a:text-blue-800">
+        {{ . }}
+      </div>
+    </article>
+  {{ end }}
+
 {{ end }}
-<article class="container-narrow py-16">
-  <div class="prose prose-lg prose-slate max-w-none prose-headings:tracking-[-0.02em] prose-a:text-blue hover:prose-a:text-blue-800">
-    {{ .Content }}
-  </div>
-</article>
 {{ end }}

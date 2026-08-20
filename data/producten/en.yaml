@@ -1,19 +1,38 @@
-title: "What we're building right now"
-body: "Two products live, more on the way. Each with its own site."
+label: "What we're building right now"
+title: "Two products live. More on the way."
+body: "Flonam builds interactive dashboards that give businesses and organisations insight into their operational processes. EAA-monitor.nl is an example of that. Each product stands on its own, with its own site, its own price and its own pace."
 items:
   - title: "EAA-monitor.nl"
-    screenshot: "eaa-monitor"
-    intro: "Since June 2025, many digital services are required to be accessible. EAA-monitor.nl tracks, sector by sector, where the Netherlands stands, and explains in plain language who the law applies to, what regulators check, and what you can do yourself."
+    tag: "DASHBOARD · FREE"
+    color: "#0A8FD8"
+    kind: "dashboard"
+    statusLine: "weekly measurement per sector"
+    intro: "Tracks, sector by sector, where the Netherlands stands on the accessibility act. In plain language: who the law applies to, what regulators check, and what you can do yourself."
     features:
       - "Weekly, independent measurement per sector"
       - "Explained in plain language, no legal jargon"
       - "Free to use, no sales pitch"
+    sectors:
+      - name: "Central government"
+        pct: 78
+      - name: "Municipalities"
+        pct: 61
+      - name: "Culture"
+        pct: 47
+      - name: "E-commerce"
+        pct: 34
+      - name: "Healthcare"
+        pct: 29
     url: "https://eaa-monitor.nl"
   - title: "MKB-offerte.nl"
+    tag: "TOOL · LIVE"
+    color: "#FEC502"
+    kind: "screenshot"
     screenshot: "mkb-offerte"
-    intro: "Create and follow up on quotes without it turning into an evening chore. Paste in your client's request, and within ten minutes you have a quote your client can sign online right away."
+    statusLine: "WCAG 2.2 AA · sign online"
+    intro: "Create and follow up on quotes without an evening chore. Paste in your client's request, and within ten minutes you have a proposal your client can sign online right away."
     features:
       - "Quote ready in 10 minutes, even from your phone"
       - "Client signs directly in the browser"
-      - "WCAG 2.2 AA-proof — also accessible for users with a disability"
+      - "WCAG 2.2 AA-proof, also usable with a disability"
     url: "https://mkb-offerte.nl"

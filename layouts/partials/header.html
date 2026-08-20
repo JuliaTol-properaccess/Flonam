@@ -1,54 +1,53 @@
-<header class="bg-white relative">
-  <div class="container-wide flex items-center justify-between py-5 gap-4">
-    <a href="{{ "/" | relLangURL }}" class="flex items-center gap-3 hover:text-ink min-w-0 shrink">
-      <img src="/images/logo/flonam-mark.svg" alt="" class="size-10 shrink-0" width="40" height="40" />
+<header class="sticky top-0 z-50 bg-ink/95 backdrop-blur border-b border-white/10">
+  <div class="container-wide flex items-center gap-8 py-3.5">
+    <a href="{{ "/" | relLangURL }}" class="flex items-center gap-3 min-w-0 shrink">
+      <img src="/images/logo/flonam-mark.svg" alt="" class="size-9 shrink-0" width="36" height="36" />
       <span class="flex flex-col min-w-0">
-        <span class="font-display font-extrabold text-[26px] text-ink tracking-[-0.02em] leading-none">Flonam</span>
-        <span class="hidden sm:block mt-1 text-[0.5625rem] font-semibold uppercase tracking-[0.22em] text-muted leading-none truncate">{{ if eq site.Language.Lang "en" }}SaaS solutions for businesses and organisations{{ else }}SaaS-oplossingen voor bedrijven en organisaties{{ end }}</span>
+        <span class="font-display font-extrabold text-[19px] text-white tracking-[-0.02em] leading-none">Flonam</span>
+        <span class="hidden sm:block mt-0.5 text-[0.5rem] font-bold uppercase tracking-[0.16em] text-white/45 leading-none truncate">{{ if eq site.Language.Lang "en" }}Data-driven SaaS for businesses and organisations{{ else }}Datagedreven SaaS voor bedrijven en organisaties{{ end }}</span>
       </span>
     </a>
 
-    <div class="flex items-center gap-2 shrink-0">
-      <nav aria-label="{{ if eq site.Language.Lang "en" }}Main menu{{ else }}Hoofdmenu{{ end }}" class="hidden md:block">
-        <ul class="flex items-center gap-8">
-          {{ range .Site.Menus.main }}
-            {{ $isCta := eq .Name "Contact" }}
-            <li>
-              {{ if $isCta }}
-                <a href="{{ .URL | relLangURL }}" class="btn-pill-ink">{{ .Name }}</a>
-              {{ else }}
-                <a href="{{ .URL | relLangURL }}" class="text-[0.9375rem] font-medium text-muted hover:text-blue transition-colors">{{ .Name }}</a>
-              {{ end }}
-            </li>
-          {{ end }}
-        </ul>
-      </nav>
+    <nav aria-label="{{ if eq site.Language.Lang "en" }}Main menu{{ else }}Hoofdmenu{{ end }}" class="hidden md:block ml-auto">
+      <ul class="flex items-center gap-1">
+        {{ range .Site.Menus.main }}
+          {{ $isCta := eq .Name "Contact" }}
+          {{ $isActive := eq (.URL | relLangURL) $.RelPermalink }}
+          <li>
+            {{ if $isCta }}
+              <a href="{{ .URL | relLangURL }}" class="btn-primary ml-2 !py-2.5 !px-5 text-[0.9375rem]">{{ .Name }}</a>
+            {{ else }}
+              <a href="{{ .URL | relLangURL }}" class="inline-block px-3.5 py-2 text-[0.9375rem] font-bold transition-colors {{ if $isActive }}text-gold{{ else }}text-white/72 hover:text-white{{ end }}">{{ .Name }}</a>
+            {{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
 
-      {{/* Taalwisselaar — desktop */}}
-      {{ with .AllTranslations }}
-        <div class="hidden md:flex items-center gap-1 border border-line rounded-full p-0.5" role="group" aria-label="{{ if eq site.Language.Lang "en" }}Switch language{{ else }}Wissel taal{{ end }}">
-          {{ range sort . "Language.LanguageName" }}
-            <a href="{{ .Permalink }}" hreflang="{{ .Language.Lang }}" class="inline-flex items-center justify-center px-2.5 py-1 rounded-full text-[0.75rem] font-bold uppercase tracking-wide transition-colors {{ if eq .Language.Lang $.Language.Lang }}bg-blue text-white{{ else }}text-muted hover:text-ink{{ end }}">{{ .Language.Lang }}</a>
-          {{ end }}
-        </div>
-      {{ end }}
+    {{/* Taalwisselaar — desktop */}}
+    {{ with .AllTranslations }}
+      <div class="hidden md:flex items-center gap-0.5 shrink-0" role="group" aria-label="{{ if eq site.Language.Lang "en" }}Switch language{{ else }}Wissel taal{{ end }}">
+        {{ range sort . "Language.LanguageName" }}
+          <a href="{{ .Permalink }}" hreflang="{{ .Language.Lang }}" class="inline-flex items-center justify-center px-2 py-1 text-[0.6875rem] font-bold uppercase tracking-wide transition-colors {{ if eq .Language.Lang $.Language.Lang }}bg-white/12 text-white{{ else }}text-white/40 hover:text-white{{ end }}">{{ .Language.Lang }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
 
-      {{/* Mobiel menu-knop */}}
-      <button type="button" id="menu-toggle" class="md:hidden inline-flex items-center justify-center size-10 rounded-full text-ink hover:bg-room transition-colors shrink-0" aria-expanded="false" aria-controls="mobile-menu" aria-label="{{ if eq site.Language.Lang "en" }}Open menu{{ else }}Menu openen{{ end }}">
-        <svg id="menu-icon-open" aria-hidden="true" class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        <svg id="menu-icon-close" aria-hidden="true" class="size-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
-    </div>
+    {{/* Mobiel menu-knop */}}
+    <button type="button" id="menu-toggle" class="md:hidden inline-flex items-center justify-center size-10 text-white hover:bg-white/10 transition-colors shrink-0 ml-auto" aria-expanded="false" aria-controls="mobile-menu" aria-label="{{ if eq site.Language.Lang "en" }}Open menu{{ else }}Menu openen{{ end }}">
+      <svg id="menu-icon-open" aria-hidden="true" class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg id="menu-icon-close" aria-hidden="true" class="size-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
   </div>
 </header>
 
 {{/* Mobiel menu — backdrop + drawer die van rechts naar links inschuift (transform, GPU-versneld = soepel) */}}
-<div id="mobile-menu-backdrop" class="md:hidden fixed inset-0 bg-ink/50 opacity-0 pointer-events-none transition-opacity duration-300 ease-out z-40" aria-hidden="true"></div>
+<div id="mobile-menu-backdrop" class="md:hidden fixed inset-0 bg-ink/60 opacity-0 pointer-events-none transition-opacity duration-300 ease-out z-40" aria-hidden="true"></div>
 
-<div id="mobile-menu-wrapper" class="md:hidden fixed inset-y-0 right-0 z-50 w-[85vw] max-w-[320px] translate-x-full transition-transform duration-300 ease-out bg-white shadow-[-12px_0_32px_rgba(31,42,55,0.18)] flex flex-col">
-  <div class="shrink-0 flex items-center justify-between px-5 py-5 border-b border-line">
-    <span class="font-display font-extrabold text-lg text-ink tracking-[-0.02em]">Menu</span>
-    <button type="button" id="menu-close" class="inline-flex items-center justify-center size-10 rounded-full text-ink hover:bg-room transition-colors" aria-label="{{ if eq site.Language.Lang "en" }}Close menu{{ else }}Menu sluiten{{ end }}">
+<div id="mobile-menu-wrapper" class="md:hidden fixed inset-y-0 right-0 z-50 w-[85vw] max-w-[320px] translate-x-full transition-transform duration-300 ease-out bg-ink shadow-[-12px_0_32px_rgba(0,0,0,0.35)] flex flex-col">
+  <div class="shrink-0 flex items-center justify-between px-5 py-5 border-b border-white/10">
+    <span class="font-display font-extrabold text-lg text-white tracking-[-0.02em]">Menu</span>
+    <button type="button" id="menu-close" class="inline-flex items-center justify-center size-10 text-white hover:bg-white/10 transition-colors" aria-label="{{ if eq site.Language.Lang "en" }}Close menu{{ else }}Menu sluiten{{ end }}">
       <svg aria-hidden="true" class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
@@ -56,20 +55,21 @@
     <ul class="p-5 flex flex-col gap-1">
       {{ range .Site.Menus.main }}
         {{ $isCta := eq .Name "Contact" }}
+        {{ $isActive := eq (.URL | relLangURL) $.RelPermalink }}
         <li>
           {{ if $isCta }}
-            <a href="{{ .URL | relLangURL }}" class="btn-pill-ink mt-2 inline-flex">{{ .Name }}</a>
+            <a href="{{ .URL | relLangURL }}" class="btn-primary mt-2 w-full">{{ .Name }}</a>
           {{ else }}
-            <a href="{{ .URL | relLangURL }}" class="block py-2.5 text-base font-medium text-muted hover:text-blue transition-colors">{{ .Name }}</a>
+            <a href="{{ .URL | relLangURL }}" class="block py-2.5 text-base font-bold transition-colors {{ if $isActive }}text-gold{{ else }}text-white/75 hover:text-white{{ end }}">{{ .Name }}</a>
           {{ end }}
         </li>
       {{ end }}
     </ul>
     {{ with .AllTranslations }}
-      <div class="px-5 pb-5 flex items-center gap-2 border-t border-line pt-4">
-        <span class="text-[0.8125rem] text-muted">{{ if eq site.Language.Lang "en" }}Language:{{ else }}Taal:{{ end }}</span>
+      <div class="px-5 pb-5 flex items-center gap-2 border-t border-white/10 pt-4">
+        <span class="text-[0.8125rem] text-white/50">{{ if eq site.Language.Lang "en" }}Language:{{ else }}Taal:{{ end }}</span>
         {{ range sort . "Language.LanguageName" }}
-          <a href="{{ .Permalink }}" hreflang="{{ .Language.Lang }}" class="inline-flex items-center justify-center px-3 py-1 rounded-full text-[0.75rem] font-bold uppercase tracking-wide transition-colors {{ if eq .Language.Lang $.Language.Lang }}bg-blue text-white{{ else }}bg-room text-muted{{ end }}">{{ .Language.Lang }}</a>
+          <a href="{{ .Permalink }}" hreflang="{{ .Language.Lang }}" class="inline-flex items-center justify-center px-3 py-1 text-[0.75rem] font-bold uppercase tracking-wide transition-colors {{ if eq .Language.Lang $.Language.Lang }}bg-white/15 text-white{{ else }}bg-white/5 text-white/50{{ end }}">{{ .Language.Lang }}</a>
         {{ end }}
       </div>
     {{ end }}

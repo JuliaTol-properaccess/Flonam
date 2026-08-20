@@ -1,14 +1,8 @@
 {{ define "main" }}
-<section class="bg-room relative overflow-hidden">
-  {{ partial "wave-bg.html" (dict "variant" "3") }}
-  <header class="container-narrow py-20 relative text-center">
-    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] leading-[1.15]">{{ .Title }}</h1>
-    {{ with .Description }}<p class="mt-5 text-[1.0625rem] text-muted leading-[1.8] max-w-2xl mx-auto">{{ . }}</p>{{ end }}
-  </header>
-</section>
+{{ partial "page-hero.html" (dict "eyebrow" .Title "title" (.Params.headline | default .Title) "body" .Description) }}
 
 {{ with .Content }}
-  <section class="container-narrow py-10">
+  <section class="container-narrow py-14">
     <div class="prose prose-slate max-w-none">{{ . }}</div>
   </section>
 {{ end }}

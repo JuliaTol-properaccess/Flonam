@@ -1,0 +1,9 @@
+{{/* Donkere paginakop — verwacht dict "eyebrow" "title" "body" (optioneel) */}}
+<section class="relative overflow-hidden bg-ink">
+  <div aria-hidden="true" class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(900px 460px at 75% 15%, rgba(10,143,216,0.2), transparent 70%);"></div>
+  <div class="container-wide py-20 sm:py-24 relative">
+    {{ with .eyebrow }}<span class="section-label !text-gold">{{ . }}</span>{{ end }}
+    <h1 class="text-[2.5rem] sm:text-[3.375rem] font-extrabold tracking-[-0.03em] leading-[1.06] text-white mt-3 mb-5 max-w-[46rem]">{{ .title }}</h1>
+    {{ with .body }}<p class="text-[1.1875rem] leading-[1.6] text-white/70 max-w-[38rem]">{{ . }}</p>{{ end }}
+  </div>
+</section>

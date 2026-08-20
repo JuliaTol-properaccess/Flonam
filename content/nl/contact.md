@@ -1,9 +1,6 @@
 ---
 title: "Contact"
-description: "Neem contact op met Flonam."
+headline: "Stuur een mail en we denken met je mee."
+description: "Vertel kort welke klus tijd kost. Je krijgt antwoord van iemand die het product zelf bouwt."
 url: "/contact/"
 ---
-
-## Contact
-
-Stuur een mail naar [info@flonam.nl](mailto:info@flonam.nl) en we nemen zo snel mogelijk contact op.
