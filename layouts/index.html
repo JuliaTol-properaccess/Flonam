@@ -117,7 +117,7 @@
       <p class="text-[1.125rem] text-white/66 max-w-[32rem]">{{ .body }}</p>
     </div>
     <div class="flex flex-col items-start gap-2.5">
-      <a href="mailto:{{ $email }}" class="btn-gold">{{ $email }}</a>
+      <a href="{{ "contact/" | relLangURL }}" class="btn-gold">{{ $email }}</a>
       <button type="button" data-copy-email="{{ $email }}" class="text-[0.8125rem] font-semibold text-white/45 hover:text-white/75 transition-colors">
         {{ if eq site.Language.Lang "en" }}Or copy the address{{ else }}Of kopieer het adres{{ end }}
       </button>
