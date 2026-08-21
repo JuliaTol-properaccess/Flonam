@@ -1,7 +1,7 @@
 ---
 title: "Over Flonam"
-headline: "Eén focus, miljoenen regels code."
-description: "Flonam is een jong bedrijf, maar de mensen erachter doen dit werk al jaren. We bouwen software die één klus volledig van je overneemt: geen platform waar je in moet stappen, geen implementatietraject, gewoon een product dat werkt op de dag dat je het aanzet."
+headline: "Software voor bedrijven en organisaties."
+description: "Flonam is een jong bedrijf, maar de mensen erachter doen dit werk al jaren. We bouwen software voor één specifieke taak, die je direct kunt gebruiken zodra je hem aanzet."
 url: "/over/"
 
 principles:
@@ -34,6 +34,5 @@ niet kunt gebruiken simpelweg niet af is.
 
 Achter Flonam staat een team van zo'n tien mensen: van ontwikkeling en
 WCAG-audits tot sales en marketing, onder leiding van oprichters Julia
-en Phi. Die omvang houdt ons wendbaar, geen logge organisatie, en geeft
-ons genoeg kennis en capaciteit in huis om projecten snel en grondig
-op te pakken.
+en Phi. Die omvang houdt ons wendbaar en geeft ons genoeg kennis en
+capaciteit om projecten snel op te pakken.

@@ -1,7 +1,7 @@
 ---
 title: "About Flonam"
-headline: "One focus, millions of lines of code."
-description: "Flonam is a young company, but the people behind it have done this work for years. We build software that fully takes one job off your hands: no platform to step into, no implementation project, just a product that works the day you turn it on."
+headline: "Software for businesses and organisations."
+description: "Flonam is a young company, but the people behind it have done this work for years. We build software for one specific task, ready to use the moment you turn it on."
 url: "/en/about/"
 
 principles:
@@ -34,6 +34,5 @@ screen reader simply isn't finished.
 
 Behind Flonam is a team of around ten people: from development and
 WCAG audits to sales and marketing, led by founders Julia and Phi.
-That size keeps us agile, not a heavy organisation, while giving us
-enough knowledge and capacity in-house to pick up projects quickly
-and thoroughly.
+That size keeps us agile and gives us enough knowledge and capacity
+to pick up projects quickly.
