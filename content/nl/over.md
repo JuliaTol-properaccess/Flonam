@@ -1,7 +1,7 @@
 ---
 title: "Over Flonam"
-headline: "Software voor bedrijven en organisaties."
-description: "Flonam is een jong bedrijf, maar de mensen erachter doen dit werk al jaren. We bouwen software voor één specifieke taak, die je direct kunt gebruiken zodra je hem aanzet."
+headline: "Het bedrijf achter de producten."
+description: "Flonam is een jong bedrijf, maar de mensen erachter doen dit werk al jaren. Hieronder lees je wie we zijn en hoe we werken."
 url: "/over/"
 
 principles:

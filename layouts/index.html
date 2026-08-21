@@ -58,53 +58,27 @@
 {{ end }}
 
 
-{{/* ─── PRODUCT SPOTLIGHTS — waar we nu aan bouwen (dashboards-framing) ─── */}}
-{{ partial "producten.html" (index site.Data.producten site.Language.Lang) }}
-
-{{/* ─── FAQ — echte accordion (open/dicht per vraag) ─── */}}
-{{ with .Params.faq }}
-<section class="bg-room border-t border-line">
-  <div class="container-narrow py-20 sm:py-24">
-    <p class="section-label">{{ .label }}</p>
-    <h2 class="section-title mb-10">{{ .title }}</h2>
-    <div class="flex flex-col gap-3" data-faq-group>
-      {{ range $idx, $item := .items }}
-        <div class="bg-white border border-line" data-faq-item>
-          <button type="button" class="w-full flex items-center justify-between gap-5 px-6 py-5 text-left" data-faq-trigger aria-expanded="{{ if eq $idx 0 }}true{{ else }}false{{ end }}">
-            <span class="font-display text-[1.125rem] font-bold tracking-[-0.01em] text-ink-900">{{ $item.q }}</span>
-            <span class="text-[1.375rem] leading-none text-blue font-bold shrink-0" data-faq-sign>{{ if eq $idx 0 }}&minus;{{ else }}+{{ end }}</span>
-          </button>
-          <div data-faq-panel class="grid transition-[grid-template-rows] duration-300 ease-in-out" style="grid-template-rows: {{ if eq $idx 0 }}1fr{{ else }}0fr{{ end }};">
-            <div class="overflow-hidden">
-              <p class="px-6 pb-6 text-[1.03125rem] leading-[1.65] text-muted max-w-[45rem]">
-                {{ $item.a }}
-                {{ with $item.link_url }}<a href="{{ . }}" class="ml-1 font-semibold text-blue hover:text-blue-800">{{ $item.link_label }} →</a>{{ end }}
-              </p>
-            </div>
-          </div>
-        </div>
+{{/* ─── PRODUCT TEASER — korte preview, volledige uitwerking staat op /producten/ ─── */}}
+<section id="producten" class="bg-white border-t border-line">
+  <div class="container-wide py-20 sm:py-24">
+    <p class="section-label">{{ if eq site.Language.Lang "en" }}What's live{{ else }}Wat er draait{{ end }}</p>
+    <h2 class="section-title mb-10">{{ if eq site.Language.Lang "en" }}Two products, ready to use today.{{ else }}Twee producten, vandaag te gebruiken.{{ end }}</h2>
+    <div class="grid gap-5 sm:grid-cols-2">
+      {{ range (index site.Data.producten site.Language.Lang).items }}
+        {{ $external := hasPrefix .url "http" }}
+        <a href="{{ .url }}"{{ if $external }} target="_blank" rel="noopener"{{ end }} class="card-base group">
+          <div class="h-[4px] -mt-8 -mx-8 mb-6" style="background:{{ .color }}"></div>
+          <span class="font-mono text-[0.6875rem] font-semibold tracking-[0.1em] text-taupe">{{ .tag }}</span>
+          <h3 class="text-[1.5rem] font-extrabold tracking-[-0.02em] mt-2 mb-2 group-hover:text-blue transition-colors">{{ .title }}</h3>
+          <p class="text-[0.9375rem] text-muted leading-[1.5]">{{ .statusLine }}</p>
+        </a>
       {{ end }}
     </div>
+    <a href="{{ "producten/" | relLangURL }}" class="inline-flex items-center gap-2 mt-8 font-semibold text-blue hover:text-blue-800">
+      {{ if eq site.Language.Lang "en" }}All products{{ else }}Alle producten{{ end }} <span>→</span>
+    </a>
   </div>
 </section>
-<script>
-  (function () {
-    document.querySelectorAll('[data-faq-group]').forEach(function (group) {
-      group.querySelectorAll('[data-faq-trigger]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var item = btn.closest('[data-faq-item]');
-          var panel = item.querySelector('[data-faq-panel]');
-          var sign = item.querySelector('[data-faq-sign]');
-          var isOpen = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', String(!isOpen));
-          panel.style.gridTemplateRows = isOpen ? '0fr' : '1fr';
-          sign.textContent = isOpen ? '+' : '−';
-        });
-      });
-    });
-  })();
-</script>
-{{ end }}
 
 {{/* ─── SLOT-CTA ─── */}}
 {{ with .Params.cta }}

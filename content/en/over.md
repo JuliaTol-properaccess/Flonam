@@ -1,7 +1,7 @@
 ---
 title: "About Flonam"
-headline: "Software for businesses and organisations."
-description: "Flonam is a young company, but the people behind it have done this work for years. We build software for one specific task, ready to use the moment you turn it on."
+headline: "The company behind the products."
+description: "Flonam is a young company, but the people behind it have done this work for years. Below you'll find out who we are and how we work."
 url: "/en/about/"
 
 principles:

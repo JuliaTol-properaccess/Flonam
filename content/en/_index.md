@@ -7,24 +7,9 @@ hero:
   badge: "LIVE · 2 PRODUCTS"
   title: "One job at a time,"
   titleAccent: "properly built."
-  body: "Flonam builds SaaS for businesses and organisations, regardless of sector or size. Each product stands on its own: its own name, its own site, no bundle around it."
+  body: "Flonam builds software that fully takes one task off your hands, for businesses and organisations of any size."
   cta_primary: "See what's live"
   terminal_summary: "2 live · 0 implementation projects · 0 bundles"
-
-faq:
-  label: "Frequently asked questions"
-  title: "What you want to know."
-  items:
-    - q: "Why separate products instead of one platform?"
-      a: "Every Flonam product stands on its own. You don't need to buy a bundle to solve one problem, and you're never locked in."
-    - q: "What happens to my data if I stop?"
-      a: "Your data stays yours. You can take it with you at any time, in a format you can use elsewhere."
-    - q: "Do I need an implementation project?"
-      a: "No. Our products work the moment you turn them on, no onboarding project or consultants."
-    - q: "Do you have any customers yet?"
-      a: "No customer cases yet, but proven experience. Flonam is a young company, the team behind it isn't."
-      link_label: "More about us"
-      link_url: "/en/about/"
 
 cta:
   title: "Questions? Feel free to email."

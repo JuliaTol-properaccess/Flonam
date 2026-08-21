@@ -1,13 +1,13 @@
-{{/* Producten — "waar we nu aan bouwen", dashboards-framing per feedback Julia. Verwacht (index site.Data.producten LANG) als context. */}}
+{{/* Producten — volledige uitwerking per product, alleen gebruikt op de Producten-pagina zelf. Verwacht (index site.Data.producten LANG) als context. */}}
 {{ with . }}
-<section id="producten" class="bg-white">
-  <div class="container-wide pt-24 pb-4">
-    <p class="section-label">{{ .label }}</p>
-    <h2 class="section-title mb-4">{{ .title }}</h2>
-    {{ with .body }}<p class="text-[1.125rem] text-muted leading-[1.6] max-w-[42rem]">{{ . }}</p>{{ end }}
-  </div>
+<section class="bg-white">
+  {{ with .body }}
+    <div class="container-wide pt-16 pb-4">
+      <p class="text-[1.125rem] text-muted leading-[1.6] max-w-[42rem]">{{ . }}</p>
+    </div>
+  {{ end }}
 
-  <div class="container-wide pt-14 pb-24 flex flex-col gap-7">
+  <div class="container-wide pt-10 pb-24 flex flex-col gap-7">
     {{ range $idx, $p := .items }}
       {{ $isOdd := eq (mod $idx 2) 1 }}
       {{ $external := hasPrefix $p.url "http" }}
