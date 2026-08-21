@@ -8,7 +8,7 @@ hero:
   titleAccent: "grondig gebouwd."
   body: "Flonam bouwt software die één taak volledig overneemt, voor bedrijven en organisaties van elke omvang."
   cta_primary: "Bekijk wat er draait"
-  terminal_summary: "2 live · 0 implementatietrajecten · 0 pakketten"
+  terminal_summary: "2 live · 1 in ontwikkeling"
 
 
 cta:

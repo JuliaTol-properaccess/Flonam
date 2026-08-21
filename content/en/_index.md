@@ -9,7 +9,7 @@ hero:
   titleAccent: "properly built."
   body: "Flonam builds software that fully takes one task off your hands, for businesses and organisations of any size."
   cta_primary: "See what's live"
-  terminal_summary: "2 live · 0 implementation projects · 0 bundles"
+  terminal_summary: "2 live · 1 in development"
 
 cta:
   title: "Questions? Feel free to email."
