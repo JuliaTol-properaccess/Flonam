@@ -1,0 +1,64 @@
+{{ define "main" }}
+{{- $c := site.Params.contact -}}
+{{ partial "intro.html" . }}
+
+<div class="rule-top">
+  <div class="container split">
+    <div class="contact">
+      <div class="contact__mail">
+        <a class="contact__address" href="mailto:{{ $c.email }}">{{ $c.email }}</a>
+        <button type="button" class="btn-outline btn-outline--sm" data-copy="{{ $c.email }}" data-copied="{{ i18n "copied" }}" data-announce="{{ i18n "copied_announce" }}" data-failed="{{ i18n "copy_failed" }}">
+          <span data-copy-label>{{ i18n "copy_address" }}</span><span class="accent" aria-hidden="true" data-kbd-copy>⌘C</span>
+        </button>
+      </div>
+      <dl class="details">
+        <div><dt>{{ i18n "detail_address" }}</dt><dd>{{ $c.address }}</dd></div>
+        <div><dt>{{ i18n "detail_kvk" }}</dt><dd>{{ $c.kvk }}</dd></div>
+        <div><dt>{{ i18n "detail_reply" }}</dt><dd>{{ i18n "detail_reply_value" }}</dd></div>
+      </dl>
+    </div>
+
+    <section class="panel" aria-labelledby="form-title">
+      <h2 class="panel__bar panel__bar--plain" id="form-title">{{ i18n "form_title" }}</h2>
+      {{- /* Zonder formEndpoint (hugo.toml) valt het formulier terug op mailto. */ -}}
+      {{- $endpoint := $c.formEndpoint -}}
+      <form class="form" data-contact-form
+        {{- if $endpoint }} action="{{ $endpoint }}" method="POST" data-endpoint="{{ $endpoint }}"
+        {{- else }} action="mailto:{{ $c.email }}" method="POST" enctype="text/plain"{{ end }}
+        data-to="{{ $c.email }}"
+        data-subject="{{ i18n "form_subject" }}"
+        data-err-email="{{ i18n "form_err_email" }}"
+        data-err-message="{{ i18n "form_err_message" }}"
+        data-err-send="{{ i18n "form_err_send" }}"
+        data-sending="{{ i18n "form_sending" }}">
+        <p class="form__hint">{{ i18n "form_required" }}</p>
+        <input type="hidden" name="_subject" value="{{ i18n "form_subject" }}">
+        <div class="form__hp" aria-hidden="true"><label>website <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+
+        <div class="field">
+          <label for="f-name">{{ i18n "form_name" }}</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="{{ i18n "form_name_ph" }}">
+        </div>
+        <div class="field">
+          <label for="f-email">{{ i18n "form_email" }}</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="{{ i18n "form_email_ph" }}">
+          <p class="field__error" id="f-email-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="f-message">{{ i18n "form_message" }}</label>
+          <textarea id="f-message" name="message" rows="5" required placeholder="{{ i18n "form_message_ph" }}"></textarea>
+          <p class="field__error" id="f-message-error" hidden></p>
+        </div>
+        <p class="field__error" data-form-error role="alert" hidden></p>
+        <button type="submit" class="btn-primary btn-primary--start" data-submit><span data-submit-label>{{ i18n "form_submit" }}</span> <span class="sym" data-sym="↵" aria-hidden="true"></span></button>
+      </form>
+
+      <div class="form-done" data-form-done hidden>
+        <h3 class="form-done__title" tabindex="-1" data-done-title><span class="accent sym" data-sym="✓ " aria-hidden="true"></span><span data-done-text data-sent="{{ i18n "form_sent" }}" data-mailto="{{ i18n "form_mailto" }}">{{ i18n "form_sent" }}</span></h3>
+        <p class="form-done__body" data-done-body data-sent="{{ i18n "form_sent_body" }}" data-mailto="{{ i18n "form_mailto_body" }}"></p>
+        <button type="button" class="form-done__again" data-form-reset>{{ i18n "form_again" }}</button>
+      </div>
+    </section>
+  </div>
+</div>
+{{ end }}

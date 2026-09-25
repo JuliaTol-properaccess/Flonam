@@ -1,38 +1,35 @@
 ---
-title: "About Flonam"
-headline: "The company behind the products."
-description: "Flonam is a young company, but the people behind it have done this work for years. Below you'll find out who we are and how we work."
+title: "About us"
+headline: "The company behind the products"
+headlineEnd: "."
+prompt: "cat ./about.md"
+description: "Flonam is a young company, but the people behind it have been doing this work for years."
 url: "/en/about/"
+layout: "over"
 
-principles:
-  - no: "01"
-    title: "One job, fully done"
-    body: "No broad suite. A product that takes one recurring task fully off your hands."
-  - no: "02"
-    title: "Your data stays yours"
-    body: "Take it with you whenever you want, stop whenever you want. No lock-in as a business model."
-  - no: "03"
-    title: "Live within a day"
-    body: "No implementation project. Turn it on, fill it in, use it."
-  - no: "04"
-    title: "Accessible from line one"
-    body: "WCAG 2.2 AA is the starting point, not a sprint at the end."
+how:
+  title: "How we work"
+  panel: "$ git log --oneline how-we-work"
+  steps:
+    - { hash: "a1f3c0", text: "job: what's costing time now?", n: "01" }
+    - { hash: "7be21d", text: "scope: which step can go?", n: "02" }
+    - { hash: "c94e08", text: "build: the smallest thing that finishes it", n: "03" }
+    - { hash: "e02a9b", text: "deploy: live, within a day", n: "04" }
+    - { hash: "HEAD →", text: "iterate: with the people who use it", n: "∞" }
+
+team:
+  kicker: "TEAM · 10"
+  title: "From development and design to sales and marketing."
+  body: "Small enough to stay agile, big enough to pick up projects quickly. Led by founders Julia and Phi."
+  members:
+    - { name: "Julia Tol", role: "co-founder · tech", img: "/images/team/julia.webp", color: "yellow" }
+    - { name: "Phi Pham", role: "co-founder · commercial", img: "/images/team/phi.jpeg", color: "blue", position: "50% 14%" }
 ---
 
-## How we work
+We start with the job, not the feature list. What's costing time now,
+which step can go, what needs to stay? Then we build the smallest thing
+that finishes that job, put it live and improve it with the people who
+use it.
 
-We start with the job, not the feature list. What's costing time right
-now, which step can go, what needs to stay? Then we build the smallest
-thing that finishes that job, put it live, and improve it with the
-people who use it.
-
-Accessibility is in from the first line of code. Not because it's
-required, but because a product you can't use with a keyboard or a
-screen reader simply isn't finished.
-
-## The team
-
-Behind Flonam is a team of around ten people: from development and
-WCAG audits to sales and marketing, led by founders Julia and Phi.
-That size keeps us agile and gives us enough knowledge and capacity
-to pick up projects quickly.
+Accessibility is in from the first line of code. A product you can't use
+with a keyboard or a screen reader simply isn't finished.

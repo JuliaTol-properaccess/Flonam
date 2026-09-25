@@ -1,0 +1,105 @@
+# UI-strings van het Console-ontwerp. Paginacopy staat in content/, productdata in data/.
+
+# — algemeen —
+skip_link = "Ga naar inhoud"
+new_tab = "(opent in nieuw tabblad)"
+to_home = "naar home"
+
+# — header —
+nav_main = "Hoofdmenu"
+nav_home = "Home"
+lang_switch = "Taal"
+lang_switch_to = "Switch to English"
+search = "Zoeken"
+search_open = "Zoeken openen"
+
+# — contactband —
+band_text = "Vragen over een van onze producten? Stuur gerust een mail."
+band_cta = "Naar contact"
+
+# — footer —
+footer_tagline = "Datagedreven SaaS voor het MKB."
+footer_nav = "Navigatie"
+footer_products = "Producten"
+footer_contact = "Contact"
+footer_built = "wcag 2.2 AA · gebouwd in Emmeloord"
+footer_privacy = "privacy"
+kvk = "KVK"
+
+# — sectie-koppen die alleen voor schermlezers zijn —
+principles_heading = "Uitgangspunten"
+
+# — home-terminal —
+term_title = "flonam — zsh — 80×24"
+term_pause = "pauzeer animatie"
+term_play = "hervat animatie"
+term_col_product = "PRODUCT"
+term_col_state = "STATE"
+term_col_uptime = "UPTIME"
+term_col_p95 = "P95"
+term_state_live = "live"
+term_state_build = "build"
+term_checks = "wcag 2.2 AA checks passed"
+term_live = "live"
+term_live_in = "live in {{ .Seconds }}s"
+
+# — producten —
+live = "LIVE"
+live_lower = "live"
+in_build = "IN BUILD"
+chart_footnote = "// actuele cijfers op eaa-monitor.nl"
+chart_week = "week {{ .Week }}"
+chart_no_value = "nog geen meting"
+progress_label = "Voortgang {{ .Name }}"
+
+# — contactpagina —
+copy_address = "kopieer adres"
+copied = "✓ gekopieerd"
+copied_announce = "E-mailadres gekopieerd naar het klembord"
+copy_failed = "Kopiëren lukte niet. Het adres is info@flonam.nl"
+detail_address = "adres"
+detail_kvk = "kvk"
+detail_reply = "reactie"
+detail_reply_value = "binnen 2 werkdagen"
+
+form_title = "nieuw_bericht.txt"
+form_required = "// e-mail en bericht zijn verplicht"
+form_name = "naam"
+form_name_ph = "Je naam"
+form_email = "e-mail"
+form_email_ph = "jij@bedrijf.nl"
+form_message = "welke klus kost je nu tijd?"
+form_message_ph = "Bijv. elke week handmatig offertes overtikken…"
+form_submit = "Verstuur"
+form_sending = "Versturen…"
+form_subject = "Contact via flonam.nl"
+form_err_email = "vul een geldig e-mailadres in"
+form_err_message = "vertel kort welke klus het is"
+form_err_send = "versturen mislukte. Probeer het nog eens of mail info@flonam.nl"
+form_sent = "bericht verstuurd"
+form_sent_body = "→ je hoort binnen 2 werkdagen van ons"
+form_mailto = "je mailprogramma is geopend"
+form_mailto_body = "→ verstuur de mail om je bericht af te ronden"
+form_again = "$ nog een bericht"
+
+# — ⌘K-palet —
+palette_label = "Zoeken"
+palette_placeholder = "Waar ben je naar op zoek?"
+palette_close = "Sluiten"
+palette_results = "Resultaten"
+palette_hint_nav = "↑↓ navigeren"
+palette_hint_open = "↵ openen"
+palette_hint_close = "esc sluiten"
+palette_empty = "Niets gevonden voor “{q}”. Mail info@flonam.nl — misschien bouwen we het."
+palette_count = "{n} resultaten"
+palette_count_one = "1 resultaat"
+palette_home_sub = "Terug naar het begin"
+palette_home_kw = "home start begin"
+palette_producten_sub = "Alles wat er draait"
+palette_producten_kw = "producten overzicht"
+palette_over_sub = "Julia, Phi en het team"
+palette_over_kw = "over team wie werkwijze"
+palette_contact_sub = "Vertel ons welke klus je kwijt wilt"
+palette_contact_kw = "contact mail maatwerk vraag"
+palette_copy = "E-mailadres kopiëren"
+palette_copy_kw = "mail kopieer email adres"

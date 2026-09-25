@@ -1,36 +1,59 @@
-body: "Flonam bouwt onder andere interactieve dashboards die bedrijven en organisaties inzicht geven in hun operationele processen. EAA-monitor.nl is daar een voorbeeld van."
+# Producten — gebruikt op Home ("Wat er draait"), Producten, in de footer, de home-terminal en het ⌘K-palet.
+# Meetwaarden (uptime, P95, percentages …) staan los in data/metrics.yaml.
 items:
-  - title: "EAA-monitor.nl"
-    tag: "DASHBOARD · LIVE"
-    color: "#0A8FD8"
-    kind: "dashboard"
-    statusLine: "wekelijkse meting per sector"
-    intro: "Houdt per sector bij hoe Nederland ervoor staat met de toegankelijkheidswet. In gewone taal: voor wie de wet geldt, waar toezichthouders op letten en wat je zelf kunt doen."
+  - id: "eaa-monitor"
+    title: "EAA-monitor.nl"
+    kind: "DASHBOARD"
+    url: "https://eaa-monitor.nl"
+    summary: "Wekelijks, onafhankelijk gemeten: hoe staat Nederland ervoor met de toegankelijkheidswet? In gewone taal, per sector."
+    intro: "Houdt per sector bij hoe Nederland ervoor staat met de toegankelijkheidswet. Voor wie de wet geldt, waar toezichthouders op letten en wat je zelf kunt doen."
     features:
       - "Wekelijkse, onafhankelijke meting per sector"
       - "Uitleg in gewone taal, geen juridisch jargon"
-      - "Onafhankelijke meting, zonder verkooppraatje"
+      - "Zonder verkooppraatje"
+    cta: "Naar EAA-monitor.nl"
+    # Metaregel op de productkaart. `metric` verwijst naar data/metrics.yaml en wordt weggelaten zolang die leeg is.
+    meta:
+      - { k: "last_run", metric: "last_run" }
+      - { k: "sectors", v: "5" }
+      - { k: "uptime", metric: "uptime" }
+    panel: "chart"
+    panel_title: "meting_per_sector.csv"
     sectors:
-      - name: "Rijksoverheid"
-        pct: 78
-      - name: "Gemeenten"
-        pct: 61
-      - name: "Cultuur"
-        pct: 47
-      - name: "E-commerce"
-        pct: 34
-      - name: "Zorg"
-        pct: 29
-    url: "https://eaa-monitor.nl"
-  - title: "MKB-offerte.nl"
-    tag: "TOOL · LIVE"
-    color: "#FEC502"
-    kind: "screenshot"
-    screenshot: "mkb-offerte"
-    statusLine: "WCAG 2.2 AA · digitaal ondertekenen"
-    intro: "Offertes maken en opvolgen zonder avondklus. Plak de aanvraag van je klant erin en binnen tien minuten staat er een voorstel klaar dat je klant direct online ondertekent."
+      - { id: "rijksoverheid", name: "Rijksoverheid" }
+      - { id: "gemeenten", name: "Gemeenten" }
+      - { id: "cultuur", name: "Cultuur" }
+      - { id: "e-commerce", name: "E-commerce" }
+      - { id: "zorg", name: "Zorg" }
+    palette:
+      title: "Geldt de toegankelijkheidswet voor mij?"
+      keywords: "eaa wcag toegankelijkheid wet european accessibility act"
+  - id: "mkb-offerte"
+    title: "MKB-offerte.nl"
+    kind: "TOOL"
+    url: "https://mkb-offerte.nl"
+    summary: "Plak de aanvraag van je klant erin. Binnen tien minuten staat er een offerte klaar die je klant online ondertekent."
+    intro: "Offertes maken en opvolgen zonder avondklus. Plak de aanvraag erin en binnen tien minuten staat er een voorstel klaar dat je klant direct online ondertekent."
     features:
       - "Offerte in 10 minuten, ook vanaf je telefoon"
       - "Klant ondertekent direct in de browser"
-      - "WCAG 2.2 AA-proof, ook met een beperking te gebruiken"
-    url: "https://mkb-offerte.nl"
+      - "WCAG 2.2 AA — ook met een beperking te gebruiken"
+    cta: "Naar MKB-offerte.nl"
+    meta:
+      - { k: "avg_time", metric: "avg_time" }
+      - { k: "e-sign", v: "ja" }
+      - { k: "wcag", v: "2.2 AA" }
+    panel: "screenshot"
+    panel_title: "mkb-offerte.nl/app"
+    screenshot: "/images/screenshots/mkb-offerte-hero.png"
+    screenshot_alt: "Screenshot van MKB-offerte.nl"
+    palette:
+      title: "Offerte maken en laten ondertekenen"
+      keywords: "offerte tekenen klant ondertekenen voorstel"
+
+# Product in ontwikkeling: teaser onderaan Producten en een regel in de home-terminal.
+upcoming:
+  id: "product-03"
+  name: "product-03"
+  code: "03 · ???"
+  cta: "Als eerste meekijken? → mail ons"

@@ -1,0 +1,87 @@
+{{ define "main" }}
+{{- $data := index hugo.Data.producten site.Language.Lang -}}
+{{- $m := hugo.Data.metrics -}}
+{{- $prod := "/producten/" -}}
+{{- with site.GetPage "/producten" }}{{ $prod = .RelPermalink }}{{ end -}}
+{{- $contact := "/contact/" -}}
+{{- with site.GetPage "/contact" }}{{ $contact = .RelPermalink }}{{ end -}}
+
+{{- /* Terminalregels. Kolommen met meetwaarden verschijnen alleen als data/metrics.yaml gevuld is. */ -}}
+{{- $showUptime := false }}{{ $showP95 := false -}}
+{{- range $data.items }}{{ with index $m.products .id }}{{ if .uptime }}{{ $showUptime = true }}{{ end }}{{ if .p95 }}{{ $showP95 = true }}{{ end }}{{ end }}{{ end -}}
+{{- $head := printf "  %-17s%-8s" (i18n "term_col_product") (i18n "term_col_state") -}}
+{{- if $showUptime }}{{ $head = printf "%s%-9s" $head (i18n "term_col_uptime") }}{{ end -}}
+{{- if $showP95 }}{{ $head = printf "%s%s" $head (i18n "term_col_p95") }}{{ end -}}
+{{- $lines := slice (dict "a" "$ " "t" "flonam status --all" "d" "") (dict "a" "" "t" "" "d" $head) -}}
+{{- range $data.items -}}
+  {{- $pm := index $m.products .id | default dict -}}
+  {{- $t := printf "%-17s%-8s" (lower .title) (i18n "term_state_live") -}}
+  {{- if $showUptime }}{{ $t = printf "%s%-9s" $t ($pm.uptime | default "—") }}{{ end -}}
+  {{- $lines = $lines | append (dict "a" "● " "t" $t "d" (cond $showP95 ($pm.p95 | default "—") "")) -}}
+{{- end -}}
+{{- with $data.upcoming -}}
+  {{- $progress := (index $m.products .id | default dict).progress -}}
+  {{- $bar := "" -}}
+  {{- if $progress }}{{ $n := div (mul (int $progress) 10) 100 }}{{ $bar = printf "%d%% %s%s" (int $progress) (strings.Repeat $n "█") (strings.Repeat (sub 10 $n) "░") }}{{ end -}}
+  {{- $lines = $lines | append (dict "a" "◐ " "t" (printf "%-17s%-8s" .name (i18n "term_state_build")) "d" $bar) -}}
+{{- end -}}
+{{- $deploy := $m.deploy -}}
+{{- $target := "" }}{{ range $data.items }}{{ if eq .id $deploy.product }}{{ $target = lower .title }}{{ end }}{{ end -}}
+{{- $lines = $lines | append (dict "a" "" "t" "" "d" " ") (dict "a" "$ " "t" (printf "flonam deploy %s --prod" $deploy.product) "d" "") -}}
+{{- $lines = $lines | append (dict "a" "✓ " "t" (i18n "term_checks") "d" (cond (ne $deploy.wcag_checks nil) (printf "  (%v)" $deploy.wcag_checks) "")) -}}
+{{- $liveText := i18n "term_live" }}{{ with $deploy.seconds }}{{ $liveText = i18n "term_live_in" (dict "Seconds" .) }}{{ end -}}
+{{- $lines = $lines | append (dict "a" "✓ " "t" $liveText "d" (printf "  → %s" $target)) -}}
+
+<div class="container hero">
+  <div class="hero__text">
+    <p class="status"><span class="live-dot" aria-hidden="true"></span>{{ .Params.hero.status }}</p>
+    <h1 class="h1 h1--hero">{{ .Params.hero.title }}<span class="accent">{{ .Params.hero.titleEnd }}</span></h1>
+    <p class="lead">{{ .Params.hero.body }}</p>
+    <div class="actions">
+      <a class="btn-primary" href="{{ $prod }}">{{ .Params.hero.cta_primary }} <span class="sym" data-sym="→" aria-hidden="true"></span></a>
+      <a class="btn-outline" href="{{ $contact }}">{{ site.Params.contact.email }}</a>
+    </div>
+  </div>
+
+  <div class="term" data-terminal>
+    <div class="term__bar">
+      <span class="term__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="term__title" aria-hidden="true">{{ i18n "term_title" }}</span>
+      <button type="button" class="term__pause" data-terminal-toggle data-label-pause="{{ i18n "term_pause" }}" data-label-play="{{ i18n "term_play" }}" hidden>{{ i18n "term_pause" }}</button>
+    </div>
+    <p class="sr-only">{{ .Params.hero.terminal_alt }}</p>
+    {{- /* <pre>: de minifier laat witruimte (kolomuitlijning) hierin met rust. */}}
+    <pre class="term__body" aria-hidden="true">
+      {{- range $lines -}}
+      <span class="term__line" data-line><span class="t-a sym" data-sym="{{ .a }}"></span><span>{{ .t }}</span><span class="t-d">{{ .d }}</span></span>
+      {{- end -}}
+      <span class="term__line"><span class="t-a">$ </span><span class="cursor"></span></span></pre>
+  </div>
+</div>
+
+{{ partial "principles.html" . }}
+
+<section class="container section" aria-labelledby="running-heading">
+  <div class="section__head">
+    <h2 class="h2" id="running-heading">{{ .Params.running.title }}</h2>
+    <a class="link-mono" href="{{ $prod }}">{{ .Params.running.link }} <span class="sym" data-sym="→" aria-hidden="true"></span></a>
+  </div>
+  <ul class="cards" role="list">
+    {{- range $data.items }}
+    {{- $pm := index $m.products .id | default dict }}
+    {{- $meta := slice }}
+    {{- range .meta }}{{ $k := .k }}{{ if .metric }}{{ with index $pm .metric }}{{ $meta = $meta | append (printf "%s: %v" $k .) }}{{ end }}{{ else }}{{ $meta = $meta | append (printf "%s: %s" .k .v) }}{{ end }}{{ end }}
+    <li class="card">
+      <a class="card__link" href="{{ $prod }}#{{ .id }}">
+        <span class="card__kicker"><span>{{ .kind }}</span><span class="card__live"><span class="sym" data-sym="● " aria-hidden="true"></span>{{ i18n "live" }}</span></span>
+        <h3 class="card__title">{{ .title }}</h3>
+        <span class="card__text">{{ .summary }}</span>
+        {{- with $meta }}
+        <span class="card__meta">{{ delimit . " · " }}</span>
+        {{- end }}
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{ end }}

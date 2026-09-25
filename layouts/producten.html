@@ -1,0 +1,75 @@
+{{ define "main" }}
+{{- $data := index hugo.Data.producten site.Language.Lang -}}
+{{- $m := hugo.Data.metrics -}}
+{{- $contact := "/contact/" -}}
+{{- with site.GetPage "/contact" }}{{ $contact = .RelPermalink }}{{ end -}}
+
+{{ partial "intro.html" . }}
+
+{{- range $i, $p := $data.items }}
+<section class="rule-top" id="{{ $p.id }}" aria-labelledby="{{ $p.id }}-title">
+  <div class="container split split--center">
+    <div class="product">
+      <p class="kicker"><span>{{ printf "%02d" (add $i 1) }} · {{ $p.kind }}</span><span class="kicker__live"><span class="sym" data-sym="● " aria-hidden="true"></span>{{ i18n "live" }}</span></p>
+      <h2 class="h2" id="{{ $p.id }}-title">{{ $p.title }}</h2>
+      <p class="product__intro">{{ $p.intro }}</p>
+      <ul class="checks" role="list">
+        {{- range $p.features }}
+        <li><span class="checks__mark sym" data-sym="✓" aria-hidden="true"></span>{{ . }}</li>
+        {{- end }}
+      </ul>
+      <a class="btn-primary btn-primary--start" href="{{ $p.url }}" target="_blank" rel="noopener">{{ $p.cta }} <span class="sym" data-sym="↗" aria-hidden="true"></span><span class="sr-only"> {{ i18n "new_tab" }}</span></a>
+    </div>
+
+    {{- if eq $p.panel "chart" }}
+    {{- /* Percentages uit data/metrics.yaml; leeg = nog geen meting, dan tonen we geen verzonnen balk. */ -}}
+    {{- $vals := slice }}
+    {{- range $p.sectors }}{{ with index $m.eaa.sectors .id }}{{ $vals = $vals | append . }}{{ end }}{{ end }}
+    {{- $min := cond (gt (len $vals) 0) (index (sort $vals) 0) -1 }}
+    <figure class="panel">
+      <div class="panel__bar"><span>{{ $p.panel_title }}</span>{{ with $m.eaa.week }}<span>{{ i18n "chart_week" (dict "Week" .) }}</span>{{ end }}</div>
+      <ul class="chart" role="list">
+        {{- range $p.sectors }}
+        {{- $v := index $m.eaa.sectors .id }}
+        <li class="chart__row">
+          <span class="chart__name">{{ .name }}</span>
+          {{- if ne $v nil }}
+          <span class="chart__bar{{ if eq $v $min }} chart__bar--low{{ end }}" style="width:{{ $v }}%" aria-hidden="true"></span>
+          <span class="chart__val">{{ $v }}%</span>
+          {{- else }}
+          <span class="chart__track" aria-hidden="true"></span>
+          <span class="chart__val"><span aria-hidden="true">—</span><span class="sr-only">{{ i18n "chart_no_value" }}</span></span>
+          {{- end }}
+        </li>
+        {{- end }}
+      </ul>
+      <figcaption class="panel__foot">{{ i18n "chart_footnote" }}</figcaption>
+    </figure>
+    {{- else if eq $p.panel "screenshot" }}
+    <figure class="panel">
+      <div class="panel__bar"><span>{{ $p.panel_title }}</span><span class="kicker__live" aria-hidden="true">● {{ i18n "live_lower" }}</span></div>
+      <img class="panel__img" src="{{ $p.screenshot }}" alt="{{ $p.screenshot_alt }}" width="1425" height="875" loading="lazy" decoding="async">
+    </figure>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+
+{{- with $data.upcoming }}
+{{- $progress := (index $m.products .id | default dict).progress }}
+<section class="rule-top" aria-labelledby="upcoming-title">
+  <div class="container teaser">
+    <div class="teaser__text">
+      <p class="kicker"><span>{{ .code }}</span><span><span class="sym" data-sym="◐ " aria-hidden="true"></span>{{ i18n "in_build" }}</span></p>
+      <h2 class="teaser__name" id="upcoming-title">{{ .name }}</h2>
+      {{- if ne $progress nil }}
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ $progress }}" aria-label="{{ i18n "progress_label" (dict "Name" .name) }}"><div class="progress__fill" style="width:{{ $progress }}%"></div></div>
+      {{- else }}
+      <div class="progress" aria-hidden="true"></div>
+      {{- end }}
+    </div>
+    <a class="btn-outline" href="{{ $contact }}">{{ .cta }}</a>
+  </div>
+</section>
+{{- end }}
+{{ end }}

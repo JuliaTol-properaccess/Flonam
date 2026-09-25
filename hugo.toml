@@ -1,52 +1,63 @@
 baseURL = "https://flonam.nl/"
 title = "Flonam"
-languageCode = "nl"
+locale = "nl"
 defaultContentLanguage = "nl"
 defaultContentLanguageInSubdir = false
 timeZone = "Europe/Amsterdam"
+disableKinds = ["taxonomy", "term", "rss"]
 
 [languages]
   [languages.nl]
-    languageName = "Nederlands"
+    label = "Nederlands"
+    locale = "nl"
     weight = 1
     contentDir = "content/nl"
     [languages.nl.params]
       description = "Wij bouwen datagedreven SaaS-oplossingen voor bedrijven en organisaties."
     [[languages.nl.menus.main]]
+      identifier = "home"
       name = "Home"
       url = "/"
       weight = 1
     [[languages.nl.menus.main]]
+      identifier = "over"
       name = "Over ons"
       url = "/over/"
-      weight = 2
-    [[languages.nl.menus.main]]
-      name = "Producten"
-      url = "/producten/"
       weight = 3
     [[languages.nl.menus.main]]
+      identifier = "producten"
+      name = "Producten"
+      url = "/producten/"
+      weight = 2
+    [[languages.nl.menus.main]]
+      identifier = "contact"
       name = "Contact"
       url = "/contact/"
       weight = 4
   [languages.en]
-    languageName = "English"
+    label = "English"
+    locale = "en"
     weight = 2
     contentDir = "content/en"
     [languages.en.params]
       description = "We build data-driven SaaS solutions for businesses and organisations."
     [[languages.en.menus.main]]
+      identifier = "home"
       name = "Home"
       url = "/en/"
       weight = 1
     [[languages.en.menus.main]]
+      identifier = "over"
       name = "About us"
       url = "/en/about/"
-      weight = 2
-    [[languages.en.menus.main]]
-      name = "Products"
-      url = "/en/products/"
       weight = 3
     [[languages.en.menus.main]]
+      identifier = "producten"
+      name = "Products"
+      url = "/en/products/"
+      weight = 2
+    [[languages.en.menus.main]]
+      identifier = "contact"
       name = "Contact"
       url = "/en/contact/"
       weight = 4
@@ -61,24 +72,16 @@ timeZone = "Europe/Amsterdam"
     startLevel = 2
     endLevel = 4
 
-[build]
-  [build.buildStats]
-    enable = true
-  [[build.cachebusters]]
-    source = 'assets/notwatching/hugo_stats\.json'
-    target = 'css'
-
-[module]
-  [[module.mounts]]
-    source = 'assets'
-    target = 'assets'
-  [[module.mounts]]
-    disableWatch = true
-    source = 'hugo_stats.json'
-    target = 'assets/notwatching/hugo_stats.json'
+# Zoekindex voor het ⌘K-palet: /search.json en /en/search.json
+[outputFormats]
+  [outputFormats.searchindex]
+    mediaType = "application/json"
+    baseName = "search"
+    isPlainText = true
+    notAlternative = true
 
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["html", "searchindex"]
 
 [params]
   author = "Flonam"
@@ -88,6 +91,10 @@ timeZone = "Europe/Amsterdam"
     email = "info@flonam.nl"
     address = "Randweg 25, 8304 AS Emmeloord"
     kvk = "42103028"
+    # Contactformulier (Formspree). Maak een formulier aan op formspree.io en zet
+    # hier de endpoint-URL, bijv. "https://formspree.io/f/abcdwxyz".
+    # TODO: leeg = het formulier valt terug op het mailprogramma van de bezoeker (mailto).
+    formEndpoint = ""
 
 [sitemap]
   changefreq = "monthly"

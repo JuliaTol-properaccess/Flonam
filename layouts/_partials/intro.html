@@ -1,0 +1,10 @@
+{{- /* Pagina-intro: prompt, H1 met gele slotleesteken, lead. */ -}}
+<div class="container intro">
+  {{- with .Params.prompt }}
+  <p class="prompt"><span class="prompt__sign" aria-hidden="true">$</span> {{ . }}</p>
+  {{- end }}
+  <h1 class="h1">{{ .Params.headline | default .Title }}{{ with .Params.headlineEnd }}<span class="accent">{{ . }}</span>{{ end }}</h1>
+  {{- with .Description }}
+  <p class="lead">{{ . }}</p>
+  {{- end }}
+</div>

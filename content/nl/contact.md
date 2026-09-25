@@ -1,6 +1,9 @@
 ---
 title: "Contact"
-headline: "Stuur een mail en we denken met je mee."
-description: "Vertel kort waar je tegenaan loopt. We denken graag mee en reageren gemiddeld binnen twee werkdagen."
+headline: "Een klus die je wilt kwijtraken"
+headlineEnd: "?"
+prompt: "mail --to"
+description: "We denken graag mee, ook als het nog geen product is. Je mailt direct met de bouwers en krijgt binnen twee werkdagen antwoord."
 url: "/contact/"
+layout: "contact"
 ---

@@ -1,0 +1,13 @@
+# Principles — shown as a strip on Home and About us.
+- flag: "--scope=1"
+  title: "One job, fully done"
+  body: "No broad suite. One recurring task, taken over completely."
+- flag: "--lock-in=false"
+  title: "Your data stays yours"
+  body: "Take it with you or stop whenever you want."
+- flag: "--live=<24h"
+  title: "Live within a day"
+  body: "No implementation project. Switch it on, fill it in, use it."
+- flag: "--wcag=2.2AA"
+  title: "Accessible from line one"
+  body: "A starting point, not a sprint at the end."

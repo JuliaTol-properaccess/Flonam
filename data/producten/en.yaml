@@ -1,36 +1,58 @@
-body: "Flonam builds, among other things, interactive dashboards that give businesses and organisations insight into their operational processes. EAA-monitor.nl is an example of that."
+# Products — used on Home ("What's running"), Products, in the footer, the home terminal and the ⌘K palette.
+# Measured values (uptime, P95, percentages …) live separately in data/metrics.yaml.
 items:
-  - title: "EAA-monitor.nl"
-    tag: "DASHBOARD · LIVE"
-    color: "#0A8FD8"
-    kind: "dashboard"
-    statusLine: "weekly measurement per sector"
-    intro: "Tracks, sector by sector, where the Netherlands stands on the accessibility act. In plain language: who the law applies to, what regulators check, and what you can do yourself."
+  - id: "eaa-monitor"
+    title: "EAA-monitor.nl"
+    kind: "DASHBOARD"
+    url: "https://eaa-monitor.nl"
+    summary: "Measured weekly and independently: how is the Netherlands doing with the accessibility act? In plain language, per sector."
+    intro: "Tracks, sector by sector, where the Netherlands stands on the accessibility act. Who the law applies to, what regulators check, and what you can do yourself."
     features:
       - "Weekly, independent measurement per sector"
       - "Explained in plain language, no legal jargon"
-      - "Independent measurement, no sales pitch"
+      - "No sales pitch"
+    cta: "Go to EAA-monitor.nl"
+    meta:
+      - { k: "last_run", metric: "last_run" }
+      - { k: "sectors", v: "5" }
+      - { k: "uptime", metric: "uptime" }
+    panel: "chart"
+    panel_title: "measurement_per_sector.csv"
     sectors:
-      - name: "Central government"
-        pct: 78
-      - name: "Municipalities"
-        pct: 61
-      - name: "Culture"
-        pct: 47
-      - name: "E-commerce"
-        pct: 34
-      - name: "Healthcare"
-        pct: 29
-    url: "https://eaa-monitor.nl"
-  - title: "MKB-offerte.nl"
-    tag: "TOOL · LIVE"
-    color: "#FEC502"
-    kind: "screenshot"
-    screenshot: "mkb-offerte"
-    statusLine: "WCAG 2.2 AA · sign online"
-    intro: "Create and follow up on quotes without an evening chore. Paste in your client's request, and within ten minutes you have a proposal your client can sign online right away."
+      - { id: "rijksoverheid", name: "Central gov." }
+      - { id: "gemeenten", name: "Municipalities" }
+      - { id: "cultuur", name: "Culture" }
+      - { id: "e-commerce", name: "E-commerce" }
+      - { id: "zorg", name: "Healthcare" }
+    palette:
+      title: "Does the accessibility act apply to me?"
+      keywords: "eaa wcag accessibility act law european toegankelijkheid"
+  - id: "mkb-offerte"
+    title: "MKB-offerte.nl"
+    kind: "TOOL"
+    url: "https://mkb-offerte.nl"
+    summary: "Paste in your client's request. Within ten minutes there's a quote ready that your client signs online."
+    intro: "Create and follow up on quotes without an evening chore. Paste in the request, and within ten minutes you have a proposal your client can sign online right away."
     features:
       - "Quote ready in 10 minutes, even from your phone"
       - "Client signs directly in the browser"
-      - "WCAG 2.2 AA-proof, also usable with a disability"
-    url: "https://mkb-offerte.nl"
+      - "WCAG 2.2 AA — also usable with a disability"
+    cta: "Go to MKB-offerte.nl"
+    meta:
+      - { k: "avg_time", metric: "avg_time" }
+      - { k: "e-sign", v: "yes" }
+      - { k: "wcag", v: "2.2 AA" }
+    panel: "screenshot"
+    panel_title: "mkb-offerte.nl/app"
+    screenshot: "/images/screenshots/mkb-offerte-hero.png"
+    screenshot_alt: "Screenshot of MKB-offerte.nl"
+    palette:
+      title: "Create a quote and get it signed"
+      keywords: "quote proposal sign signature client offerte"
+
+# Product in development: teaser at the bottom of Products and a line in the home terminal.
+upcoming:
+  id: "product-03"
+  name: "product-03"
+  code: "03 · ???"
+  cta: "Want an early look? → email us"

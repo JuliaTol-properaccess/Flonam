@@ -1,0 +1,34 @@
+# Meetwaarden die op de site getoond worden (home-terminal, productkaarten, producten-pagina).
+#
+# TODO: alles hieronder staat bewust leeg (~). Het ontwerp gebruikte verzonnen voorbeeldcijfers;
+# die tonen we niet. Vul een waarde pas in als die echt gemeten is (bijv. uit monitoring of
+# uit de EAA-monitor-export). Een lege waarde wordt op de site simpelweg weggelaten.
+
+products:
+  eaa-monitor:
+    uptime: ~      # bv. "99,98%"   — beschikbaarheid, afgelopen 30 dagen
+    p95: ~         # bv. "48ms"     — P95-responstijd
+    last_run: ~    # bv. "ma 06:00" — laatste wekelijkse meting
+  mkb-offerte:
+    uptime: ~      # bv. "100,0%"
+    p95: ~         # bv. "61ms"
+    avg_time: ~    # bv. "9m42s"    — gemiddelde tijd van aanvraag tot verstuurde offerte
+  product-03:
+    progress: ~    # 0–100          — voortgang van het product in ontwikkeling
+
+# Laatste productie-deploy, getoond in de home-terminal.
+deploy:
+  product: "mkb-offerte"
+  seconds: ~       # bv. 41         — "live in 41s"
+  wcag_checks: ~   # bv. "214/214"  — geslaagde WCAG 2.2 AA-checks in de pipeline
+
+# EAA-monitor: percentage per sector (producten-pagina, "meting_per_sector.csv").
+# De laagste ingevulde waarde wordt automatisch rood gemarkeerd.
+eaa:
+  week: ~          # bv. 38         — weeknummer van de meting
+  sectors:
+    rijksoverheid: ~
+    gemeenten: ~
+    cultuur: ~
+    e-commerce: ~
+    zorg: ~

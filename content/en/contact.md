@@ -1,6 +1,9 @@
 ---
 title: "Contact"
-headline: "Send an email and we'll think it through with you."
-description: "Tell us briefly what you're running into. We're happy to think along, and typically reply within two business days."
+headline: "A job you'd rather be rid of"
+headlineEnd: "?"
+prompt: "mail --to"
+description: "We're happy to think along, even if it isn't a product yet. You email the people who build it directly and get an answer within two working days."
 url: "/en/contact/"
+layout: "contact"
 ---

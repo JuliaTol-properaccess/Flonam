@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200">
+  <!-- Flonam-merkteken, vierkante versie voor het Console-ontwerp (0 radius). Nagebouwd uit flonam-logo.png. -->
+  <rect width="1200" height="1200" fill="#1F2A37"/>
+  <path fill="#FDC500" d="M274 265H523V935H369V591H310V511H369V353H274Z"/>
+  <path fill="#006AA7" d="M523 265H677C665.6 533 788.7 667 772 935H619C635.7 667 512.5 533 523 265Z"/>
+  <path fill="#DA251D" d="M772 265H926V935H772Z"/>
+</svg>
