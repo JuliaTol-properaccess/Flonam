@@ -1,0 +1,13 @@
+# Uitgangspunten — getoond als strook op Home en Over ons.
+- flag: "--scope=1"
+  title: "Eén klus, helemaal af"
+  body: "Geen brede suite. Eén terugkerende taak, volledig overgenomen."
+- flag: "--lock-in=false"
+  title: "Je data blijft van jou"
+  body: "Meenemen of stoppen wanneer je wilt."
+- flag: "--live=<24h"
+  title: "Live binnen een dag"
+  body: "Geen implementatietraject. Aanzetten, invullen, gebruiken."
+- flag: "--wcag=2.2AA"
+  title: "Toegankelijk vanaf regel één"
+  body: "Uitgangspunt, geen sprint aan het eind."

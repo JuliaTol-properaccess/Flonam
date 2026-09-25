@@ -1,0 +1,41 @@
+{{- $products := index hugo.Data.producten site.Language.Lang -}}
+{{- $privacy := site.GetPage "/privacy" -}}
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="footer__col">
+      <img src="/images/logo/flonam-logo.svg" alt="Flonam" width="40" height="40">
+      <p class="footer__tagline">{{ i18n "footer_tagline" }}</p>
+    </div>
+    <nav class="footer__col" aria-labelledby="footer-nav">
+      <h2 class="footer__heading" id="footer-nav">{{ i18n "footer_nav" }}</h2>
+      <ul>
+        {{- range site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+    <div class="footer__col">
+      <h2 class="footer__heading">{{ i18n "footer_products" }}</h2>
+      <ul>
+        {{- range $products.items }}
+        <li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }} <span class="sym" data-sym="↗" aria-hidden="true"></span><span class="sr-only"> {{ i18n "new_tab" }}</span></a></li>
+        {{- end }}
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h2 class="footer__heading">{{ i18n "footer_contact" }}</h2>
+      {{- with site.Params.contact }}
+      <ul>
+        <li><a href="mailto:{{ .email }}">{{ .email }}</a></li>
+        <li>{{ .address }}</li>
+        <li>{{ i18n "kvk" }} {{ .kvk }}</li>
+      </ul>
+      {{- end }}
+    </div>
+  </div>
+  <div class="container footer__meta">
+    <span>© {{ now.Year }} Flonam B.V.</span>
+    <span>{{ i18n "footer_built" }}</span>
+    {{- with $privacy }}<a href="{{ .RelPermalink }}">{{ i18n "footer_privacy" }}</a>{{ end }}
+  </div>
+</footer>

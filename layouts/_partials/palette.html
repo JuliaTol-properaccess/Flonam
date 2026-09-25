@@ -1,0 +1,18 @@
+{{- /* ⌘K-palet. De commando's komen uit de Hugo-gegenereerde zoekindex (layouts/home.searchindex.json). */ -}}
+{{- $index := site.Home.OutputFormats.Get "searchindex" -}}
+<dialog class="palette" id="palette" aria-labelledby="palette-label" data-src="{{ with $index }}{{ .RelPermalink }}{{ end }}">
+  <div class="palette__head">
+    <span class="palette__caret" aria-hidden="true">›</span>
+    <label class="sr-only" id="palette-label" for="palette-input">{{ i18n "palette_label" }}</label>
+    <input class="palette__input" id="palette-input" type="text" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="{{ i18n "palette_placeholder" }}">
+    <button type="button" class="palette__esc" data-palette-close aria-label="{{ i18n "palette_close" }}">esc</button>
+  </div>
+  <div class="palette__body">
+    <ul class="palette__list" id="palette-list" role="listbox" aria-label="{{ i18n "palette_results" }}"></ul>
+    <p class="palette__empty" hidden></p>
+  </div>
+  <div class="palette__hints" aria-hidden="true">
+    <span>{{ i18n "palette_hint_nav" }}</span><span>{{ i18n "palette_hint_open" }}</span><span>{{ i18n "palette_hint_close" }}</span>
+  </div>
+  <p class="sr-only" role="status" aria-live="polite" data-palette-status></p>
+</dialog>

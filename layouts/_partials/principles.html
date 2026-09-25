@@ -1,0 +1,13 @@
+{{- /* Uitgangspunten-strook (Home en Over ons). Divider-grid: gap 0, lijnen via box-shadow per cel. */ -}}
+<section class="strip" aria-labelledby="principles-heading">
+  <h2 class="sr-only" id="principles-heading">{{ i18n "principles_heading" }}</h2>
+  <ul class="flags" role="list">
+    {{- range index hugo.Data.principles site.Language.Lang }}
+    <li class="flag">
+      <span class="flag__flag">{{ .flag }}</span>
+      <h3 class="flag__title">{{ .title }}</h3>
+      <p class="flag__body">{{ .body }}</p>
+    </li>
+    {{- end }}
+  </ul>
+</section>

@@ -1,17 +1,18 @@
 ---
 title: "Flonam"
-description: "We build SaaS solutions for businesses and organisations."
+description: "Small, sharp SaaS for SMEs. No suite, no implementation project: switch it on, fill it in, use it."
 url: "/en/"
 
 hero:
-  badge: "LIVE · 2 PRODUCTS"
-  title: "One job at a time,"
-  titleAccent: "properly built."
-  body: "Flonam builds software that fully takes one task off your hands, for businesses and organisations of any size."
-  cta_primary: "See what's live"
-  terminal_summary: "2 live · 1 in development"
+  status: "2 live · 1 in build · Emmeloord, NL"
+  title: "Software that takes one job fully off your hands"
+  titleEnd: "."
+  body: "Small, sharp SaaS for SMEs. No suite, no implementation project: switch it on, fill it in, use it."
+  cta_primary: "See what's running"
+  # Text alternative for the terminal animation (hidden from screen readers).
+  terminal_alt: "Status: EAA-monitor.nl and MKB-offerte.nl are live, a third product is in development."
 
-cta:
-  title: "Questions? Feel free to email."
-  body: "We're happy to think along, and typically reply within two business days."
+running:
+  title: "What's running"
+  link: "ls ./products"
 ---

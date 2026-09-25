@@ -1,0 +1,49 @@
+{{- /* Pad in de wordmark: "~" op home, "~/producten" enz. op andere pagina's. */ -}}
+{{- $langRoot := strings.TrimSuffix "/" site.Home.RelPermalink -}}
+{{- $path := strings.Trim (strings.TrimPrefix $langRoot .RelPermalink) "/" -}}
+<header class="site-header">
+  <div class="container header__row">
+    <a class="brand" href="{{ site.Home.RelPermalink }}">
+      <img src="/images/logo/flonam-logo.svg" alt="" width="36" height="36">
+      <span>flonam<span class="brand__path" aria-hidden="true">:~{{ with $path }}/{{ . }}{{ end }}$</span><span class="sr-only">, {{ i18n "to_home" }}</span></span>
+    </a>
+
+    <nav class="nav" aria-label="{{ i18n "nav_main" }}">
+      {{- range site.Menus.main }}
+        {{- $url := .URL | relURL }}
+        {{- $active := eq $url $.RelPermalink }}
+        {{- $slug := strings.Trim (strings.TrimPrefix $langRoot $url) "/" }}
+        <a href="{{ $url }}"{{ if $active }} aria-current="page"{{ end }}>
+          {{- if eq .Identifier "home" -}}
+            <span aria-hidden="true">~</span><span class="sr-only">{{ i18n "nav_home" }}</span>
+          {{- else -}}
+            <span aria-hidden="true">./</span>{{ $slug }}
+          {{- end -}}
+        </a>
+      {{- end }}
+    </nav>
+
+    <button type="button" class="search-btn" data-palette-open aria-haspopup="dialog">
+      <svg class="search-btn__icon" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="7" r="5"/><path d="m11 11 4 4"/></svg>
+      <span class="search-btn__label">{{ i18n "search" }}</span>
+      <kbd class="search-btn__kbd" aria-hidden="true" data-kbd>⌘K</kbd>
+    </button>
+
+    <div class="lang" role="group" aria-label="{{ i18n "lang_switch" }}">
+      {{- $page := . }}
+      {{- range $i, $s := hugo.Sites }}
+        {{- $l := $s.Language }}
+        {{- if $i }}<span aria-hidden="true"> / </span>{{ end }}
+        {{- if eq $l.Lang site.Language.Lang }}
+          <span class="lang__current" lang="{{ $l.Lang }}" aria-current="true">{{ $l.Lang }}</span>
+        {{- else }}
+          {{- $target := "" }}
+          {{- range $page.Translations }}{{ if eq .Language.Lang $l.Lang }}{{ $target = .RelPermalink }}{{ end }}{{ end }}
+          {{- if not $target }}{{ $target = $s.Home.RelPermalink }}{{ end }}
+          <a href="{{ $target }}" hreflang="{{ $l.Lang }}" lang="{{ $l.Lang }}"><span class="sr-only">{{ i18n "lang_switch_to" }}: </span>{{ $l.Lang }}</a>
+        {{- end }}
+      {{- end }}
+    </div>
+  </div>
+  <div class="stripe" aria-hidden="true"><span></span><span></span><span></span></div>
+</header>

@@ -1,17 +1,17 @@
 ---
 title: "Flonam"
-description: "Wij bouwen SaaS-oplossingen voor bedrijven en organisaties."
+description: "Kleine, scherpe SaaS voor het MKB. Geen suite, geen implementatietraject: aanzetten, invullen, gebruiken."
 
 hero:
-  badge: "LIVE · 2 PRODUCTEN"
-  title: "Eén klus tegelijk,"
-  titleAccent: "grondig gebouwd."
-  body: "Flonam bouwt software die één taak volledig overneemt, voor bedrijven en organisaties van elke omvang."
+  status: "2 live · 1 in build · Emmeloord, NL"
+  title: "Software die één klus helemaal overneemt"
+  titleEnd: "."
+  body: "Kleine, scherpe SaaS voor het MKB. Geen suite, geen implementatietraject: aanzetten, invullen, gebruiken."
   cta_primary: "Bekijk wat er draait"
-  terminal_summary: "2 live · 1 in ontwikkeling"
+  # Tekstalternatief voor de (voor schermlezers verborgen) terminal-animatie.
+  terminal_alt: "Status: EAA-monitor.nl en MKB-offerte.nl zijn live, een derde product is in ontwikkeling."
 
-
-cta:
-  title: "Vragen? Stuur gerust een mail."
-  body: "We denken graag mee en reageren gemiddeld binnen twee werkdagen."
+running:
+  title: "Wat er draait"
+  link: "ls ./producten"
 ---

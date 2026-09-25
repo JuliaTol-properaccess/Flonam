@@ -1,0 +1,105 @@
+# UI strings for the Console design. Page copy lives in content/, product data in data/.
+
+# — general —
+skip_link = "Skip to content"
+new_tab = "(opens in a new tab)"
+to_home = "to home"
+
+# — header —
+nav_main = "Main menu"
+nav_home = "Home"
+lang_switch = "Language"
+lang_switch_to = "Naar Nederlands"
+search = "Search"
+search_open = "Open search"
+
+# — contact band —
+band_text = "Questions about one of our products? Feel free to send an email."
+band_cta = "Go to contact"
+
+# — footer —
+footer_tagline = "Data-driven SaaS for SMEs."
+footer_nav = "Navigation"
+footer_products = "Products"
+footer_contact = "Contact"
+footer_built = "wcag 2.2 AA · built in Emmeloord"
+footer_privacy = "privacy"
+kvk = "KVK"
+
+# — screen-reader-only section headings —
+principles_heading = "Principles"
+
+# — home terminal —
+term_title = "flonam — zsh — 80×24"
+term_pause = "pause animation"
+term_play = "resume animation"
+term_col_product = "PRODUCT"
+term_col_state = "STATE"
+term_col_uptime = "UPTIME"
+term_col_p95 = "P95"
+term_state_live = "live"
+term_state_build = "build"
+term_checks = "wcag 2.2 AA checks passed"
+term_live = "live"
+term_live_in = "live in {{ .Seconds }}s"
+
+# — products —
+live = "LIVE"
+live_lower = "live"
+in_build = "IN BUILD"
+chart_footnote = "// current figures at eaa-monitor.nl"
+chart_week = "week {{ .Week }}"
+chart_no_value = "not measured yet"
+progress_label = "Progress {{ .Name }}"
+
+# — contact page —
+copy_address = "copy address"
+copied = "✓ copied"
+copied_announce = "Email address copied to the clipboard"
+copy_failed = "Copying didn't work. The address is info@flonam.nl"
+detail_address = "address"
+detail_kvk = "kvk"
+detail_reply = "reply"
+detail_reply_value = "within 2 working days"
+
+form_title = "new_message.txt"
+form_required = "// email and message are required"
+form_name = "name"
+form_name_ph = "Your name"
+form_email = "email"
+form_email_ph = "you@company.com"
+form_message = "which job is eating your time?"
+form_message_ph = "E.g. retyping quotes by hand every week…"
+form_submit = "Send"
+form_sending = "Sending…"
+form_subject = "Contact via flonam.nl"
+form_err_email = "enter a valid email address"
+form_err_message = "tell us briefly which job it is"
+form_err_send = "sending failed. Try again or email info@flonam.nl"
+form_sent = "message sent"
+form_sent_body = "→ you'll hear from us within 2 working days"
+form_mailto = "your email app has opened"
+form_mailto_body = "→ send the email to complete your message"
+form_again = "$ another message"
+
+# — ⌘K palette —
+palette_label = "Search"
+palette_placeholder = "What are you looking for?"
+palette_close = "Close"
+palette_results = "Results"
+palette_hint_nav = "↑↓ navigate"
+palette_hint_open = "↵ open"
+palette_hint_close = "esc close"
+palette_empty = "Nothing found for “{q}”. Email info@flonam.nl — maybe we'll build it."
+palette_count = "{n} results"
+palette_count_one = "1 result"
+palette_home_sub = "Back to the start"
+palette_home_kw = "home start"
+palette_producten_sub = "Everything that's running"
+palette_producten_kw = "products overview"
+palette_over_sub = "Julia, Phi and the team"
+palette_over_kw = "about team who how we work"
+palette_contact_sub = "Tell us which job you want gone"
+palette_contact_kw = "contact mail email custom question"
+palette_copy = "Copy email address"
+palette_copy_kw = "mail copy email address"

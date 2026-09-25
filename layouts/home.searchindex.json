@@ -1,0 +1,39 @@
+{{- /* Zoekindex voor het ⌘K-palet, per taal: /search.json en /en/search.json. */ -}}
+{{- $cmds := slice -}}
+{{- $langRoot := strings.TrimSuffix "/" site.Home.RelPermalink -}}
+{{- range site.Menus.main -}}
+  {{- $url := .URL | relURL -}}
+  {{- $slug := strings.Trim (strings.TrimPrefix $langRoot $url) "/" -}}
+  {{- $cmds = $cmds | append (dict
+      "t" .Name
+      "s" (i18n (printf "palette_%s_sub" .Identifier))
+      "k" (i18n (printf "palette_%s_kw" .Identifier))
+      "d" (cond (eq .Identifier "home") "~" (printf "./%s" $slug))
+      "action" "nav"
+      "href" $url) -}}
+{{- end -}}
+{{- range (index hugo.Data.producten site.Language.Lang).items -}}
+  {{- $cmds = $cmds | append (dict
+      "t" .palette.title
+      "s" .title
+      "k" .palette.keywords
+      "d" "↗"
+      "action" "external"
+      "href" .url) -}}
+{{- end -}}
+{{- $cmds = $cmds | append (dict
+    "t" (i18n "palette_copy")
+    "s" site.Params.contact.email
+    "k" (i18n "palette_copy_kw")
+    "d" "⌘C"
+    "action" "copy"
+    "value" site.Params.contact.email) -}}
+{{- dict
+    "strings" (dict
+      "empty" (i18n "palette_empty")
+      "count" (i18n "palette_count")
+      "countOne" (i18n "palette_count_one")
+      "copied" (i18n "copied_announce")
+      "newTab" (i18n "new_tab"))
+    "commands" $cmds
+  | jsonify -}}

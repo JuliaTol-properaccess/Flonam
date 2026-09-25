@@ -1,0 +1,44 @@
+{{ define "main" }}
+{{ partial "intro.html" . }}
+
+{{ partial "principles.html" . }}
+
+{{- with .Params.how }}
+<section class="container split split--how" aria-labelledby="how-title">
+  <div class="prose-dim">
+    <h2 class="h2 h2--40" id="how-title">{{ .title }}</h2>
+    {{ $.Content }}
+  </div>
+  <div class="panel panel--gitlog" data-gitlog>
+    <p class="panel__bar panel__bar--plain">{{ .panel }}</p>
+    <ol class="gitlog" role="list">
+      {{- range .steps }}
+      <li class="gitlog__row" data-line><span class="gitlog__hash" aria-hidden="true">{{ .hash }}</span><span>{{ .text }}</span><span class="gitlog__n sym" data-sym="{{ .n }}" aria-hidden="true"></span></li>
+      {{- end }}
+    </ol>
+    <div class="gitlog__prompt" aria-hidden="true"><span class="t-a">$ </span><span class="cursor cursor--finite"></span></div>
+  </div>
+</section>
+{{- end }}
+
+{{- with .Params.team }}
+<section class="rule-top" aria-labelledby="team-title">
+  <ul class="team" role="list">
+    <li class="team__intro">
+      <p class="kicker">{{ .kicker }}</p>
+      <h2 class="team__title" id="team-title">{{ .title }}</h2>
+      <p class="team__body">{{ .body }}</p>
+    </li>
+    {{- range .members }}
+    <li class="member">
+      <div class="member__photo">
+        <img src="{{ .img }}" alt="{{ .name }}" width="800" height="600" loading="lazy" decoding="async"{{ with .position }} style="object-position:{{ . }}"{{ end }}>
+      </div>
+      <div class="member__bar member__bar--{{ .color }}"></div>
+      <div class="member__meta"><h3 class="member__name">{{ .name }}</h3><span class="member__role">{{ .role }}</span></div>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}
+{{ end }}

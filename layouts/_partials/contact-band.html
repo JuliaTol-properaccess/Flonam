@@ -1,0 +1,12 @@
+{{- $href := "/contact/" -}}
+{{- with site.GetPage "/contact" }}{{ $href = .RelPermalink }}{{ end -}}
+<aside class="band" aria-label="{{ i18n "footer_contact" }}">
+  <div class="container band__inner">
+    <div class="band__text">
+      <p class="band__prompt"><span class="band__sign" aria-hidden="true">$</span> mail --to</p>
+      <a class="band__mail" href="{{ $href }}">{{ site.Params.contact.email }}</a>
+      <p class="band__lead">{{ i18n "band_text" }}</p>
+    </div>
+    <a class="btn-invert" href="{{ $href }}">{{ i18n "band_cta" }} <span class="sym" data-sym="→" aria-hidden="true"></span></a>
+  </div>
+</aside>
