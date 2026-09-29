@@ -17,8 +17,13 @@ items:
       - { k: "last_run", metric: "last_run" }
       - { k: "sectors", v: "5" }
       - { k: "uptime", metric: "uptime" }
-    panel: "chart"
-    panel_title: "meting_per_sector.csv"
+    panel: "screenshot"
+    panel_title: "eaa-monitor.nl"
+    screenshot: "/images/screenshots/eaa-monitor-hero.png"
+    screenshot_w: 1410
+    screenshot_h: 858
+    screenshot_alt: "Screenshot van EAA-monitor.nl"
+    # Alternatief: panel: "chart" + panel_title: "meting_per_sector.csv" toont de sectorgrafiek (cijfers uit data/metrics.yaml).
     sectors:
       - { id: "rijksoverheid", name: "Rijksoverheid" }
       - { id: "gemeenten", name: "Gemeenten" }
@@ -46,6 +51,8 @@ items:
     panel: "screenshot"
     panel_title: "mkb-offerte.nl/app"
     screenshot: "/images/screenshots/mkb-offerte-hero.png"
+    screenshot_w: 1425
+    screenshot_h: 875
     screenshot_alt: "Screenshot van MKB-offerte.nl"
     palette:
       title: "Offerte maken en laten ondertekenen"

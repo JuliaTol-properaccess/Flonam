@@ -48,7 +48,7 @@
     {{- else if eq $p.panel "screenshot" }}
     <figure class="panel">
       <div class="panel__bar"><span>{{ $p.panel_title }}</span><span class="kicker__live" aria-hidden="true">● {{ i18n "live_lower" }}</span></div>
-      <img class="panel__img" src="{{ $p.screenshot }}" alt="{{ $p.screenshot_alt }}" width="1425" height="875" loading="lazy" decoding="async">
+      <img class="panel__img" src="{{ $p.screenshot }}" alt="{{ $p.screenshot_alt }}" width="{{ $p.screenshot_w }}" height="{{ $p.screenshot_h }}" loading="lazy" decoding="async">
     </figure>
     {{- end }}
   </div>

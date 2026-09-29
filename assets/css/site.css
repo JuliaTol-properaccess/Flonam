@@ -299,14 +299,24 @@ kbd { font-family: var(--font-mono); }
   .gitlog__row { grid-template-columns: 60px 1fr auto; gap: 10px; }
 }
 
-.team { max-width: var(--container); margin-inline: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 0; }
+/* Julia en Phi altijd samen op één rij; overflow knipt de buitenste 1px-lijnen af zodat niets buiten de sectie steekt. */
+.team { max-width: var(--container); margin-inline: auto; display: grid; grid-template-columns: 1fr; gap: 0; overflow: hidden; }
+@media (min-width: 640px) {
+  .team { grid-template-columns: 1fr 1fr; }
+  .team__intro { grid-column: 1 / -1; }
+}
+@media (min-width: 1024px) {
+  .team { grid-template-columns: repeat(3, 1fr); }
+  .team__intro { grid-column: auto; }
+}
 .team > li { box-shadow: 0 0 0 1px var(--rule); }
 .team__intro { padding: 40px clamp(20px, 3vw, 32px); display: flex; flex-direction: column; gap: 16px; }
 .team__title { font-size: 28px; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
 .team__body { font-size: 15px; line-height: 1.55; color: var(--text-2); }
 .member { display: flex; flex-direction: column; }
 .member__photo { overflow: hidden; }
-.member__photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .5s var(--ease-out); }
+/* Beide bronfoto's zijn vierkant met de ogen op dezelfde hoogte: dezelfde uitsnede (bovenaan) lijnt de hoofden uit. */
+.member__photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 0; transform-origin: 50% 100%; transition: transform .5s var(--ease-out); }
 .member:hover .member__photo img { transform: scale(1.05); }
 .member__bar { height: 4px; }
 .member__bar--yellow { background: var(--yellow); }

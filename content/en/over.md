@@ -23,7 +23,7 @@ team:
   body: "Small enough to stay agile, big enough to pick up projects quickly. Led by founders Julia and Phi."
   members:
     - { name: "Julia Tol", role: "co-founder · tech", img: "/images/team/julia.webp", color: "yellow" }
-    - { name: "Phi Pham", role: "co-founder · commercial", img: "/images/team/phi.jpeg", color: "blue", position: "50% 14%" }
+    - { name: "Phi Pham", role: "co-founder · commercial", img: "/images/team/phi.jpeg", color: "blue" }
 ---
 
 We start with the job, not the feature list. What's costing time now,

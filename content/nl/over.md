@@ -23,7 +23,7 @@ team:
   body: "Klein genoeg om wendbaar te blijven, groot genoeg om projecten snel op te pakken. Onder leiding van oprichters Julia en Phi."
   members:
     - { name: "Julia Tol", role: "co-founder · techniek", img: "/images/team/julia.webp", color: "yellow" }
-    - { name: "Phi Pham", role: "co-founder · commercie", img: "/images/team/phi.jpeg", color: "blue", position: "50% 14%" }
+    - { name: "Phi Pham", role: "co-founder · commercie", img: "/images/team/phi.jpeg", color: "blue" }
 ---
 
 We beginnen bij de klus, niet bij de featurelijst. Wat kost nu tijd, welke
