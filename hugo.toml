@@ -23,17 +23,22 @@ disableKinds = ["taxonomy", "term", "rss"]
       identifier = "over"
       name = "Over ons"
       url = "/over/"
-      weight = 3
+      weight = 4
     [[languages.nl.menus.main]]
       identifier = "producten"
       name = "Producten"
       url = "/producten/"
       weight = 2
     [[languages.nl.menus.main]]
+      identifier = "workshops"
+      name = "Workshops"
+      url = "/workshops/"
+      weight = 3
+    [[languages.nl.menus.main]]
       identifier = "contact"
       name = "Contact"
       url = "/contact/"
-      weight = 4
+      weight = 5
   [languages.en]
     label = "English"
     locale = "en"

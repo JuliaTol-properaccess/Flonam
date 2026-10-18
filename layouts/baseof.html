@@ -31,7 +31,7 @@
   <main id="main" tabindex="-1">
     {{ block "main" . }}{{ end }}
   </main>
-  {{ if ne .Layout "contact" }}{{ partial "contact-band.html" . }}{{ end }}
+  {{ if not (in (slice "contact" "workshops") .Layout) }}{{ partial "contact-band.html" . }}{{ end }}
   {{ partial "footer.html" . }}
   {{ partial "palette.html" . }}
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
