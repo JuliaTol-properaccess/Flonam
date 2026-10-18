@@ -1,5 +1,5 @@
 // Aanmeldformulier workshops: validatie, verzenden naar Formspree (of terugval op mailto) en succes-/foutstates.
-// Zelfde opzet als form.js, met een keuze voor de workshop en een plaats in plaats van een bericht.
+// Zelfde opzet als form.js, met een of meer workshops (checkboxes) en een locatie in plaats van een bericht.
 
 const EMAIL = /.+@.+\..+/;
 
@@ -17,18 +17,17 @@ export function initWorkshopForm(form) {
   const name = form.elements.name;
   const email = form.elements.email;
   const place = form.elements.place;
-  const system = form.elements.system;
   const website = form.elements.website;
   const workshopSet = document.getElementById('w-workshop');
-  const radios = [...form.querySelectorAll('input[name="workshop"]')];
+  const boxes = [...form.querySelectorAll('input[name="workshop"]')];
   const endpoint = form.dataset.endpoint || '';
 
   form.noValidate = true;
 
-  // Bij een fout wijst het veld (of de eerste radio) naar de melding.
+  // Bij een fout wijst het veld (of de eerste checkbox) naar de melding.
   const setError = (field, errId, text, keepDescribed = '') => {
     const el = document.getElementById(errId);
-    const targets = field === workshopSet ? radios : [field];
+    const targets = field === workshopSet ? boxes : [field];
     if (text) {
       el.textContent = `✗ ${text}`;
       el.hidden = false;
@@ -47,7 +46,7 @@ export function initWorkshopForm(form) {
     }
   };
 
-  const chosen = () => radios.find((r) => r.checked);
+  const chosen = () => boxes.filter((b) => b.checked).map((b) => b.value).join(', ');
 
   const validate = () => {
     const invalid = [];
@@ -56,7 +55,7 @@ export function initWorkshopForm(form) {
     if (!emailOk) invalid.push(email);
     const wsOk = Boolean(chosen());
     setError(workshopSet, 'w-workshop-error', wsOk ? '' : form.dataset.errWorkshop);
-    if (!wsOk) invalid.push(radios[0]);
+    if (!wsOk) invalid.push(boxes[0]);
     const placeOk = place.value.trim().length > 0;
     setError(place, 'w-place-error', placeOk ? '' : form.dataset.errPlace);
     if (!placeOk) invalid.push(place);
@@ -65,7 +64,7 @@ export function initWorkshopForm(form) {
 
   email.addEventListener('input', () => { if (email.hasAttribute('aria-invalid')) setError(email, 'w-email-error', ''); });
   place.addEventListener('input', () => { if (place.hasAttribute('aria-invalid')) setError(place, 'w-place-error', ''); });
-  radios.forEach((r) => r.addEventListener('change', () => setError(workshopSet, 'w-workshop-error', '')));
+  boxes.forEach((b) => b.addEventListener('change', () => { if (chosen()) setError(workshopSet, 'w-workshop-error', ''); }));
 
   const showDone = (mode) => {
     doneText.textContent = doneText.dataset[mode];
@@ -89,19 +88,18 @@ export function initWorkshopForm(form) {
       return;
     }
 
-    if (form.elements._gotcha && form.elements._gotcha.value) { showDone('sent'); return; }
+    if (form.elements._honey && form.elements._honey.value) { showDone('sent'); return; }
 
     if (!endpoint) {
       // Nog geen formulier-endpoint ingesteld: open het mailprogramma met alles ingevuld.
       const lines = [
-        `Workshop: ${chosen().value}`,
+        `Workshop: ${chosen()}`,
         `Naam: ${name.value.trim()}`,
         `E-mail: ${email.value.trim()}`,
-        `Woon- of werkplaats: ${place.value.trim()}`,
+        `Locatie: ${place.value.trim()}`,
       ];
       if (website && website.value.trim()) lines.push(`Website: ${website.value.trim()}`);
-      if (system.value.trim()) lines.push(`CRM of ander systeem: ${system.value.trim()}`);
-      const subject = `${form.dataset.subject}: ${chosen().value}`;
+      const subject = `${form.dataset.subject}: ${chosen()}`;
       window.location.href = `mailto:${form.dataset.to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
       showDone('mailto');
       return;
@@ -109,9 +107,12 @@ export function initWorkshopForm(form) {
 
     setBusy(true);
     try {
+      // Meerdere aangevinkte workshops als één veld, zodat ze allemaal in de mail staan.
+      const data = new FormData(form);
+      data.set('workshop', chosen());
       const res = await fetch(endpoint, {
         method: 'POST',
-        body: new FormData(form),
+        body: data,
         headers: { Accept: 'application/json' },
       });
       if (!res.ok) throw new Error(String(res.status));

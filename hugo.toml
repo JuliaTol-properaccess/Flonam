@@ -96,10 +96,10 @@ disableKinds = ["taxonomy", "term", "rss"]
     email = "info@flonam.nl"
     address = "Randweg 25, 8304 AS Emmeloord"
     kvk = "42103028"
-    # Contactformulier (Formspree). Maak een formulier aan op formspree.io en zet
-    # hier de endpoint-URL, bijv. "https://formspree.io/f/abcdwxyz".
-    # TODO: leeg = het formulier valt terug op het mailprogramma van de bezoeker (mailto).
-    formEndpoint = ""
+    # Contact- en aanmeldformulier gaan via FormSubmit naar info@flonam.nl (geen account nodig).
+    # De eerste inzending stuurt een activatiemail naar dat adres; pas na die klik komen berichten door.
+    # Leeg = het formulier valt terug op het mailprogramma van de bezoeker (mailto).
+    formEndpoint = "https://formsubmit.co/ajax/info@flonam.nl"
 
 [sitemap]
   changefreq = "monthly"

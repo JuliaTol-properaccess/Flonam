@@ -267,7 +267,7 @@
           data-sending="{{ i18n "form_sending" }}">
           <p class="ws-mono ws-small ws-muted">{{ i18n "ws_form_title" }} · {{ i18n "ws_form_required" }}</p>
           <input type="hidden" name="_subject" value="{{ i18n "ws_form_subject" }}">
-          <div class="form__hp" aria-hidden="true"><label>website <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+          <div class="form__hp" aria-hidden="true"><label>website <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
 
           <div class="ws-field">
             <label for="w-name">{{ i18n "ws_form_name" }}</label>
@@ -285,7 +285,7 @@
           <fieldset class="ws-field ws-field--choice" id="w-workshop">
             <legend>{{ i18n "ws_form_workshop" }}</legend>
             {{- range slice "Dag 1: van 0 naar 5 AI-medewerkers" "Dag 2: je eigen AI OS" "Eigen AI OS, voor wie al met Claude werkt" }}
-            <label class="ws-choice"><input type="radio" name="workshop" value="{{ . }}" required> <span>{{ . }}</span></label>
+            <label class="ws-choice"><input type="checkbox" name="workshop" value="{{ . }}"> <span>{{ . }}</span></label>
             {{- end }}
             <p class="ws-field__error" id="w-workshop-error" hidden></p>
           </fieldset>
@@ -293,11 +293,6 @@
             <label for="w-place">{{ i18n "ws_form_place" }}</label>
             <input id="w-place" name="place" type="text" autocomplete="address-level2" required>
             <p class="ws-field__error" id="w-place-error" hidden></p>
-          </div>
-          <div class="ws-field">
-            <label for="w-system">{{ i18n "ws_form_system" }}</label>
-            <input id="w-system" name="system" type="text" aria-describedby="w-system-hint">
-            <p class="ws-field__hint" id="w-system-hint">{{ i18n "ws_form_system_hint" }}</p>
           </div>
           <p class="ws-field__error" data-form-error role="alert" hidden></p>
           <button type="submit" class="ws-btn ws-btn--start" data-submit><span data-submit-label>{{ i18n "ws_form_submit" }}</span></button>

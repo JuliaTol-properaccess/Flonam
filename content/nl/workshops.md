@@ -77,7 +77,7 @@ nodig:
 aanmelden_stappen:
   title: "Zo werkt aanmelden"
   steps:
-    - "Je meldt je aan met het [formulier](#aanmelden), en je vult in waar je woont of werkt."
+    - "Je meldt je aan met het [formulier](#aanmelden), en je vult in welke locatie je het beste uitkomt."
     - "Zijn er bij jou in de buurt 5 aanmeldingen, dan zoeken we een ruimte in de buurt en prikken we een datum."
     - "Je betaalt pas als de datum vaststaat."
 
@@ -116,7 +116,7 @@ over:
   photo: "/images/team/julia.webp"
   photo_alt: "Julia Tol"
   paragraphs:
-    - "Ik ben Julia Tol, software engineer. Ik heb een bachelor in Computer Science van Malmö University. Sinds 2022 werk ik met AI. Ik ben een vakidioot en houd alle ontwikkelingen bij."
+    - "Ik ben Julia Tol, software engineer met een bachelor in Computer Science van Malmö University. Sinds 2022 werk ik met AI, en als vakidioot volg ik elke nieuwe ontwikkeling."
     - "In mijn eigen bedrijf deed ik alles zelf. Nu doet een AI-team een groot deel van dat werk: administratie, vertalen, teksten schrijven, SEO en marketinganalyse. Op de dag laat ik zien hoe dat er bij mij uitziet."
 
 faq:
@@ -125,7 +125,7 @@ faq:
     - q: "Moet ik technisch zijn?"
       a: "Nee. Dag 1 is gemaakt voor mensen die nog nooit met AI hebben gewerkt. In het eerste uur leer je een gesprek voeren met Claude, en waarom je een antwoord controleert."
     - q: "Waarom Claude?"
-      a: "Daar werk ik zelf mee, en daarmee heb ik mijn eigen AI-team opgebouwd. Iedereen werkt op de dag met hetzelfde programma, zodat je de stappen kunt volgen. Het meeste wat ik je leer, werkt ook in andere AI-programma's. Gebruik je OpenAI, bijvoorbeeld ChatGPT, dan ben je ook welkom."
+      a: "Met Claude heb ik mijn eigen AI-team opgebouwd. Op de dag werkt iedereen ermee, zodat de hele groep dezelfde stappen volgt. De meeste kennis die je meekrijgt, is niet aan Claude gebonden: je past hem ook toe in ChatGPT of een ander programma. Werk je nu met OpenAI, dan ben je dus net zo welkom."
     - q: "Kan ik dag 2 doen zonder dag 1?"
       a: "Dag 2 bouwt verder op wat je op dag 1 maakt. Werk je al met Claude, kies dan de workshop \"Eigen AI OS, voor wie al met Claude werkt\"."
 
