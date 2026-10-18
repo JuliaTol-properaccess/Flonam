@@ -1,0 +1,88 @@
+{{ define "main" }}
+{{- /* Workshoppagina: intro met knop, lopende tekst, en onderaan het aanmeldformulier (#aanmelden). */ -}}
+{{- $c := site.Params.contact -}}
+<div class="container intro">
+  {{- with .Params.prompt }}
+  <p class="prompt"><span class="prompt__sign" aria-hidden="true">$</span> {{ . }}</p>
+  {{- end }}
+  <h1 class="h1">{{ .Params.headline | default .Title }}</h1>
+  {{- range .Params.intro }}
+  <p class="lead">{{ . }}</p>
+  {{- end }}
+  <div class="actions">
+    <a class="btn-primary" href="#aanmelden">{{ .Params.cta }} <span class="sym" data-sym="↓" aria-hidden="true"></span></a>
+  </div>
+</div>
+
+<div class="rule-top">
+  <div class="container">
+    <article class="prose">
+      {{ .Content }}
+    </article>
+  </div>
+</div>
+
+<div class="rule-top">
+  <div class="container split">
+    <div class="prose-dim">
+      <h2 class="h2 h2--40" id="aanmelden">{{ .Params.cta }}</h2>
+      <p>Zijn er bij jou in de buurt 5 aanmeldingen, dan zoeken we een ruimte in de buurt en prikken we een datum. Je betaalt pas als de datum vaststaat.</p>
+    </div>
+
+    <section class="panel" aria-labelledby="form-title">
+      <h2 class="panel__bar panel__bar--plain" id="form-title">{{ i18n "ws_form_title" }}</h2>
+      {{- /* Zonder formEndpoint (hugo.toml) valt het formulier terug op mailto. */ -}}
+      {{- $endpoint := $c.formEndpoint -}}
+      <form class="form" data-workshop-form
+        {{- if $endpoint }} action="{{ $endpoint }}" method="POST" data-endpoint="{{ $endpoint }}"
+        {{- else }} action="mailto:{{ $c.email }}" method="POST" enctype="text/plain"{{ end }}
+        data-to="{{ $c.email }}"
+        data-subject="{{ i18n "ws_form_subject" }}"
+        data-err-email="{{ i18n "form_err_email" }}"
+        data-err-workshop="{{ i18n "ws_form_err_workshop" }}"
+        data-err-place="{{ i18n "ws_form_err_place" }}"
+        data-err-send="{{ i18n "form_err_send" }}"
+        data-sending="{{ i18n "form_sending" }}">
+        <p class="form__hint">{{ i18n "ws_form_required" }}</p>
+        <input type="hidden" name="_subject" value="{{ i18n "ws_form_subject" }}">
+        <div class="form__hp" aria-hidden="true"><label>website <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+
+        <div class="field">
+          <label for="w-name">{{ i18n "form_name" }}</label>
+          <input id="w-name" name="name" type="text" autocomplete="name" placeholder="{{ i18n "form_name_ph" }}">
+        </div>
+        <div class="field">
+          <label for="w-email">{{ i18n "form_email" }}</label>
+          <input id="w-email" name="email" type="email" autocomplete="email" required placeholder="{{ i18n "form_email_ph" }}">
+          <p class="field__error" id="w-email-error" hidden></p>
+        </div>
+        <fieldset class="field field--choice" id="w-workshop">
+          <legend>{{ i18n "ws_form_workshop" }}</legend>
+          <label class="choice"><input type="radio" name="workshop" value="Dag 1: van 0 naar 5 AI-medewerkers" required> Dag 1: van 0 naar 5 AI-medewerkers</label>
+          <label class="choice"><input type="radio" name="workshop" value="Dag 2: je eigen AI OS"> Dag 2: je eigen AI OS</label>
+          <label class="choice"><input type="radio" name="workshop" value="Eigen AI OS, voor wie al met Claude werkt"> Eigen AI OS, voor wie al met Claude werkt</label>
+          <p class="field__error" id="w-workshop-error" hidden></p>
+        </fieldset>
+        <div class="field">
+          <label for="w-place">{{ i18n "ws_form_place" }}</label>
+          <input id="w-place" name="place" type="text" autocomplete="address-level2" required placeholder="{{ i18n "ws_form_place_ph" }}">
+          <p class="field__error" id="w-place-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="w-system">{{ i18n "ws_form_system" }}</label>
+          <p class="field__hint" id="w-system-hint">{{ i18n "ws_form_system_hint" }}</p>
+          <input id="w-system" name="system" type="text" aria-describedby="w-system-hint">
+        </div>
+        <p class="field__error" data-form-error role="alert" hidden></p>
+        <button type="submit" class="btn-primary btn-primary--start" data-submit><span data-submit-label>{{ i18n "ws_form_submit" }}</span> <span class="sym" data-sym="↵" aria-hidden="true"></span></button>
+      </form>
+
+      <div class="form-done" data-form-done hidden>
+        <h3 class="form-done__title" tabindex="-1" data-done-title><span class="accent sym" data-sym="✓ " aria-hidden="true"></span><span data-done-text data-sent="{{ i18n "ws_form_sent" }}" data-mailto="{{ i18n "form_mailto" }}">{{ i18n "ws_form_sent" }}</span></h3>
+        <p class="form-done__body" data-done-body data-sent="{{ i18n "ws_form_sent_body" }}" data-mailto="{{ i18n "ws_form_mailto_body" }}"></p>
+        <button type="button" class="form-done__again" data-form-reset>{{ i18n "ws_form_again" }}</button>
+      </div>
+    </section>
+  </div>
+</div>
+{{ end }}

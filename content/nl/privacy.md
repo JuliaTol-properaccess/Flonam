@@ -22,7 +22,9 @@ meer gegevens verwerken dan deze website.
 ## Welke gegevens we verwerken
 
 Alleen wat je zelf invult in het contactformulier: je naam, e-mailadres en
-bericht. Het formulier opent je eigen mailprogramma, we hebben geen
+bericht. Meld je je aan voor een workshop, dan ook welke workshop je
+kiest, waar je woont of werkt, en welk CRM of ander systeem je gebruikt
+als je dat invult. Het formulier opent je eigen mailprogramma, we hebben geen
 database die berichten opslaat. Je bericht komt gewoon als e-mail in onze
 inbox terecht.
 

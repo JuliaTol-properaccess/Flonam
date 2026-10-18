@@ -4,6 +4,7 @@ import { initGitlog } from './gitlog.js';
 import { initPalette } from './palette.js';
 import { initCopyButtons } from './copy.js';
 import { initContactForm } from './form.js';
+import { initWorkshopForm } from './workshop-form.js';
 
 // Hoogte van de sticky header bijhouden, zodat focus en ankers er niet onder verdwijnen (WCAG 2.4.11).
 function trackHeaderHeight() {
@@ -27,5 +28,6 @@ platformKeys();
 document.querySelectorAll('[data-terminal]').forEach(initTerminal);
 document.querySelectorAll('[data-gitlog]').forEach(initGitlog);
 document.querySelectorAll('[data-contact-form]').forEach(initContactForm);
+document.querySelectorAll('[data-workshop-form]').forEach(initWorkshopForm);
 initCopyButtons();
 initPalette();
