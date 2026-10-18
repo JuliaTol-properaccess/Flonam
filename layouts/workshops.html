@@ -1,88 +1,316 @@
 {{ define "main" }}
-{{- /* Workshoppagina: intro met knop, lopende tekst, en onderaan het aanmeldformulier (#aanmelden). */ -}}
+{{- /* Workshoppagina in het lichte workshop-ontwerp (bron: "Flonam workshops.html").
+       Alle tekst staat in de front matter van content/nl/workshops.md; onderaan het aanmeldformulier (#aanmelden). */ -}}
 {{- $c := site.Params.contact -}}
-<div class="container intro">
-  {{- with .Params.prompt }}
-  <p class="prompt"><span class="prompt__sign" aria-hidden="true">$</span> {{ . }}</p>
-  {{- end }}
-  <h1 class="h1">{{ .Params.headline | default .Title }}</h1>
-  {{- range .Params.intro }}
-  <p class="lead">{{ . }}</p>
-  {{- end }}
-  <div class="actions">
-    <a class="btn-primary" href="#aanmelden">{{ .Params.cta }} <span class="sym" data-sym="↓" aria-hidden="true"></span></a>
-  </div>
-</div>
+{{- $p := .Params -}}
+<div class="ws">
 
-<div class="rule-top">
-  <div class="container">
-    <article class="prose">
-      {{ .Content }}
-    </article>
-  </div>
-</div>
+  {{- /* Hero */}}
+  <section class="ws-hero" aria-labelledby="ws-hero-title">
+    <div class="ws-wrap ws-hero__inner">
+      {{- with $p.prompt }}
+      <p class="ws-mono ws-hero__prompt"><span aria-hidden="true">$</span> {{ . }}</p>
+      {{- end }}
+      {{- $h := $p.headline | default .Title }}
+      {{- with $p.headline_accent }}{{ $h = replace $h . (printf `<span class="ws-gold">%s</span>` .) }}{{ end }}
+      <h1 class="ws-hero__title" id="ws-hero-title">{{ $h | safeHTML }}</h1>
 
-<div class="rule-top">
-  <div class="container split">
-    <div class="prose-dim">
-      <h2 class="h2 h2--40" id="aanmelden">{{ .Params.cta }}</h2>
-      <p>Zijn er bij jou in de buurt 5 aanmeldingen, dan zoeken we een ruimte in de buurt en prikken we een datum. Je betaalt pas als de datum vaststaat.</p>
-    </div>
-
-    <section class="panel" aria-labelledby="form-title">
-      <h2 class="panel__bar panel__bar--plain" id="form-title">{{ i18n "ws_form_title" }}</h2>
-      {{- /* Zonder formEndpoint (hugo.toml) valt het formulier terug op mailto. */ -}}
-      {{- $endpoint := $c.formEndpoint -}}
-      <form class="form" data-workshop-form
-        {{- if $endpoint }} action="{{ $endpoint }}" method="POST" data-endpoint="{{ $endpoint }}"
-        {{- else }} action="mailto:{{ $c.email }}" method="POST" enctype="text/plain"{{ end }}
-        data-to="{{ $c.email }}"
-        data-subject="{{ i18n "ws_form_subject" }}"
-        data-err-email="{{ i18n "form_err_email" }}"
-        data-err-workshop="{{ i18n "ws_form_err_workshop" }}"
-        data-err-place="{{ i18n "ws_form_err_place" }}"
-        data-err-send="{{ i18n "form_err_send" }}"
-        data-sending="{{ i18n "form_sending" }}">
-        <p class="form__hint">{{ i18n "ws_form_required" }}</p>
-        <input type="hidden" name="_subject" value="{{ i18n "ws_form_subject" }}">
-        <div class="form__hp" aria-hidden="true"><label>website <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
-
-        <div class="field">
-          <label for="w-name">{{ i18n "form_name" }}</label>
-          <input id="w-name" name="name" type="text" autocomplete="name" placeholder="{{ i18n "form_name_ph" }}">
+      <figure class="ws-week">
+        <div class="ws-week__days" aria-hidden="true">
+          {{- range slice "ma" "di" "wo" "do" "vr" "za" "zo" }}<span class="ws-week__day">{{ . }}</span>{{ end }}
+          <span class="ws-week__day ws-week__day--extra">+1</span><span class="ws-week__day ws-week__day--extra">+2</span>
         </div>
-        <div class="field">
-          <label for="w-email">{{ i18n "form_email" }}</label>
-          <input id="w-email" name="email" type="email" autocomplete="email" required placeholder="{{ i18n "form_email_ph" }}">
-          <p class="field__error" id="w-email-error" hidden></p>
-        </div>
-        <fieldset class="field field--choice" id="w-workshop">
-          <legend>{{ i18n "ws_form_workshop" }}</legend>
-          <label class="choice"><input type="radio" name="workshop" value="Dag 1: van 0 naar 5 AI-medewerkers" required> Dag 1: van 0 naar 5 AI-medewerkers</label>
-          <label class="choice"><input type="radio" name="workshop" value="Dag 2: je eigen AI OS"> Dag 2: je eigen AI OS</label>
-          <label class="choice"><input type="radio" name="workshop" value="Eigen AI OS, voor wie al met Claude werkt"> Eigen AI OS, voor wie al met Claude werkt</label>
-          <p class="field__error" id="w-workshop-error" hidden></p>
-        </fieldset>
-        <div class="field">
-          <label for="w-place">{{ i18n "ws_form_place" }}</label>
-          <input id="w-place" name="place" type="text" autocomplete="address-level2" required placeholder="{{ i18n "ws_form_place_ph" }}">
-          <p class="field__error" id="w-place-error" hidden></p>
-        </div>
-        <div class="field">
-          <label for="w-system">{{ i18n "ws_form_system" }}</label>
-          <p class="field__hint" id="w-system-hint">{{ i18n "ws_form_system_hint" }}</p>
-          <input id="w-system" name="system" type="text" aria-describedby="w-system-hint">
-        </div>
-        <p class="field__error" data-form-error role="alert" hidden></p>
-        <button type="submit" class="btn-primary btn-primary--start" data-submit><span data-submit-label>{{ i18n "ws_form_submit" }}</span> <span class="sym" data-sym="↵" aria-hidden="true"></span></button>
-      </form>
+        <figcaption class="ws-mono ws-week__caption">{{ $p.week_caption }}</figcaption>
+      </figure>
 
-      <div class="form-done" data-form-done hidden>
-        <h3 class="form-done__title" tabindex="-1" data-done-title><span class="accent sym" data-sym="✓ " aria-hidden="true"></span><span data-done-text data-sent="{{ i18n "ws_form_sent" }}" data-mailto="{{ i18n "form_mailto" }}">{{ i18n "ws_form_sent" }}</span></h3>
-        <p class="form-done__body" data-done-body data-sent="{{ i18n "ws_form_sent_body" }}" data-mailto="{{ i18n "ws_form_mailto_body" }}"></p>
-        <button type="button" class="form-done__again" data-form-reset>{{ i18n "ws_form_again" }}</button>
+      <div class="ws-hero__intro">
+        {{- range $p.intro }}
+        <p>{{ . }}</p>
+        {{- end }}
       </div>
-    </section>
-  </div>
+
+      <div class="ws-hero__actions">
+        <a class="ws-btn" href="#aanmelden">{{ $p.cta }}</a>
+        <a class="ws-mono ws-hero__more" href="#workshops">{{ $p.cta_secondary }} <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </section>
+
+  {{- /* Drie workshops */}}
+  {{- with $p.workshops }}
+  <section class="ws-section" id="workshops" aria-labelledby="ws-title">
+    <div class="ws-wrap ws-stack ws-stack--48">
+      <div class="ws-stack ws-stack--8">
+        <p class="ws-mono ws-kicker">{{ .prompt }}</p>
+        <h2 class="ws-h2" id="ws-title">{{ .title }}</h2>
+      </div>
+
+      <p class="ws-route ws-mono">
+        {{- range $i, $r := .route }}
+        {{- if $i }}<span class="ws-route__line" aria-hidden="true">───</span>{{ end }}
+        <span class="ws-route__step{{ if eq $i 1 }} ws-route__step--gap{{ end }}">{{ $r }}</span>
+        {{- end }}
+        <span class="ws-route__alt">{{ .route_alt }}</span>
+      </p>
+
+      {{- with .dag1 }}
+      <article class="ws-card ws-card--white" aria-labelledby="dag1-title">
+        <div class="ws-card__head">
+          <div class="ws-stack ws-stack--8 ws-card__headtext">
+            <p class="ws-mono ws-kicker">{{ .label }}</p>
+            <h3 class="ws-h3" id="dag1-title">{{ .title }}</h3>
+            <p class="ws-muted">{{ .intro }}</p>
+          </div>
+          <span class="ws-mono ws-tag">{{ .tag }}</span>
+        </div>
+        <ul class="ws-team" role="list">
+          {{- range $i, $m := .medewerkers }}
+          <li class="ws-team__item">
+            <span class="ws-mono ws-team__id" aria-hidden="true">medewerker_0{{ add $i 1 }}</span>
+            <strong class="ws-team__title">{{ $m.title }}</strong>
+            <span class="ws-team__text">{{ $m.text }}</span>
+          </li>
+          {{- end }}
+        </ul>
+        <p class="ws-muted ws-measure">{{ .outro }}</p>
+      </article>
+      {{- end }}
+
+      <div class="ws-grid-2">
+        {{- with .dag2 }}
+        <article class="ws-card ws-card--dark" aria-labelledby="dag2-title">
+          <p class="ws-mono ws-kicker ws-gold">{{ .label }}</p>
+          <h3 class="ws-h3 ws-h3--sm" id="dag2-title">{{ .title }}</h3>
+          <p class="ws-on-dark-2">{{ .intro }}</p>
+          <ol class="ws-numlist" role="list">
+            {{- range $i, $it := .items }}
+            <li><span class="ws-mono ws-gold" aria-hidden="true">0{{ add $i 1 }}</span><span>{{ $it }}</span></li>
+            {{- end }}
+          </ol>
+          <p class="ws-on-dark-2">{{ .outro }}</p>
+        </article>
+        {{- end }}
+
+        {{- with .eigen_os }}
+        <article class="ws-card ws-card--cream" aria-labelledby="os-title">
+          <p class="ws-mono ws-kicker ws-brown">{{ .label }}</p>
+          <h3 class="ws-h3 ws-h3--sm" id="os-title">{{ .title }}</h3>
+          <p class="ws-on-cream">{{ .intro }}</p>
+          <div class="ws-note">
+            <span class="ws-mono ws-brown ws-note__label">{{ .note_label }}</span>
+            <span>{{ .note }}</span>
+          </div>
+        </article>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+  {{- end }}
+
+  {{- /* Voor wie + wat je nodig hebt */}}
+  <section class="ws-section ws-section--flush-top">
+    <div class="ws-wrap ws-grid-2 ws-grid-2--wide">
+      {{- with $p.voor_wie }}
+      <div class="ws-stack ws-stack--16">
+        <h2 class="ws-h2 ws-h2--md">{{ .title }}</h2>
+        <p class="ws-lead">{{ .intro }}</p>
+        <ul class="ws-chips" role="list" aria-label="{{ .voorbeelden_label }}">
+          {{- range .voorbeelden }}<li>{{ . }}</li>{{ end }}
+        </ul>
+        <p class="ws-mono ws-small ws-muted">{{ .note }}</p>
+      </div>
+      {{- end }}
+
+      {{- with $p.nodig }}
+      <div class="ws-stack ws-stack--16">
+        <h2 class="ws-h2 ws-h2--md">{{ .title }}</h2>
+        <ul class="ws-checklist" role="list">
+          {{- range .items }}
+          <li>
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"/></svg>
+            <span>{{ . }}</span>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+    </div>
+  </section>
+
+  {{- /* Zo werkt aanmelden */}}
+  {{- with $p.aanmelden_stappen }}
+  <section class="ws-section ws-section--sage" aria-labelledby="hoe-title">
+    <div class="ws-wrap ws-stack ws-stack--40">
+      <h2 class="ws-h2 ws-h2--lg" id="hoe-title">{{ .title }}</h2>
+      <ol class="ws-steps" role="list">
+        {{- $n := len .steps }}
+        {{- range $i, $s := .steps }}
+        {{- $last := eq (add $i 1) $n }}
+        <li class="ws-steps__item{{ if $last }} ws-steps__item--dark{{ end }}">
+          <span class="ws-steps__num" aria-hidden="true">{{ add $i 1 }}</span>
+          <span><span class="sr-only">{{ add $i 1 }}. </span>{{ $s | markdownify }}</span>
+          {{- if eq $i 1 }}
+          <span class="ws-dots" aria-hidden="true"><span></span><span></span><span></span><span class="ws-dots__open"></span><span class="ws-dots__open"></span></span>
+          {{- end }}
+        </li>
+        {{- end }}
+      </ol>
+    </div>
+  </section>
+  {{- end }}
+
+  {{- /* Prijs */}}
+  {{- with $p.prijs }}
+  <section class="ws-section" aria-labelledby="prijs-title">
+    <div class="ws-wrap ws-grid-2 ws-grid-2--wide ws-grid-2--start">
+      <div class="ws-stack ws-stack--12">
+        <h2 class="ws-mono ws-kicker ws-price__label" id="prijs-title">{{ .title }}</h2>
+        <p class="ws-price">{{ .bedrag }}</p>
+        <p class="ws-price__per">{{ .per }}</p>
+        <p class="ws-lead ws-price__intro">{{ .intro }}</p>
+      </div>
+      <ul class="ws-timeline" role="list">
+        {{- range .items }}
+        <li>
+          <span class="ws-mono ws-timeline__label">{{ .label }}</span>
+          <span>{{ .text | markdownify }}</span>
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+  </section>
+  {{- end }}
+
+  {{- /* Forum + praktisch */}}
+  <section class="ws-section ws-section--flush-top">
+    <div class="ws-wrap ws-grid-2">
+      {{- with $p.forum }}
+      <div class="ws-card ws-card--outline">
+        <h2 class="ws-h3 ws-h3--sm">{{ .title }}</h2>
+        <ol class="ws-ol">
+          {{- range .steps }}<li>{{ . }}</li>{{ end }}
+        </ol>
+        <p class="ws-fairuse">{{ .fair_use }}</p>
+      </div>
+      {{- end }}
+
+      {{- with $p.praktisch }}
+      <div class="ws-card ws-card--dark">
+        <h2 class="ws-h3 ws-h3--sm">{{ .title }}</h2>
+        <dl class="ws-dl">
+          {{- range .items }}
+          <div>
+            <dt class="ws-mono ws-gold">{{ .label }}</dt>
+            <dd>{{ .text }}</dd>
+          </div>
+          {{- end }}
+        </dl>
+      </div>
+      {{- end }}
+    </div>
+  </section>
+
+  {{- /* Over mij */}}
+  {{- with $p.over }}
+  <section class="ws-section ws-section--cream" aria-labelledby="over-title">
+    <div class="ws-wrap ws-about">
+      {{- with .photo }}
+      <img class="ws-about__photo" src="{{ . }}" alt="{{ $p.over.photo_alt }}" width="240" height="300" loading="lazy">
+      {{- end }}
+      <div class="ws-stack ws-stack--16 ws-about__text">
+        <h2 class="ws-h2 ws-h2--lg" id="over-title">{{ .title }}</h2>
+        {{- range .paragraphs }}
+        <p class="ws-about__p">{{ . }}</p>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+  {{- end }}
+
+  {{- /* Veelgestelde vragen */}}
+  {{- with $p.faq }}
+  <section class="ws-section" aria-labelledby="faq-title">
+    <div class="ws-wrap ws-wrap--narrow ws-stack ws-stack--32">
+      <h2 class="ws-h2 ws-h2--lg" id="faq-title">{{ .title }}</h2>
+      <div class="ws-faq">
+        {{- range .items }}
+        <details>
+          <summary>{{ .q }}<span class="ws-mono ws-faq__plus" aria-hidden="true">+</span></summary>
+          <p>{{ .a }}</p>
+        </details>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+  {{- end }}
+
+  {{- /* Aanmelden */}}
+  <section class="ws-section ws-section--dark" id="aanmelden" aria-labelledby="aanmelden-title">
+    <div class="ws-wrap ws-grid-2 ws-grid-2--wide ws-grid-2--start">
+      <div class="ws-stack ws-stack--16">
+        <h2 class="ws-h2 ws-h2--xl" id="aanmelden-title">{{ $p.cta }}</h2>
+        <p class="ws-lead ws-on-dark-2 ws-measure--sm">{{ $p.aanmelden_intro }}</p>
+      </div>
+
+      <div class="ws-formcard">
+        {{- /* Zonder formEndpoint (hugo.toml) valt het formulier terug op mailto. */ -}}
+        {{- $endpoint := $c.formEndpoint -}}
+        <form class="ws-form" aria-labelledby="aanmelden-title" data-workshop-form
+          {{- if $endpoint }} action="{{ $endpoint }}" method="POST" data-endpoint="{{ $endpoint }}"
+          {{- else }} action="mailto:{{ $c.email }}" method="POST" enctype="text/plain"{{ end }}
+          data-to="{{ $c.email }}"
+          data-subject="{{ i18n "ws_form_subject" }}"
+          data-err-email="{{ i18n "form_err_email" }}"
+          data-err-workshop="{{ i18n "ws_form_err_workshop" }}"
+          data-err-place="{{ i18n "ws_form_err_place" }}"
+          data-err-send="{{ i18n "form_err_send" }}"
+          data-sending="{{ i18n "form_sending" }}">
+          <p class="ws-mono ws-small ws-muted">{{ i18n "ws_form_title" }} · {{ i18n "ws_form_required" }}</p>
+          <input type="hidden" name="_subject" value="{{ i18n "ws_form_subject" }}">
+          <div class="form__hp" aria-hidden="true"><label>website <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+
+          <div class="ws-field">
+            <label for="w-name">{{ i18n "ws_form_name" }}</label>
+            <input id="w-name" name="name" type="text" autocomplete="name">
+          </div>
+          <div class="ws-field">
+            <label for="w-email">{{ i18n "ws_form_email" }}</label>
+            <input id="w-email" name="email" type="email" autocomplete="email" required>
+            <p class="ws-field__error" id="w-email-error" hidden></p>
+          </div>
+          <div class="ws-field">
+            <label for="w-website">{{ i18n "ws_form_website" }}</label>
+            <input id="w-website" name="website" type="url" autocomplete="url">
+          </div>
+          <fieldset class="ws-field ws-field--choice" id="w-workshop">
+            <legend>{{ i18n "ws_form_workshop" }}</legend>
+            {{- range slice "Dag 1: van 0 naar 5 AI-medewerkers" "Dag 2: je eigen AI OS" "Eigen AI OS, voor wie al met Claude werkt" }}
+            <label class="ws-choice"><input type="radio" name="workshop" value="{{ . }}" required> <span>{{ . }}</span></label>
+            {{- end }}
+            <p class="ws-field__error" id="w-workshop-error" hidden></p>
+          </fieldset>
+          <div class="ws-field">
+            <label for="w-place">{{ i18n "ws_form_place" }}</label>
+            <input id="w-place" name="place" type="text" autocomplete="address-level2" required>
+            <p class="ws-field__error" id="w-place-error" hidden></p>
+          </div>
+          <div class="ws-field">
+            <label for="w-system">{{ i18n "ws_form_system" }}</label>
+            <input id="w-system" name="system" type="text" aria-describedby="w-system-hint">
+            <p class="ws-field__hint" id="w-system-hint">{{ i18n "ws_form_system_hint" }}</p>
+          </div>
+          <p class="ws-field__error" data-form-error role="alert" hidden></p>
+          <button type="submit" class="ws-btn ws-btn--start" data-submit><span data-submit-label>{{ i18n "ws_form_submit" }}</span></button>
+        </form>
+
+        <div class="ws-done" data-form-done hidden>
+          <h3 class="ws-done__title" tabindex="-1" data-done-title><span aria-hidden="true">✓ </span><span data-done-text data-sent="{{ i18n "ws_form_sent" }}" data-mailto="{{ i18n "form_mailto" }}">{{ i18n "ws_form_sent" }}</span></h3>
+          <p class="ws-muted" data-done-body data-sent="{{ i18n "ws_form_sent_body" }}" data-mailto="{{ i18n "ws_form_mailto_body" }}"></p>
+          <button type="button" class="ws-done__again ws-mono" data-form-reset>{{ i18n "ws_form_again" }}</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </div>
 {{ end }}

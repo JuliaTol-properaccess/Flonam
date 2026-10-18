@@ -18,6 +18,7 @@ export function initWorkshopForm(form) {
   const email = form.elements.email;
   const place = form.elements.place;
   const system = form.elements.system;
+  const website = form.elements.website;
   const workshopSet = document.getElementById('w-workshop');
   const radios = [...form.querySelectorAll('input[name="workshop"]')];
   const endpoint = form.dataset.endpoint || '';
@@ -98,6 +99,7 @@ export function initWorkshopForm(form) {
         `E-mail: ${email.value.trim()}`,
         `Woon- of werkplaats: ${place.value.trim()}`,
       ];
+      if (website && website.value.trim()) lines.push(`Website: ${website.value.trim()}`);
       if (system.value.trim()) lines.push(`CRM of ander systeem: ${system.value.trim()}`);
       const subject = `${form.dataset.subject}: ${chosen().value}`;
       window.location.href = `mailto:${form.dataset.to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
