@@ -75,7 +75,7 @@ export function initContactForm(form) {
     }
 
     // Honeypot gevuld: doe alsof het gelukt is.
-    if (form.elements._gotcha && form.elements._gotcha.value) { showDone('sent'); return; }
+    if (form.elements._honey && form.elements._honey.value) { showDone('sent'); return; }
 
     if (!endpoint) {
       // Nog geen formulier-endpoint ingesteld: open het mailprogramma met alles ingevuld.
